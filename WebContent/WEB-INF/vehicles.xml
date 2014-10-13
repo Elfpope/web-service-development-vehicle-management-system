@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vehicles>
+	<vehicle>
+		<registrationNumber>ABC123</registrationNumber>
+		<vehicleType>seden</vehicleType>
+		<make>Honda</make>
+		<model>Accord</model>
+		<odometer>10000</odometer>
+	</vehicle>
+
+	<vehicle>
+		<registrationNumber>EFG123</registrationNumber>
+		<vehicleType>hatch</vehicleType>
+		<make>Mazda</make>
+		<model>CX-5</model>
+		<odometer>250</odometer>
+	</vehicle>
+
+	<vehicle>
+		<registrationNumber>HJK123</registrationNumber>
+		<vehicleType>seden</vehicleType>
+		<make>Ford</make>
+		<model>Focus</model>
+		<odometer>500</odometer>
+	</vehicle>
+
+	<vehicle>
+		<registrationNumber>XYZ789</registrationNumber>
+		<vehicleType>SUV</vehicleType>
+		<make>Audi</make>
+		<model>Q5</model>
+		<odometer>1500</odometer>
+	</vehicle>
+</vehicles>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Wondering if having trips separated into a single xml could enhence 
+	object-oriented programming -->
+<trips>
+	<trip>
+		<registrationNumber>ABC123</registrationNumber>
+		<driver>David Kim</driver>
+		<startDate>01/08/2014</startDate>
+		<startTime>8:00</startTime>
+		<endDate>05/08/2014</endDate>
+		<endTime>20:00</endTime>
+		<description>Commute staff between offices</description>
+		<mileage>1000</mileage>
+	</trip>
+	<trip>
+		<registrationNumber>ABC123</registrationNumber>
+		<driver>James Pan</driver>
+		<startDate>08/08/2014</startDate>
+		<startTime>9:00</startTime>
+		<endDate>15/08/2014</endDate>
+		<endTime>21:00</endTime>
+		<description>Carry stuff between offices</description>
+		<mileage>1500</mileage>
+	</trip>
+	<trip>
+		<registrationNumber>EFG123</registrationNumber>
+		<driver>Gorden Green</driver>
+		<startDate>01/08/2014</startDate>
+		<startTime>10:00</startTime>
+		<endDate>03/08/2014</endDate>
+		<endTime>20:00</endTime>
+		<description>travel to Canberra</description>
+		<mileage>1200</mileage>
+	</trip>
+	<trip>
+		<registrationNumber>EFG123</registrationNumber>
+		<driver>James Pan</driver>
+		<startDate>05/08/2014</startDate>
+		<startTime>9:00</startTime>
+		<endDate>15/08/2014</endDate>
+		<endTime>21:00</endTime>
+		<description>travel to Brisbane</description>
+		<mileage>1500</mileage>
+	</trip>
+	<trip>
+		<registrationNumber>HJK123</registrationNumber>
+		<driver>Gorden Green</driver>
+		<startDate>07/08/2014</startDate>
+		<startTime>10:00</startTime>
+		<endDate>13/08/2014</endDate>
+		<endTime>20:00</endTime>
+		<description>travel to BlueMountain</description>
+		<mileage>1200</mileage>
+	</trip>
+	<trip>
+		<registrationNumber>HJK123</registrationNumber>
+		<driver>David Kim</driver>
+		<startDate>15/08/2014</startDate>
+		<startTime>9:00</startTime>
+		<endDate>18/08/2014</endDate>
+		<endTime>21:00</endTime>
+		<description>travel to Canberra</description>
+		<mileage>1500</mileage>
+	</trip>
+	<trip>
+		<registrationNumber>XYZ789</registrationNumber>
+		<driver>James Pan</driver>
+		<startDate>03/08/2014</startDate>
+		<startTime>10:00</startTime>
+		<endDate>7/08/2014</endDate>
+		<endTime>20:00</endTime>
+		<description>Commute staff between offices</description>
+		<mileage>800</mileage>
+	</trip>
+	<trip>
+		<registrationNumber>XYZ789</registrationNumber>
+		<driver>Gorden Green</driver>
+		<startDate>12/08/2014</startDate>
+		<startTime>9:00</startTime>
+		<endDate>17/08/2014</endDate>
+		<endTime>21:00</endTime>
+		<description>travel to Brisbane</description>
+		<mileage>1500</mileage>
+	</trip>
+</trips>
