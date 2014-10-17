@@ -6,8 +6,14 @@ import java.util.ArrayList;
 public class Vehicles implements Serializable {
 	private ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>();
 	
-	public Vehicles() {
-		// TODO Auto-generated constructor stub
+	public Vehicles() {	}
+
+	public ArrayList<Vehicle> getVehicles() {
+		return vehicles;
+	}
+
+	public void setVehicles(ArrayList<Vehicle> vehicles) {
+		this.vehicles = vehicles;
 	}
 
 }
