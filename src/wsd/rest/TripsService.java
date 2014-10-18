@@ -4,12 +4,15 @@ import javax.ws.rs.core.*;
 import javax.servlet.ServletContext;
 import javax.xml.bind.JAXBException;
 
+
+import wsd.vms.Trip;
 import wsd.vms.Users;
 import wsd.vms.VehicleManagementApplication;
 import wsd.vms.Vehicles;
 
 
 import java.io.*;
+import java.util.ArrayList;
  
 @Path("/vehicleApp")
 public class TripsService {
@@ -52,6 +55,14 @@ public class TripsService {
 	 return getVehicleApp().getVehicles();
 	 
 	}
+ 
+ @Path("trips")
+ @GET
+	@Produces(MediaType.APPLICATION_XML)
+	public ArrayList<Trip> getTrips(@QueryParam("vehicleRego") String vehicleRego, @QueryParam("startDate") int startDate, @QueryParam("keyword") String keyword ) throws JAXBException, IOException {
+		return getVehicleApp().getTrips(vehicleRego, startDate, keyword);
+	}
+	
  @Path("hello")
  @GET
  @Produces(MediaType.TEXT_PLAIN)

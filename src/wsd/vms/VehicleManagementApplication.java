@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -54,27 +55,52 @@ public class VehicleManagementApplication {
 			e.printStackTrace();
 		}
 	}
-	public void setTripPath(String filePath) throws JAXBException, FileNotFoundException {
-		this.filePath = filePath;
-		// Create the unmarshaller
-		JAXBContext jc = JAXBContext.newInstance(Trip.class);
-		Unmarshaller u = jc.createUnmarshaller();
-		 
-		// Now unmarshal the object from the file
-		FileInputStream fin = new FileInputStream(filePath);
-		users = (Users)u.unmarshal(fin); // This loads the "shop" object
-		try {
-			fin.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
 	public Users getUsers() {
 		return users;
 	}
 	public Vehicles getVehicles() {
 		return vehicles;
+	}
+	public ArrayList<Trip> getTrips() {
+		return vehicles.getTrips();
+	}
+	public ArrayList<Trip> getTrips(String vehicleRego, int startDate, String keyword) {
+		
+		ArrayList<Trip> trips = vehicles.getTrips();
+		boolean allNull = true;
+		
+		for (int i = 0; i < trips.size(); i++)
+		{
+			boolean delete = false;
+			if (vehicleRego != null) {
+				allNull = false;
+				if(!trips.get(i).getRegoNumber().equals(vehicleRego)) {
+					delete = true;
+				}
+			}
+			if (startDate != 0) {
+				allNull = false;
+				if(!(trips.get(i).getStratDate() == startDate )) {
+					delete = true;
+				}
+			}
+			if (keyword != null) {
+				allNull = false;
+				if (!trips.get(i).getDescripton().contains(keyword)) {
+					delete = true;
+				}
+			}
+			if(delete) {	
+				trips.remove(i);
+				i--;
+			}
+		}
+		
+		if(allNull) {
+			return vehicles.getTrips();
+		}
+		return trips;
 	}
 	public void setUsers(Users users) {
 		this.users = users;
