@@ -3,13 +3,30 @@ package wsd.vms;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Vehicle implements Serializable {
+	private static final long serialVersionUID = 1L;
+	@XmlElement(name = "registrationNumber")
 	private String regoNumber;
+	@XmlElement(name = "vehicleType")
 	private String type;
-	private double kilometres;
+
+
+	@XmlElement(name = "make")
 	private String make;
+	@XmlElement(name = "model")
 	private String model;
+	@XmlElement(name = "odometer")
+	private double kilometres;
+	
+	@XmlElement(name = "colour")
 	private String colour;
+	
 	private ArrayList<Trip> trips = new ArrayList<Trip> ();
 	
 	public Vehicle() {	}

@@ -8,19 +8,22 @@ public class Trip implements Serializable {
 	private String regoNumber;
 	private String driverId;
 	private String driverName;
-	private Date stratDate;
-	private Date endDate;
-	private Time startTime;
-	private Time endTime;
+	private int stratDate;
+	private int endDate;
+	private int startTime;
+	private int endTime;
 	private String descripton;
 	private double kilometres;
 	private boolean deleted = false;
 	private int deletedById;
 	
-	public Trip() {	}
+	public Trip() {	
+		
+		
+	}
 		
 	public Trip(String regoNumber, String driverId, String driverName,
-			Date stratDate, Date endDate, Time startTime, Time endTime,
+			int stratDate, int endDate, int startTime, int endTime,
 			String descripton, double kilometres, int deletedById) {
 		super();
 		this.regoNumber = regoNumber;
@@ -59,35 +62,35 @@ public class Trip implements Serializable {
 		this.driverName = driverName;
 	}
 
-	public Date getStratDate() {
+	public int getStratDate() {
 		return stratDate;
 	}
 
-	public void setStratDate(Date stratDate) {
+	public void setStratDate(int stratDate) {
 		this.stratDate = stratDate;
 	}
 
-	public Date getEndDate() {
+	public int getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(Date endDate) {
+	public void setEndDate(int endDate) {
 		this.endDate = endDate;
 	}
 
-	public Time getStartTime() {
+	public int getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(Time startTime) {
+	public void setStartTime(int startTime) {
 		this.startTime = startTime;
 	}
 
-	public Time getEndTime() {
+	public int getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(Time endTime) {
+	public void setEndTime(int endTime) {
 		this.endTime = endTime;
 	}
 

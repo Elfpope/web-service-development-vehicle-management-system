@@ -6,6 +6,7 @@
 		<make>Honda</make>
 		<model>Accord</model>
 		<odometer>10000</odometer>
+		<colour>Blue</colour>
 	</vehicle>
 
 	<vehicle>
@@ -14,6 +15,7 @@
 		<make>Mazda</make>
 		<model>CX-5</model>
 		<odometer>250</odometer>
+		<colour>Purple</colour>
 	</vehicle>
 
 	<vehicle>
@@ -22,6 +24,7 @@
 		<make>Ford</make>
 		<model>Focus</model>
 		<odometer>500</odometer>
+		<colour>Red</colour>
 	</vehicle>
 
 	<vehicle>
@@ -30,5 +33,6 @@
 		<make>Audi</make>
 		<model>Q5</model>
 		<odometer>1500</odometer>
+		<colour>Yellow</colour>
 	</vehicle>
 </vehicles>

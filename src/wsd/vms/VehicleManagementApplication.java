@@ -18,10 +18,11 @@ public class VehicleManagementApplication {
 	
 	private String filePath;
 	private Users users;
+	private Vehicles vehicles;
 	public String getFilePath() {
 		return filePath;
 	}
-	public void setFilePath(String filePath) throws JAXBException, FileNotFoundException {
+	public void setUserPath(String filePath) throws JAXBException, FileNotFoundException {
 		this.filePath = filePath;
 		// Create the unmarshaller
 		JAXBContext jc = JAXBContext.newInstance(Users.class);
@@ -37,8 +38,43 @@ public class VehicleManagementApplication {
 			e.printStackTrace();
 		}
 	}
+	public void setVehiclePath(String filePath) throws JAXBException, FileNotFoundException {
+		this.filePath = filePath;
+		// Create the unmarshaller
+		JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
+		Unmarshaller u = jc.createUnmarshaller();
+		 
+		// Now unmarshal the object from the file
+		FileInputStream fin = new FileInputStream(filePath);
+		vehicles = (Vehicles)u.unmarshal(fin); // This loads the "shop" object
+		try {
+			fin.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public void setTripPath(String filePath) throws JAXBException, FileNotFoundException {
+		this.filePath = filePath;
+		// Create the unmarshaller
+		JAXBContext jc = JAXBContext.newInstance(Trip.class);
+		Unmarshaller u = jc.createUnmarshaller();
+		 
+		// Now unmarshal the object from the file
+		FileInputStream fin = new FileInputStream(filePath);
+		users = (Users)u.unmarshal(fin); // This loads the "shop" object
+		try {
+			fin.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	public Users getUsers() {
 		return users;
+	}
+	public Vehicles getVehicles() {
+		return vehicles;
 	}
 	public void setUsers(Users users) {
 		this.users = users;

@@ -6,6 +6,7 @@ import javax.xml.bind.JAXBException;
 
 import wsd.vms.Users;
 import wsd.vms.VehicleManagementApplication;
+import wsd.vms.Vehicles;
 
 
 import java.io.*;
@@ -28,7 +29,8 @@ public class TripsService {
 	  VehicleManagementApplication vehicleApp = (VehicleManagementApplication)application.getAttribute("vehicleApp");
    if (vehicleApp == null) {
 	   vehicleApp = new VehicleManagementApplication();
-	   vehicleApp.setFilePath(application.getRealPath("WEB-INF/users.xml"));
+	   vehicleApp.setUserPath(application.getRealPath("WEB-INF/users.xml"));
+	   vehicleApp.setVehiclePath(application.getRealPath("WEB-INF/vehicles.xml"));
     application.setAttribute("vehicleApp", vehicleApp);
    }
    return vehicleApp;
@@ -40,6 +42,14 @@ public class TripsService {
 	public Users getUsers() throws JAXBException, IOException {
 	 
 	 return getVehicleApp().getUsers();
+	 
+	}
+ @Path("vehicles")
+	@GET
+	@Produces(MediaType.APPLICATION_XML)
+	public Vehicles getVehicles() throws JAXBException, IOException {
+	 
+	 return getVehicleApp().getVehicles();
 	 
 	}
  @Path("hello")
