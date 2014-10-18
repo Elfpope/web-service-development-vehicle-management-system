@@ -7,6 +7,42 @@
 		<model>Accord</model>
 		<odometer>10000</odometer>
 		<colour>Blue</colour>
+		<trip>
+			<registrationNumber>ABC123</registrationNumber>
+			<driver>David Kim</driver>
+			<startDate>5</startDate>
+			<startTime>5</startTime>
+			<endDate>6</endDate>
+			<endTime>6</endTime>
+			<description>Commute staff between offices</description>
+			<mileage>1000</mileage>
+			<deleted></deleted>
+			<deletedByID></deletedByID>
+		</trip>
+		<trip>
+			<registrationNumber>ABC123</registrationNumber>
+			<driver>James Pan</driver>
+			<startDate>4</startDate>
+			<startTime>4</startTime>
+			<endDate>7</endDate>
+			<endTime>7</endTime>
+			<description>Carry stuff between offices</description>
+			<mileage>1500</mileage>
+			<deleted>true</deleted>
+			<deletedByID>7</deletedByID>
+		</trip>
+		<trip>
+			<registrationNumber>ABC123</registrationNumber>
+			<driver>David Kim</driver>
+			<startDate>8</startDate>
+			<startTime>8</startTime>
+			<endDate>13</endDate>
+			<endTime>13</endTime>
+			<description>Carry staff between offices 2</description>
+			<mileage>1000</mileage>
+			<deleted></deleted>
+			<deletedByID></deletedByID>
+		</trip>
 	</vehicle>
 
 	<vehicle>
@@ -16,6 +52,30 @@
 		<model>CX-5</model>
 		<odometer>250</odometer>
 		<colour>Purple</colour>
+		<trip>
+			<registrationNumber>EFG123</registrationNumber>
+			<driver>Gorden Green</driver>
+			<startDate>9</startDate>
+			<startTime>9</startTime>
+			<endDate>12</endDate>
+			<endTime>12</endTime>
+			<description>travel to Canberra</description>
+			<mileage>1200</mileage>
+			<deleted></deleted>
+			<deletedByID></deletedByID>
+		</trip>
+		<trip>
+			<registrationNumber>EFG123</registrationNumber>
+			<driver>James Pan</driver>
+			<startDate>6</startDate>
+			<startTime>6</startTime>
+			<endDate>7</endDate>
+			<endTime>7</endTime>
+			<description>travel to Brisbane</description>
+			<mileage>1500</mileage>
+			<deleted></deleted>
+			<deletedByID></deletedByID>
+		</trip>
 	</vehicle>
 
 	<vehicle>
@@ -25,6 +85,30 @@
 		<model>Focus</model>
 		<odometer>500</odometer>
 		<colour>Red</colour>
+		trip>
+		<registrationNumber>HJK123</registrationNumber>
+		<driver>Gorden Green</driver>
+		<startDate>12</startDate>
+		<startTime>12</startTime>
+		<endDate>13</endDate>
+		<endTime>13</endTime>
+		<description>travel to BlueMountain</description>
+		<mileage>1200</mileage>
+		<deleted></deleted>
+		<deletedByID></deletedByID>
+
+		<trip>
+			<registrationNumber>HJK123</registrationNumber>
+			<driver>David Kim</driver>
+			<startDate>18</startDate>
+			<startTime>18</startTime>
+			<endDate>19</endDate>
+			<endTime>19</endTime>
+			<description>travel to Canberra</description>
+			<mileage>1500</mileage>
+			<deleted></deleted>
+			<deletedByID></deletedByID>
+		</trip>
 	</vehicle>
 
 	<vehicle>
@@ -34,5 +118,29 @@
 		<model>Q5</model>
 		<odometer>1500</odometer>
 		<colour>Yellow</colour>
+		<trip>
+			<registrationNumber>XYZ789</registrationNumber>
+			<driver>James Pan</driver>
+			<startDate>21</startDate>
+			<startTime>21</startTime>
+			<endDate>22</endDate>
+			<endTime>22</endTime>
+			<description>Commute staff between offices</description>
+			<mileage>800</mileage>
+			<deleted></deleted>
+			<deletedByID></deletedByID>
+		</trip>
+		<trip>
+			<registrationNumber>XYZ789</registrationNumber>
+			<driver>Gorden Green</driver>
+			<startDate>28</startDate>
+			<startTime>28</startTime>
+			<endDate>30</endDate>
+			<endTime>30</endTime>
+			<description>travel to Brisbane</description>
+			<mileage>1500</mileage>
+			<deleted></deleted>
+			<deletedByID></deletedByID>
+		</trip>
 	</vehicle>
 </vehicles>

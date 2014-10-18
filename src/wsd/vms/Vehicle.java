@@ -26,7 +26,7 @@ public class Vehicle implements Serializable {
 	
 	@XmlElement(name = "colour")
 	private String colour;
-	
+	@XmlElement(name = "trip")
 	private ArrayList<Trip> trips = new ArrayList<Trip> ();
 	
 	public Vehicle() {	}
@@ -91,7 +91,16 @@ public class Vehicle implements Serializable {
 	}
 
 	public ArrayList<Trip> getTrips() {
-		return trips;
+		
+		ArrayList<Trip> currentTrips = new ArrayList<Trip> ();
+
+		
+		for (Trip trip : trips) {
+			if(!trip.isDeleted()) {
+			currentTrips.add(trip);
+			}
+		}
+		return currentTrips;
 	}
 
 	public void setTrips(ArrayList<Trip> trips) {

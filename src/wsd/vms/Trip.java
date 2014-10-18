@@ -4,17 +4,35 @@ import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Trip implements Serializable {
+	private static final long serialVersionUID = 1L;
+	@XmlElement(name = "registrationNumber")
 	private String regoNumber;
+	
 	private String driverId;
+	@XmlElement(name = "driver")
 	private String driverName;
+	@XmlElement(name = "startDate")
 	private int stratDate;
+	@XmlElement(name = "endDate")
 	private int endDate;
+	@XmlElement(name = "startTime")
 	private int startTime;
+	@XmlElement(name = "endTime")
 	private int endTime;
+	@XmlElement(name = "description")
 	private String descripton;
+	@XmlElement(name = "mileage")
 	private double kilometres;
+	@XmlElement(name = "deleted")
 	private boolean deleted = false;
+	@XmlElement(name = "deletedByID")
 	private int deletedById;
 	
 	public Trip() {	
@@ -35,7 +53,7 @@ public class Trip implements Serializable {
 		this.endTime = endTime;
 		this.descripton = descripton;
 		this.kilometres = kilometres;
-		this.deletedById = deletedById;
+		
 	}
 
 	public String getRegoNumber() {
