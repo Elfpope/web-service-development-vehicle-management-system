@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.xml.bind.annotation.*;
+
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "users")
 public class Users implements Serializable {
@@ -29,5 +31,13 @@ public class Users implements Serializable {
 		
 		users.add(user);
 	}
+	  public User login(int id, String password) {
+	        // For each user in the list...
+	        for (User user : users) {
+	            if (user.getId() == id && user.getPassword().equals(password))
+	                return user; // Login correct. Return this user.
+	        }
+	        return null; // Login incorrect. Return null.
+	    }
 
 }
