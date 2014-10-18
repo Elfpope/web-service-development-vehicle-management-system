@@ -33,7 +33,7 @@ public class TripsService {
    if (vehicleApp == null) {
 	   vehicleApp = new VehicleManagementApplication();
 	   vehicleApp.setUserPath(application.getRealPath("WEB-INF/users.xml"));
-	   vehicleApp.setVehiclePath(application.getRealPath("WEB-INF/vehicles.xml"));
+	   vehicleApp.setVehiclePath(application.getRealPath("vehicles.xml"));
     application.setAttribute("vehicleApp", vehicleApp);
    }
    return vehicleApp;
