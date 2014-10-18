@@ -106,7 +106,14 @@ public class Vehicle implements Serializable {
 	public void setTrips(ArrayList<Trip> trips) {
 		this.trips = trips;
 	}
-	
+	public void deleteTrip(int id) {
+		
+		for (Trip trip : trips) {
+			if(!trip.isDeleted() && trip.getId() == id) {
+			 trip.setDeleted(true);
+			}
+		}
+	}
 	
 
 }

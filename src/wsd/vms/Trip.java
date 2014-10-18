@@ -31,11 +31,13 @@ public class Trip implements Serializable {
 	@XmlElement(name = "mileage")
 	private double kilometres;
 	@XmlElement(name = "deleted")
-	private boolean deleted = false;
+	private boolean deleted;
 	@XmlElement(name = "deletedByID")
-	private String deletedById;
-	
+	private int deletedById;
+	@XmlElement(name = "id")
+	private int id;
 	public Trip() {	
+		
 		
 	}
 		
@@ -135,12 +137,19 @@ public class Trip implements Serializable {
 		this.deleted = deleted;
 	}
 
-	public String getDeletedById() {
+	public int getDeletedById() {
 		return deletedById;
 	}
 
-	public void setDeletedById(String deletedById) {
+	public void setDeletedById(int deletedById) {
 		this.deletedById = deletedById;
 	}
-
+	public int getId() {
+		
+		return id;
+	}
+public void setId(int id) {
+		
+		this.id = id;
+	}
 }

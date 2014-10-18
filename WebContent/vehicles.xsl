@@ -27,7 +27,16 @@
 
 	<xsl:template match="vehicle">
 		<tr>
-			hello
+			<xsl:apply-templates />
 		</tr>
 	</xsl:template>
+
+	<xsl:template match="vehicle/*">
+		<td>
+			<xsl:apply-templates />
+		</td>
+	</xsl:template>
+	
+	<xsl:template match="//trip"/>
+
 </xsl:stylesheet>
