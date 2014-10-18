@@ -16,22 +16,24 @@ import wsd.vms.Users;
 
 public class VehicleManagementApplication {
 
-	
 	private String filePath;
 	private Users users;
 	private Vehicles vehicles;
+
 	public String getFilePath() {
 		return filePath;
 	}
-	public void setUserPath(String filePath) throws JAXBException, FileNotFoundException {
+
+	public void setUserPath(String filePath) throws JAXBException,
+			FileNotFoundException {
 		this.filePath = filePath;
 		// Create the unmarshaller
 		JAXBContext jc = JAXBContext.newInstance(Users.class);
 		Unmarshaller u = jc.createUnmarshaller();
-		 
+
 		// Now unmarshal the object from the file
 		FileInputStream fin = new FileInputStream(filePath);
-		users = (Users)u.unmarshal(fin); // This loads the "shop" object
+		users = (Users) u.unmarshal(fin); // This loads the "shop" object
 		try {
 			fin.close();
 		} catch (IOException e) {
@@ -39,15 +41,17 @@ public class VehicleManagementApplication {
 			e.printStackTrace();
 		}
 	}
-	public void setVehiclePath(String filePath) throws JAXBException, FileNotFoundException {
+
+	public void setVehiclePath(String filePath) throws JAXBException,
+			FileNotFoundException {
 		this.filePath = filePath;
 		// Create the unmarshaller
 		JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
 		Unmarshaller u = jc.createUnmarshaller();
-		 
+
 		// Now unmarshal the object from the file
 		FileInputStream fin = new FileInputStream(filePath);
-		vehicles = (Vehicles)u.unmarshal(fin); // This loads the "shop" object
+		vehicles = (Vehicles) u.unmarshal(fin); // This loads the "shop" object
 		try {
 			fin.close();
 		} catch (IOException e) {
@@ -55,33 +59,36 @@ public class VehicleManagementApplication {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public Users getUsers() {
 		return users;
 	}
+
 	public Vehicles getVehicles() {
 		return vehicles;
 	}
+
 	public ArrayList<Trip> getTrips() {
 		return vehicles.getTrips();
 	}
-	public ArrayList<Trip> getTrips(String vehicleRego, int startDate, String keyword) {
-		
+
+	public ArrayList<Trip> getTrips(String vehicleRego, int startDate,
+			String keyword) {
+
 		ArrayList<Trip> trips = vehicles.getTrips();
 		boolean allNull = true;
-		
-		for (int i = 0; i < trips.size(); i++)
-		{
+
+		for (int i = 0; i < trips.size(); i++) {
 			boolean delete = false;
 			if (vehicleRego != null) {
 				allNull = false;
-				if(!trips.get(i).getRegoNumber().equals(vehicleRego)) {
+				if (!trips.get(i).getRegoNumber().equals(vehicleRego)) {
 					delete = true;
 				}
 			}
 			if (startDate != 0) {
 				allNull = false;
-				if(!(trips.get(i).getStratDate() == startDate )) {
+				if (!(trips.get(i).getStratDate() == startDate)) {
 					delete = true;
 				}
 			}
@@ -91,60 +98,58 @@ public class VehicleManagementApplication {
 					delete = true;
 				}
 			}
-			if(delete) {	
+			if (delete) {
 				trips.remove(i);
 				i--;
 			}
 		}
-		
-		if(allNull) {
+
+		if (allNull) {
 			return vehicles.getTrips();
 		}
 		return trips;
 	}
+
 	public void setUsers(Users users) {
 		this.users = users;
 	}
-	public boolean validUser(String email, String password) {
-		
-		//if(getUsers().login(email, password) != null) {
-			
-		//return true;
-		//}
+
+	public boolean isValidUser(int id, String password) {
+
+		if (getUsers().login(id, password) != null) {
+
+			return true;
+		}
 		return false;
 	}
-public User userInfo(String email, String password) {
-		
-		//return getUsers().login(email, password);
-			return null;
-	
+
+	public User getUser(int id, String password) {
+
+		return getUsers().login(id, password);
+
 	}
 
-public User getUser(String email) {
-	
-	//return getUsers().email(email);
-		return null;
-
-}
-	public void addUser(int id, String firstName, String lastName, String password,
-			String role) throws FileNotFoundException, JAXBException {
-		getUsers().addUser(new User(id, firstName, lastName,password,
-				role));
+	public void addUser(int id, String firstName, String lastName,
+			String password, String role) throws FileNotFoundException,
+			JAXBException {
+		getUsers().addUser(new User(id, firstName, lastName, password, role));
 		JAXBContext jc = JAXBContext.newInstance(Users.class);
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(users, new FileOutputStream(getFilePath()));
 	}
-	public void setFilePath2(String filePath) throws JAXBException, FileNotFoundException {
+
+	public void setFilePath2(String filePath) throws JAXBException,
+			FileNotFoundException {
 		this.filePath = filePath;
 		// Create the unmarshaller
 		JAXBContext jc = JAXBContext.newInstance(Users.class);
 		Unmarshaller u = jc.createUnmarshaller();
-		 
+
 		// Now unmarshal the object from the file
 		FileInputStream fin = new FileInputStream(filePath);
-		getUsers().addUser((User)u.unmarshal(fin));
-		
+		getUsers().addUser((User) u.unmarshal(fin));
+
 		try {
 			fin.close();
 		} catch (IOException e) {
@@ -153,6 +158,4 @@ public User getUser(String email) {
 		}
 	}
 
-	
-	
 }
