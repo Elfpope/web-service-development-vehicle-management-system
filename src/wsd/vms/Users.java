@@ -31,10 +31,10 @@ public class Users implements Serializable {
 		
 		users.add(user);
 	}
-	  public User login(String id, String password) {
+	  public User login(int id, String password) {
 	        // For each user in the list...
 	        for (User user : users) {
-	            if (user.getId().equals(id) && user.getPassword().equals(password))
+	            if (user.getId() == id && user.getPassword().equals(password))
 	                return user; // Login correct. Return this user.
 	        }
 	        return null; // Login incorrect. Return null.

@@ -71,6 +71,8 @@ public class VehicleManagementApplication {
 	public ArrayList<Trip> getTrips() {
 		return vehicles.getTrips();
 	}
+	
+	
 
 	public ArrayList<Trip> getTrips(String vehicleRego, int startDate,
 			String keyword) {
@@ -114,7 +116,7 @@ public class VehicleManagementApplication {
 		this.users = users;
 	}
 
-	public boolean isValidUser(String id, String password) {
+	public boolean isValidUser(int id, String password) {
 
 		if (getUsers().login(id, password) != null) {
 
@@ -123,41 +125,43 @@ public class VehicleManagementApplication {
 		return false;
 	}
 
-	public User getUser(String id, String password) {
-		System.out.println("HELLO" + id + password);
-		Users users = getUsers();
-		User poo = users.login(id, password);
-		return poo;
+	public User getUser(int id, String password) {
+
+		return getUsers().login(id, password);
 
 	}
 
-	public void addUser(String id, String firstName, String lastName,
+	public void addUser(int id, String firstName, String lastName,
 			String password, String role) throws FileNotFoundException,
 			JAXBException {
 		getUsers().addUser(new User(id, firstName, lastName, password, role));
-		JAXBContext jc = JAXBContext.newInstance(Users.class);
-		Marshaller m = jc.createMarshaller();
-		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		m.marshal(users, new FileOutputStream(getFilePath()));
+	
 	}
 
-	public void setFilePath2(String filePath) throws JAXBException,
-			FileNotFoundException {
-		this.filePath = filePath;
-		// Create the unmarshaller
-		JAXBContext jc = JAXBContext.newInstance(Users.class);
-		Unmarshaller u = jc.createUnmarshaller();
 
-		// Now unmarshal the object from the file
-		FileInputStream fin = new FileInputStream(filePath);
-		getUsers().addUser((User) u.unmarshal(fin));
-
+	
+	
+	public void saveFile() throws FileNotFoundException, JAXBException {
+		JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
+		  Marshaller m = jc.createMarshaller();
+		  m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		  m.marshal(vehicles, System.out);
+		//JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
+		//Marshaller m = jc.createMarshaller();
+		//m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		//m.marshal(vehicles, new FileOutputStream("WEB-INF/vehicles.xml"));
+	}
+     public void deleteTrip(int id) {
+		
+		vehicles.deleteTrip(id);
 		try {
-			fin.close();
-		} catch (IOException e) {
+			saveFile();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
 }

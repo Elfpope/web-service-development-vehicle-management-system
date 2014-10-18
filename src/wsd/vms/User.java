@@ -11,7 +11,7 @@ public class User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	@XmlElement(name = "id")
-	private String id;
+	private int id;
 	@XmlElement(name = "firstName")
 	private String firstName;
 	@XmlElement(name = "lastName")
@@ -25,7 +25,7 @@ public class User implements Serializable {
 	
 	public User() {	}
 
-	public User(String id, String firstName, String lastName, String password,
+	public User(int id, String firstName, String lastName, String password,
 			String role) {
 		super();
 		this.id = id;
@@ -35,11 +35,11 @@ public class User implements Serializable {
 		this.role = role;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
