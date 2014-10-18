@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trips xmlns="wsdVehicleMgmtSystem/trips" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="wsdVehicleMgmtSystem/trips trips.xsd">
+<!-- Wondering if having trips separated into a single xml could enhence 
+	object-oriented programming -->
+
+	<trip>
+		<regoNumber>ABC123</regoNumber>
+		<driverId>D1000</driverId>
+		<driverName>David Kim</driverName>
+		<startDate>01/08/2014</startDate>
+		<startTime>8:00</startTime>
+		<endDate>05/08/2014</endDate>
+		<endTime>20:00</endTime>
+		<description>Commute staff between offices</description>
+		<kilometres>1000</kilometres>
+		<deleted>false</deleted>
+		<deletedById></deletedById>
+	</trip>
+	<trip>
+		<regoNumber>ABC123</regoNumber>
+		<driverId>J1000</driverId>
+		<driverName>James Pan</driverName>
+		<startDate>08/08/2014</startDate>
+		<startTime>9:00</startTime>
+		<endDate>15/08/2014</endDate>
+		<endTime>21:00</endTime>
+		<description>Carry stuff between offices</description>
+		<kilometres>1500</kilometres>
+		<deleted>false</deleted>
+		<deletedById></deletedById>
+	</trip>
+	<trip>
+		<regoNumber>EFG123</regoNumber>
+		<driverId>G1000</driverId>
+		<driverName>Gorden Green</driverName>
+		<startDate>01/08/2014</startDate>
+		<startTime>10:00</startTime>
+		<endDate>03/08/2014</endDate>
+		<endTime>20:00</endTime>
+		<description>travel to Canberra</description>
+		<kilometres>1200</kilometres>
+		<deleted>false</deleted>
+		<deletedById></deletedById>
+	</trip>
+	<trip>
+		<regoNumber>EFG123</regoNumber>
+		<driverId>J1000</driverId>
+		<driverName>James Pan</driverName>
+		<startDate>05/08/2014</startDate>
+		<startTime>9:00</startTime>
+		<endDate>15/08/2014</endDate>
+		<endTime>21:00</endTime>
+		<description>travel to Brisbane</description>
+		<kilometres>1500</kilometres>
+		<deleted>false</deleted>
+		<deletedById></deletedById>
+	</trip>
+	<trip>
+		<regoNumber>HJK123</regoNumber>
+		<driverId>G1000</driverId>
+		<driverName>Gorden Green</driverName>
+		<startDate>07/08/2014</startDate>
+		<startTime>10:00</startTime>
+		<endDate>13/08/2014</endDate>
+		<endTime>20:00</endTime>
+		<description>travel to BlueMountain</description>
+		<kilometres>1200</kilometres>
+		<deleted>false</deleted>
+		<deletedById></deletedById>
+	</trip>
+	<trip>
+		<regoNumber>HJK123</regoNumber>
+		<driverId>D1000</driverId>
+		<driverName>David Kim</driverName>
+		<startDate>15/08/2014</startDate>
+		<startTime>9:00</startTime>
+		<endDate>18/08/2014</endDate>
+		<endTime>21:00</endTime>
+		<description>travel to Canberra</description>
+		<kilometres>1500</kilometres>
+		<deleted>false</deleted>
+		<deletedById></deletedById>
+	</trip>
+	<trip>
+		<regoNumber>XYZ789</regoNumber>
+		<driverId>J1000</driverId>
+		<driverName>James Pan</driverName>
+		<startDate>03/08/2014</startDate>
+		<startTime>10:00</startTime>
+		<endDate>7/08/2014</endDate>
+		<endTime>20:00</endTime>
+		<description>Commute staff between offices</description>
+		<kilometres>800</kilometres>
+		<deleted>false</deleted>
+		<deletedById></deletedById>
+	</trip>
+	<trip>
+		<regoNumber>XYZ789</regoNumber>
+		<driverId>G1000</driverId>
+		<driverName>Gorden Green</driverName>
+		<startDate>12/08/2014</startDate>
+		<startTime>9:00</startTime>
+		<endDate>17/08/2014</endDate>
+		<endTime>21:00</endTime>
+		<description>travel to Brisbane</description>
+		<kilometres>1500</kilometres>
+		<deleted>false</deleted>
+		<deletedById></deletedById>
+	</trip>
+</trips>
