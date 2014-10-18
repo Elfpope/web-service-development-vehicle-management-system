@@ -2,12 +2,26 @@ package wsd.vms;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+
 public class User implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	@XmlElement(name = "id")
 	private int id;
+	@XmlElement(name = "firstName")
 	private String firstName;
+	@XmlElement(name = "lastName")
 	private String lastName;
+	@XmlElement(name = "password")
 	private String password;
+	@XmlElement(name = "role")
 	private String role;
+	
+	
 	
 	public User() {	}
 
