@@ -32,7 +32,7 @@
 <body>
 	<jsp:useBean id="user" class="wsd.vms.User" scope="session" />
 	<%
-		user.setId(request.getParameter("id"));
+		user.setId(request.getParameter("id"));	
 		user.setPassword(request.getParameter("password"));
 		String filePath = application.getRealPath("WEB-INF/users.xml");
 	%>
