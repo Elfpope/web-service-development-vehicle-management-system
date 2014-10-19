@@ -116,7 +116,7 @@ public class VehicleManagementApplication {
 		this.users = users;
 	}
 
-	public boolean isValidUser(int id, String password) {
+	public boolean isValidUser(String id, String password) {
 
 		if (getUsers().login(id, password) != null) {
 
@@ -125,13 +125,13 @@ public class VehicleManagementApplication {
 		return false;
 	}
 
-	public User getUser(int id, String password) {
+	public User getUser(String id, String password) {
 
 		return getUsers().login(id, password);
 
 	}
 
-	public void addUser(int id, String firstName, String lastName,
+	public void addUser(String id, String firstName, String lastName,
 			String password, String role) throws FileNotFoundException,
 			JAXBException {
 		getUsers().addUser(new User(id, firstName, lastName, password, role));

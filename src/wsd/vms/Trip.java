@@ -33,7 +33,7 @@ public class Trip implements Serializable {
 	@XmlElement(name = "deleted")
 	private boolean deleted;
 	@XmlElement(name = "deletedByID")
-	private int deletedById;
+	private String deletedById;
 	@XmlElement(name = "id")
 	private int id;
 	public Trip() {	
@@ -43,7 +43,7 @@ public class Trip implements Serializable {
 		
 	public Trip(String regoNumber, String driverId, String driverName,
 			int stratDate, int endDate, int startTime, int endTime,
-			String descripton, double kilometres, int deletedById) {
+			String descripton, double kilometres, String deletedById) {
 		super();
 		this.regoNumber = regoNumber;
 		this.driverId = driverId;
@@ -137,11 +137,11 @@ public class Trip implements Serializable {
 		this.deleted = deleted;
 	}
 
-	public int getDeletedById() {
+	public String getDeletedById() {
 		return deletedById;
 	}
 
-	public void setDeletedById(int deletedById) {
+	public void setDeletedById(String deletedById) {
 		this.deletedById = deletedById;
 	}
 	public int getId() {
