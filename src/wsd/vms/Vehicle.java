@@ -11,19 +11,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Vehicle implements Serializable {
 	private static final long serialVersionUID = 1L;
-	@XmlElement(name = "registrationNumber")
+	@XmlElement(name = "regoNumber")
 	private String regoNumber;
 	@XmlElement(name = "vehicleType")
 	private String type;
-
-
 	@XmlElement(name = "make")
 	private String make;
 	@XmlElement(name = "model")
 	private String model;
-	@XmlElement(name = "odometer")
-	private double kilometres;
-	
+	@XmlElement(name = "kilometres")
+	private double kilometres;	
 	@XmlElement(name = "colour")
 	private String colour;
 	@XmlElement(name = "trip")

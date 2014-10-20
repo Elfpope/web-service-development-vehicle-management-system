@@ -1,147 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="vehicles.xsl"?>
+<!-- <vehicles xmlns="wsdVehicleMgmtSystem/vehicles" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="wsdVehicleMgmtSystem/vehicles vehicles.xsd"> -->
+	
 <vehicles>
 	<vehicle>
-		<registrationNumber>ABC123</registrationNumber>
-		<vehicleType>seden</vehicleType>
+		<regoNumber>ABC123</regoNumber>
+		<vehicleType>Seden</vehicleType>
 		<make>Honda</make>
 		<model>Accord</model>
-		<odometer>10000</odometer>
+		<kilometres>10000</kilometres>
 		<colour>Blue</colour>
 		<trip>
-			<registrationNumber>ABC123</registrationNumber>
-			<driver>David Kim</driver>
-			<startDate>5</startDate>
-			<startTime>5</startTime>
-			<endDate>6</endDate>
-			<endTime>6</endTime>
+			<id>1</id>
+			<regoNumber>ABC123</regoNumber>
+			<driverId>D1000</driverId>
+			<driverName>David Kim</driverName>
+<!-- 			<startDate>01/08/2014</startDate>
+			<startTime>8:00</startTime>
+			<endDate>05/08/2014</endDate>
+			<endTime>20:00</endTime> -->
+			<startDate>1</startDate>
+			<startTime>1</startTime>
+			<endDate>3</endDate>
+			<endTime>3</endTime>
 			<description>Commute staff between offices</description>
-			<mileage>1000</mileage>
-			<deleted></deleted>
-			<deletedByID></deletedByID>
+			<kilometres>1000</kilometres>
+			<deleted>false</deleted>
+			<deletedById></deletedById>
 		</trip>
 		<trip>
-			<registrationNumber>ABC123</registrationNumber>
-			<driver>James Pan</driver>
-			<startDate>4</startDate>
-			<startTime>4</startTime>
-			<endDate>7</endDate>
-			<endTime>7</endTime>
-			<description>Carry stuff between offices</description>
-			<mileage>1500</mileage>
-			<deleted>true</deleted>
-			<deletedByID>7</deletedByID>
-		</trip>
-		<trip>
-			<registrationNumber>ABC123</registrationNumber>
-			<driver>David Kim</driver>
-			<startDate>8</startDate>
-			<startTime>8</startTime>
-			<endDate>13</endDate>
-			<endTime>13</endTime>
-			<description>Carry staff between offices 2</description>
-			<mileage>1000</mileage>
-			<deleted></deleted>
-			<deletedByID></deletedByID>
-		</trip>
-	</vehicle>
-
-	<vehicle>
-		<registrationNumber>EFG123</registrationNumber>
-		<vehicleType>hatch</vehicleType>
-		<make>Mazda</make>
-		<model>CX-5</model>
-		<odometer>250</odometer>
-		<colour>Purple</colour>
-		<trip>
-			<registrationNumber>EFG123</registrationNumber>
-			<driver>Gorden Green</driver>
-			<startDate>9</startDate>
-			<startTime>9</startTime>
-			<endDate>12</endDate>
-			<endTime>12</endTime>
-			<description>travel to Canberra</description>
-			<mileage>1200</mileage>
-			<deleted></deleted>
-			<deletedByID></deletedByID>
-		</trip>
-		<trip>
-			<registrationNumber>EFG123</registrationNumber>
-			<driver>James Pan</driver>
+			<id>6</id>
+			<regoNumber>ABC123</regoNumber>
+			<driverId>J1000</driverId>
+			<driverName>James Pan</driverName>
+<!-- 			<startDate>08/08/2014</startDate>
+			<startTime>9:00</startTime>
+			<endDate>15/08/2014</endDate>
+			<endTime>21:00</endTime> -->
 			<startDate>6</startDate>
 			<startTime>6</startTime>
-			<endDate>7</endDate>
-			<endTime>7</endTime>
-			<description>travel to Brisbane</description>
-			<mileage>1500</mileage>
-			<deleted></deleted>
-			<deletedByID></deletedByID>
+			<endDate>8</endDate>
+			<endTime>8</endTime>
+			<description>Carry stuff between offices</description>
+			<kilometres>1500</kilometres>
+			<deleted>false</deleted>
+			<deletedById></deletedById>
 		</trip>
 	</vehicle>
 
 	<vehicle>
-		<registrationNumber>HJK123</registrationNumber>
-		<vehicleType>seden</vehicleType>
+		<regoNumber>EFG123</regoNumber>
+		<vehicleType>Hatch</vehicleType>
+		<make>Mazda</make>
+		<model>CX-5</model>
+		<kilometres>250</kilometres>
+		<colour>Purple</colour>
+		<trip>
+			<id>2</id>
+			<regoNumber>EFG123</regoNumber>
+			<driverId>G1000</driverId>
+			<driverName>Gorden Green</driverName>
+<!-- 			<startDate>01/08/2014</startDate>
+			<startTime>10:00</startTime>
+			<endDate>03/08/2014</endDate>
+			<endTime>20:00</endTime> -->
+			<startDate>2</startDate>
+			<startTime>2</startTime>
+			<endDate>4</endDate>
+			<endTime>4</endTime>
+			<description>travel to Canberra</description>
+			<kilometres>1200</kilometres>
+			<deleted>false</deleted>
+			<deletedById></deletedById>
+		</trip>
+		<trip>
+			<id>4</id>
+			<regoNumber>EFG123</regoNumber>
+			<driverId>J1000</driverId>
+			<driverName>James Pan</driverName>
+<!-- 			<startDate>05/08/2014</startDate>
+			<startTime>9:00</startTime>
+			<endDate>15/08/2014</endDate>
+			<endTime>21:00</endTime> -->
+			<startDate>4</startDate>
+			<startTime>4</startTime>
+			<endDate>6</endDate>
+			<endTime>6</endTime>
+			<description>travel to Brisbane</description>
+			<kilometres>1500</kilometres>
+			<deleted>false</deleted>
+			<deletedById></deletedById>
+		</trip>
+	</vehicle>
+
+	<vehicle>
+		<regoNumber>HJK123</regoNumber>
+		<vehicleType>Minibus</vehicleType>
 		<make>Ford</make>
 		<model>Focus</model>
-		<odometer>500</odometer>
+		<kilometres>500</kilometres>
 		<colour>Red</colour>
 		<trip>
-			<registrationNumber>HJK123</registrationNumber>
-			<driver>Gorden Green</driver>
-			<startDate>12</startDate>
-			<startTime>12</startTime>
-			<endDate>13</endDate>
-			<endTime>13</endTime>
+			<id>5</id>
+			<regoNumber>HJK123</regoNumber>
+			<driverId>G1000</driverId>
+			<driverName>Gorden Green</driverName>
+<!-- 			<startDate>07/08/2014</startDate>
+			<startTime>10:00</startTime>
+			<endDate>13/08/2014</endDate>
+			<endTime>20:00</endTime> -->
+			<startDate>5</startDate>
+			<startTime>5</startTime>
+			<endDate>7</endDate>
+			<endTime>7</endTime>
 			<description>travel to BlueMountain</description>
-			<mileage>1200</mileage>
-			<deleted></deleted>
-			<deletedByID></deletedByID>
+			<kilometres>1200</kilometres>
+			<deleted>false</deleted>
+			<deletedById></deletedById>
 		</trip>
 		<trip>
-			<registrationNumber>HJK123</registrationNumber>
-			<driver>David Kim</driver>
-			<startDate>18</startDate>
-			<startTime>18</startTime>
-			<endDate>19</endDate>
-			<endTime>19</endTime>
+			<id>8</id>
+			<regoNumber>HJK123</regoNumber>
+			<driverId>D1000</driverId>
+			<driverName>David Kim</driverName>
+<!-- 			<startDate>15/08/2014</startDate>
+			<startTime>9:00</startTime>
+			<endDate>18/08/2014</endDate>
+			<endTime>21:00</endTime> -->
+			<startDate>8</startDate>
+			<startTime>8</startTime>
+			<endDate>10</endDate>
+			<endTime>10</endTime>
 			<description>travel to Canberra</description>
-			<mileage>1500</mileage>
-			<deleted></deleted>
-			<deletedByID></deletedByID>
+			<kilometres>1500</kilometres>
+			<deleted>false</deleted>
+			<deletedById></deletedById>
 		</trip>
 	</vehicle>
 
 	<vehicle>
-		<registrationNumber>XYZ789</registrationNumber>
+		<regoNumber>XYZ789</regoNumber>
 		<vehicleType>SUV</vehicleType>
 		<make>Audi</make>
 		<model>Q5</model>
-		<odometer>1500</odometer>
+		<kilometres>1500</kilometres>
 		<colour>Yellow</colour>
 		<trip>
-			<registrationNumber>XYZ789</registrationNumber>
-			<driver>James Pan</driver>
-			<startDate>21</startDate>
-			<startTime>21</startTime>
-			<endDate>22</endDate>
-			<endTime>22</endTime>
+			<id>3</id>
+			<regoNumber>XYZ789</regoNumber>
+			<driverId>J1000</driverId>
+			<driverName>James Pan</driverName>
+<!-- 			<startDate>03/08/2014</startDate>
+			<startTime>10:00</startTime>
+			<endDate>7/08/2014</endDate>
+			<endTime>20:00</endTime> -->
+			<startDate>3</startDate>
+			<startTime>3</startTime>
+			<endDate>5</endDate>
+			<endTime>5</endTime>
 			<description>Commute staff between offices</description>
-			<mileage>800</mileage>
-			<deleted></deleted>
-			<deletedByID></deletedByID>
+			<kilometres>800</kilometres>
+			<deleted>false</deleted>
+			<deletedById></deletedById>
 		</trip>
 		<trip>
-			<registrationNumber>XYZ789</registrationNumber>
-			<driver>Gorden Green</driver>
-			<startDate>28</startDate>
-			<startTime>28</startTime>
-			<endDate>30</endDate>
-			<endTime>30</endTime>
+			<id>7</id>
+			<regoNumber>XYZ789</regoNumber>
+			<driverId>G1000</driverId>
+			<driverName>Gorden Green</driverName>
+<!-- 			<startDate>12/08/2014</startDate>
+			<startTime>9:00</startTime>
+			<endDate>17/08/2014</endDate>
+			<endTime>21:00</endTime> -->
+			<startDate>7</startDate>
+			<startTime>7</startTime>
+			<endDate>9</endDate>
+			<endTime>9</endTime>
 			<description>travel to Brisbane</description>
-			<mileage>1500</mileage>
-			<deleted></deleted>
-			<deletedByID></deletedByID>
+			<kilometres>1500</kilometres>
+			<deleted>false</deleted>
+			<deletedById></deletedById>
 		</trip>
 	</vehicle>
 </vehicles>
