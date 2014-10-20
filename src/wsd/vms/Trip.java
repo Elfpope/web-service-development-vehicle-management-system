@@ -12,34 +12,33 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Trip implements Serializable {
 	private static final long serialVersionUID = 1L;
-	@XmlElement(name = "registrationNumber")
+	@XmlElement(name = "id")
+	private int id;
+	@XmlElement(name = "regoNumber")
 	private String regoNumber;
-	
+	@XmlElement(name = "driverId")
 	private String driverId;
-	@XmlElement(name = "driver")
+	@XmlElement(name = "driverName")
 	private String driverName;
 	@XmlElement(name = "startDate")
 	private int stratDate;
-	@XmlElement(name = "endDate")
-	private int endDate;
 	@XmlElement(name = "startTime")
 	private int startTime;
+	@XmlElement(name = "endDate")
+	private int endDate;
 	@XmlElement(name = "endTime")
 	private int endTime;
 	@XmlElement(name = "description")
 	private String descripton;
-	@XmlElement(name = "mileage")
+	@XmlElement(name = "kilometres")
 	private double kilometres;
 	@XmlElement(name = "deleted")
 	private boolean deleted;
-	@XmlElement(name = "deletedByID")
+	@XmlElement(name = "deletedById")
 	private String deletedById;
-	@XmlElement(name = "id")
-	private int id;
-	public Trip() {	
-		
-		
-	}
+
+	
+	public Trip() {	}
 		
 	public Trip(String regoNumber, String driverId, String driverName,
 			int stratDate, int endDate, int startTime, int endTime,
@@ -54,7 +53,6 @@ public class Trip implements Serializable {
 		this.endTime = endTime;
 		this.descripton = descripton;
 		this.kilometres = kilometres;
-		
 	}
 
 	public String getRegoNumber() {

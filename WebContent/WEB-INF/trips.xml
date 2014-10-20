@@ -2,10 +2,9 @@
 <trips xmlns="wsdVehicleMgmtSystem/trips" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="wsdVehicleMgmtSystem/trips trips.xsd">
-<!-- Wondering if having trips separated into a single xml could enhence 
-	object-oriented programming -->
 
 	<trip>
+		<id>1</id>
 		<regoNumber>ABC123</regoNumber>
 		<driverId>D1000</driverId>
 		<driverName>David Kim</driverName>
@@ -19,6 +18,7 @@
 		<deletedById></deletedById>
 	</trip>
 	<trip>
+		<id>6</id>
 		<regoNumber>ABC123</regoNumber>
 		<driverId>J1000</driverId>
 		<driverName>James Pan</driverName>
@@ -32,6 +32,7 @@
 		<deletedById></deletedById>
 	</trip>
 	<trip>
+		<id>2</id>
 		<regoNumber>EFG123</regoNumber>
 		<driverId>G1000</driverId>
 		<driverName>Gorden Green</driverName>
@@ -45,6 +46,7 @@
 		<deletedById></deletedById>
 	</trip>
 	<trip>
+		<id>4</id>
 		<regoNumber>EFG123</regoNumber>
 		<driverId>J1000</driverId>
 		<driverName>James Pan</driverName>
@@ -58,6 +60,7 @@
 		<deletedById></deletedById>
 	</trip>
 	<trip>
+		<id>5</id>
 		<regoNumber>HJK123</regoNumber>
 		<driverId>G1000</driverId>
 		<driverName>Gorden Green</driverName>
@@ -71,6 +74,7 @@
 		<deletedById></deletedById>
 	</trip>
 	<trip>
+		<id>8</id>
 		<regoNumber>HJK123</regoNumber>
 		<driverId>D1000</driverId>
 		<driverName>David Kim</driverName>
@@ -84,6 +88,7 @@
 		<deletedById></deletedById>
 	</trip>
 	<trip>
+		<id>3</id>
 		<regoNumber>XYZ789</regoNumber>
 		<driverId>J1000</driverId>
 		<driverName>James Pan</driverName>
@@ -97,6 +102,7 @@
 		<deletedById></deletedById>
 	</trip>
 	<trip>
+		<id>7</id>
 		<regoNumber>XYZ789</regoNumber>
 		<driverId>G1000</driverId>
 		<driverName>Gorden Green</driverName>

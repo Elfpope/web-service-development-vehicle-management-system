@@ -3,7 +3,7 @@
 	targetNamespace="wsdVehicleMgmtSystem/trips" xmlns="wsdVehicleMgmtSystem/trips"
 	elementFormDefault="qualified">
 
-	<!-- Type declarations -->
+	<!-- Type declarations -->	
 	<xs:simpleType name="regoNumber">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[A-Z]{3}[0-9]{3}" />
@@ -36,6 +36,7 @@
 
 	<xs:complexType name="trip">
 		<xs:sequence>
+			<xs:element name="id" type="xs:positiveInteger" />
 			<xs:element name="regoNumber" type="regoNumber" />
 			<xs:element name="driverId" type="xs:string" />
 			<xs:element name="driverName" type="Name" />
