@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="wsd.vms.User"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x"%>
+<c:import var="xml" url="vehicles.xml" />
+<c:import var="xslt" url="vehicles.xsl" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -42,38 +46,32 @@
 			<a class="navbar-brand" href="#">Vehicle Management System</a>
 		</div>
 		<div class="navbar-collapse collapse navbar-responsive-collapse">
-			<ul class="nav navbar-nav navbar-left">
-			</ul>
+			<%
+				if (user.getId() == null) {
+			%>
+			<form action="loginAction.jsp" class="navbar-form navbar-right"
+				role="form" method="post">
+				<div class="form-group">
+					<input placeholder="ID" class="form-control" type="text" name="id">
+				</div>
+				<div class="form-group">
+					<input placeholder="Password" class="form-control" type="password"
+						name="password">
+				</div>
+				<button type="submit" class="btn btn-success">Sign in</button>
+				<a href="register.jsp" class="btn btn-info">Register</a>
+			</form>
+			<%
+				} else {
+			%>
 			<ul class="nav navbar-nav navbar-right">
-				<%
-					if (user.getFirstName() == null) {
-				%>
-				<form action="loginAction.jsp" class="navbar-form" role="form"
-					method="post">
-					<div class="form-group">
-						<input placeholder="ID" class="form-control" type="text" name="id"
-							for="id">
-					</div>
-					<div class="form-group">
-						<input placeholder="Password" class="form-control" type="password"
-							name="password" for="password">
-					</div>
-					<button type="submit" class="btn btn-success">Sign in</button>
-					<a href="register.jsp" class="btn btn-info">Register</a>
-				</form>
-				<%
-					} else {
-				%>
-				<p>
-					You are currently logged in as
-					<%=user.getFirstName()%>
-					&nbsp;
-					<%=user.getLastName()%>
-					<%
-						}
-					%>
-				
+				<div class="navbar-form">
+					<a href="logout.jsp" class="btn btn-info">Log out</a>
+				</div>
 			</ul>
+			<%
+				}
+			%>
 		</div>
 	</div>
 
@@ -87,6 +85,8 @@
 			you're on atm.</p>
 		<p></p>
 	</div>
+
+	<x:transform xml="${xml}" xslt="${xslt}" />
 
 </body>
 </html>

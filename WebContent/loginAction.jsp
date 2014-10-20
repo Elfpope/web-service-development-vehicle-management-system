@@ -32,17 +32,34 @@
 <body>
 	<jsp:useBean id="user" class="wsd.vms.User" scope="session" />
 	<%
-		user.setId(request.getParameter("id"));	
+		user.setId(request.getParameter("id"));
 		user.setPassword(request.getParameter("password"));
 		String filePath = application.getRealPath("WEB-INF/users.xml");
 	%>
-	<jsp:useBean id="vms" class="wsd.vms.VehicleManagementApplication"
-		scope="application">
+	<%=filePath %>
+	<jsp:useBean id="vms" class="wsd.vms.VehicleManagementApplication" scope="application">
 		<jsp:setProperty name="vms" property="filePath" value="<%=filePath%>" />
 	</jsp:useBean>
-	<p>Logged in as <%=user.getId()%> <%=user.getPassword()%></p>
+
+	<%
+		User userLoggingIn = vms.getUser(user.getId(), user.getPassword());
+		if (userLoggingIn != null) {
+			user.setId(userLoggingIn.getId());
+	%>
 	
+	<p>
+		Logged in as
+		<%=user.getId()%>
+		<%=user.getPassword()%></p>
+
 	<a href="index.jsp">Return to home</a>
+	
+	<% } else { %>
+	
+	<p>whoops!</p>
+	
+	<%} %>
+
 
 </body>
 </html>
