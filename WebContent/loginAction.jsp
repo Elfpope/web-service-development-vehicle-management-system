@@ -34,11 +34,10 @@
 	<%
 		user.setId(request.getParameter("id"));
 		user.setPassword(request.getParameter("password"));
-		String filePath = application.getRealPath("WEB-INF/users.xml");
+		String usersFilePath = application.getRealPath("WEB-INF/users.xml");
 	%>
-	<%=filePath %>
 	<jsp:useBean id="vms" class="wsd.vms.VehicleManagementApplication" scope="application">
-		<jsp:setProperty name="vms" property="filePath" value="<%=filePath%>" />
+		<jsp:setProperty name="vms" property="usersFilePath" value="<%=usersFilePath%>" />
 	</jsp:useBean>
 
 	<%

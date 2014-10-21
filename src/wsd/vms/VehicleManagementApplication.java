@@ -16,59 +16,42 @@ import wsd.vms.Users;
 
 public class VehicleManagementApplication {
 
-	private String filePath;
+	private String usersFilePath;
+	private String vehiclesFilePath;
 	private Users users;
 	private Vehicles vehicles;
 
-	public String getFilePath() {
-		return filePath;
+	public String getUserFilePath() {
+		return usersFilePath;
 	}
 	
-	public void setFilePath(String filePath) throws JAXBException, IOException {
-		this.filePath = filePath;
+	public String getVehicleFilePath() {
+		return vehiclesFilePath;
+	}
+	
+	public void setUsersFilePath(String usersFilePath) throws JAXBException, IOException {
+		this.usersFilePath = usersFilePath;
 		// Create the unmarshaller
 		JAXBContext jc = JAXBContext.newInstance(Users.class);
 		Unmarshaller u = jc.createUnmarshaller();
 
 		// Now unmarshal the object from the file
-		FileInputStream fin = new FileInputStream(filePath);
+		FileInputStream fin = new FileInputStream(usersFilePath);
 		users = (Users) u.unmarshal(fin); 
 		fin.close();
 	}
+	
+	public void setVehiclesFilePath(String vehiclesFilePath) throws JAXBException, IOException {
+		this.vehiclesFilePath = vehiclesFilePath;
+		// Create the unmarshaller
+		JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
+		Unmarshaller u = jc.createUnmarshaller();
 
-//	public void setUserPath(String filePath) throws JAXBException, FileNotFoundException {
-//		this.filePath = filePath;
-//		// Create the unmarshaller
-//		JAXBContext jc = JAXBContext.newInstance(Users.class);
-//		Unmarshaller u = jc.createUnmarshaller();
-//
-//		// Now unmarshal the object from the file
-//		FileInputStream fin = new FileInputStream(filePath);
-//		users = (Users) u.unmarshal(fin); // This loads the "shop" object
-//		try {
-//			fin.close();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
-
-//	public void setVehiclePath(String filePath) throws JAXBException, FileNotFoundException {
-//		this.filePath = filePath;
-//		// Create the unmarshaller
-//		JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
-//		Unmarshaller u = jc.createUnmarshaller();
-//
-//		// Now unmarshal the object from the file
-//		FileInputStream fin = new FileInputStream(filePath);
-//		vehicles = (Vehicles) u.unmarshal(fin); // This loads the "shop" object
-//		try {
-//			fin.close();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
+		// Now unmarshal the object from the file
+		FileInputStream fin = new FileInputStream(vehiclesFilePath);
+		vehicles = (Vehicles) u.unmarshal(fin); 
+		fin.close();
+	}
 
 	public Users getUsers() {
 		return users;
