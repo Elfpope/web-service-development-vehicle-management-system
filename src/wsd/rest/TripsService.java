@@ -10,7 +10,6 @@ import wsd.vms.Users;
 import wsd.vms.VehicleManagementApplication;
 import wsd.vms.Vehicles;
 
-
 import java.io.*;
 import java.util.ArrayList;
  
@@ -55,11 +54,11 @@ public class TripsService {
 	 return getVehicleApp().getVehicles();
 	 
 	}
- 
+
  @Path("trips")
  @GET
 	@Produces(MediaType.APPLICATION_XML)
-	public ArrayList<Trip> getTrips(@QueryParam("vehicleRego") String vehicleRego, @QueryParam("startDate") int startDate, @QueryParam("keyword") String keyword ) throws JAXBException, IOException {
+	public ArrayList<Trip> getTrips(@QueryParam("regoNumber") String vehicleRego, @QueryParam("startDate") int startDate, @QueryParam("keyword") String keyword ) throws JAXBException, IOException {
 		return getVehicleApp().getTrips(vehicleRego, startDate, keyword);
 	}
 	
