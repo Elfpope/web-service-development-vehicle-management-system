@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="wsd.vms.User"%>
+<%@ page import="wsd.vms.*"%>
+<%@ page import="wsd.rest.*" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x"%>
-<c:import var="xml" url="vehicles.xml" />
-<c:import var="xslt" url="vehicles.xsl" />
+<c:import var="xml"	url="vehicles.xml" />
+<c:import var="xslt" url="vehicleAndTrips.xsl" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Vehicle Management System</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Vehicle Number</title>
 
 <!-- Bootstrap core CSS -->
 <link href="bootstrap/simplex-css/bootstrap.min.css" rel="stylesheet">
@@ -35,7 +36,7 @@
 </head>
 
 <body>
-	<jsp:useBean id="user" class="wsd.vms.User" scope="session" />
+		<jsp:useBean id="user" class="wsd.vms.User" scope="session" />
 	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -75,7 +76,10 @@
 		</div>
 	</div>
 
-	<x:transform xml="${xml}" xslt="${xslt}" />
+
+	<x:transform xml="${xml}" xslt="${xslt}" >
+		<x:param name="filter" value='<%= request.getParameter("regoNumber") %>'/>
+		</x:transform>
 
 </body>
 </html>

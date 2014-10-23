@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Vehicle Management System</title>
 
 <!-- Bootstrap core CSS -->
@@ -43,19 +43,25 @@
 	<%
 		User userLoggingIn = vms.getUser(user.getId(), user.getPassword());
 		if (userLoggingIn != null) {
-			user.setId(userLoggingIn.getId());
+			user.setFirstName(userLoggingIn.getFirstName());
+			user.setLastName(userLoggingIn.getLastName());
+			user.setRole(userLoggingIn.getRole());
 	%>
 	
 	<p>
 		Logged in as
 		<%=user.getId()%>
-		<%=user.getPassword()%></p>
+		<%=user.getPassword()%>
+	</p>
 
 	<a href="index.jsp">Return to home</a>
 	
-	<% } else { %>
+	<% } else { 
+		user.setId(null);
+		user.setPassword(null);
+	%>
 	
-	<p>whoops!</p>
+	<p>whoops! you should probably return home <a href="index.jsp">Return to home</a></p>
 	
 	<%} %>
 
