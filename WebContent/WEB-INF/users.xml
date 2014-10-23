@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- <users xmlns="wsdVehicleMgmtSystem/users" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="wsdVehicleMgmtSystem/users users.xsd"> -->
+
 <users>
 	<user>
 		<id>1</id>
@@ -14,5 +18,23 @@
 		<password>Coderiscool</password>
 		<role>Driver</role>
 	</user>
+	
+	<!-- data for users.xsd -->
+<!-- 
+	<user>
+		<email>Jason.Ralston@uts.edu.au</email>
+		<firstName>Jason</firstName>
+		<lastName>Ralston</lastName>
+		<password>123456</password>
+		<role>Administrator</role>
+	</user>
+	<user>
+		<email>Ryan.Heise@outlook.com</email>
+		<firstName>Ryan</firstName>
+		<lastName>Heise</lastName>
+		<password>zyxwvu</password>
+		<role>Driver</role>
+	</user>
+ -->	
 </users>
 	

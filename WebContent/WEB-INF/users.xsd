@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="wsdVehicleMgmtSystem/users" 
+	xmlns="wsdVehicleMgmtSystem/users"
+	elementFormDefault="qualified">
+
+	<!-- Type declarations -->	
+	<xs:simpleType name="email">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-z|A-Z|\.|_]*@[a-z|-]*\.(com|gov|org|net|edu)*(\.[a-z]+)*" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="name">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z][a-z]*" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Can be any lower or upper case letters and digits,  at least 6 to maximun 12 charachers  -->
+	<xs:simpleType name="password">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([a-zA-Z0-9]){6,12}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="role">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Guest" />
+			<xs:enumeration value="Driver" />
+			<xs:enumeration value="Administrator" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="user">
+		<xs:sequence>
+			<xs:element name="email" type="email" />
+			<xs:element name="firstName" type="name" />
+			<xs:element name="lastName" type="name" />
+			<xs:element name="password" type="password" />
+			<xs:element name="role" type="role" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- xml structure -->
+	<xs:element name="users">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="user" type="user" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

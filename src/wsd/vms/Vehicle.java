@@ -19,10 +19,10 @@ public class Vehicle implements Serializable {
 	private String make;
 	@XmlElement(name = "model")
 	private String model;
-	@XmlElement(name = "kilometres")
-	private double kilometres;	
 	@XmlElement(name = "colour")
 	private String colour;
+	@XmlElement(name = "kilometres")
+	private double kilometres;	
 	@XmlElement(name = "trip")
 	private ArrayList<Trip> trips = new ArrayList<Trip> ();
 	

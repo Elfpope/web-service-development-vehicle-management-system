@@ -20,10 +20,35 @@
 		    <xs:enumeration value="Minibus" />
 		</xs:restriction>
 	</xs:simpleType>
+	
+	<xs:simpleType name="make">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z][a-z]*" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="model">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z].*" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="colour">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Blue" />
+			<xs:enumeration value="Purple" />
+			<xs:enumeration value="Red" />
+		    <xs:enumeration value="Yellow" />
+		    <xs:enumeration value="Black" />
+			<xs:enumeration value="White" />
+		    <xs:enumeration value="Green" />
+		    <xs:enumeration value="Grey" />
+		</xs:restriction>
+	</xs:simpleType>
 
 	<xs:simpleType name="Name">
 		<xs:restriction base="xs:string">
-			<xs:pattern value="[A-Z][a-zA-Z]* [A-Z][a-zA-Z]*" />
+			<xs:pattern value="[A-Z][a-z]* [A-Z][a-z]*" />
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -71,13 +96,11 @@
 		<xs:sequence>
 			<xs:element name="regoNumber" type="regoNumber" />
 			<xs:element name="vehicleType" type="vehicleType" />
-			<xs:element name="make" type="xs:string" />
-			<xs:element name="model" type="xs:string" />
+			<xs:element name="make" type="make" />
+			<xs:element name="model" type="model" />
+			<xs:element name="colour" type="colour" />
 			<xs:element name="kilometres" type="positiveDecimal" />
-			<xs:element name="colour" type="xs:string" />
-
-				<xs:element name="trip" type="trip" minOccurs="0" maxOccurs="unbounded" />
-
+			<xs:element name="trip" type="trip" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>	
 
