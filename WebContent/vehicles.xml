@@ -9,9 +9,9 @@
 		<regoNumber>ABC123</regoNumber>
 		<vehicleType>Seden</vehicleType>
 		<make>Honda</make>
-		<model>Accord</model>
-		<kilometres>10000</kilometres>
+		<model>Accord</model>		
 		<colour>Blue</colour>
+		<kilometres>10000</kilometres>
 		<trip>
 			<id>1</id>
 			<regoNumber>ABC123</regoNumber>
@@ -54,9 +54,9 @@
 		<regoNumber>EFG123</regoNumber>
 		<vehicleType>Hatch</vehicleType>
 		<make>Mazda</make>
-		<model>CX-5</model>
-		<kilometres>250</kilometres>
+		<model>CX5</model>
 		<colour>Purple</colour>
+		<kilometres>250</kilometres>
 		<trip>
 			<id>2</id>
 			<regoNumber>EFG123</regoNumber>
@@ -100,8 +100,8 @@
 		<vehicleType>Minibus</vehicleType>
 		<make>Ford</make>
 		<model>Focus</model>
-		<kilometres>500</kilometres>
 		<colour>Red</colour>
+		<kilometres>500</kilometres>
 		<trip>
 			<id>5</id>
 			<regoNumber>HJK123</regoNumber>
@@ -145,8 +145,8 @@
 		<vehicleType>SUV</vehicleType>
 		<make>Audi</make>
 		<model>Q5</model>
-		<kilometres>1500</kilometres>
 		<colour>Yellow</colour>
+		<kilometres>1500</kilometres>
 		<trip>
 			<id>3</id>
 			<regoNumber>XYZ789</regoNumber>
