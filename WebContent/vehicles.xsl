@@ -10,8 +10,7 @@
 			<h1>Vehicle Management System</h1>
 			<p>
 				This is a vehicle management system, and this is the home page
-				you're
-				on atm.
+				you're on atm.
 			</p>
 		</div>
 		<div class="container">

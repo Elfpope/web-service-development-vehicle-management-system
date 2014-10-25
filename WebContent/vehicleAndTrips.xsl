@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:param name="filter" />
+	<xsl:param name="regoNumberFilter" />
+	<xsl:param name="currentlyLoggedIn" />
 	<xsl:template match="/">
 		<ul class="breadcrumb" style="margin-top:75px;">
 			<li>
@@ -10,17 +11,17 @@
 			<li class="active">Vehicle</li>
 		</ul>
 		<div class="container">
+			<h1>
+				Vehicle Information
+				<xsl:value-of select="$regoNumberFilter" />
+			</h1>
 			<xsl:apply-templates />
 		</div>
 	</xsl:template>
 
 	<xsl:template match="vehicle">
 		<xsl:choose>
-			<xsl:when test="regoNumber = $filter">
-				<h1>
-					Vehicle Information
-					<xsl:value-of select="regoNumber" />
-				</h1>
+			<xsl:when test="regoNumber = $regoNumberFilter">
 				<table class="table">
 					<tr>
 						<th>Registration Number</th>
@@ -62,6 +63,10 @@
 				<h1>
 					Trip Information
 				</h1>
+				<a href="" type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#addTripModal">
+					Add a new trip
+					<span class="glyphicon glyphicon-plus"></span>
+				</a>
 				<table class="table table-striped table-hover ">
 					<thead>
 						<tr>
@@ -74,7 +79,9 @@
 							<th>End Time</th>
 							<th>Description</th>
 							<th>Kilometres</th>
-							<th>Delete</th>
+							<xsl:if test="$currentlyLoggedIn = 'true'">
+								<th>Delete</th>
+							</xsl:if>
 						</tr>
 					</thead>
 					<tbody>
@@ -82,31 +89,22 @@
 					</tbody>
 				</table>
 			</xsl:when>
-			<xsl:when test="$filter = ''">
+			<xsl:when test="$regoNumberFilter = ''">
 				WELPS
 			</xsl:when>
 		</xsl:choose>
-
 	</xsl:template>
 
-	<xsl:template match="vehicle/*[not(self::trip)]">
-	</xsl:template>
+	<xsl:template match="vehicle/*[not(self::trip)]" />
 
 	<xsl:template match="trip">
 		<xsl:if test="deleted = 'false'">
 			<tr>
 				<xsl:apply-templates />
-				<td></td>
 			</tr>
 		</xsl:if>
 	</xsl:template>
 
-	<xsl:template match="startDate|endDate">
-		<td>
-			<xsl:apply-templates />
-		</td>
-	</xsl:template>
-	
 	<xsl:template
 		match="id|driverId|driverName|startTime|endTime|description|kilometres">
 		<td>
@@ -114,7 +112,25 @@
 		</td>
 	</xsl:template>
 
-	<xsl:template match="trip/regoNumber|deleted">
+	<xsl:template match="startDate|endDate">
+		<td>
+			<xsl:variable name="date" select="current()" />
+			<a href="tripsByDate.jsp?date={$date}">
+				<xsl:value-of select="current()" />
+			</a>
+		</td>
 	</xsl:template>
+
+	<xsl:template match="deleted">
+		<xsl:if test="$currentlyLoggedIn = 'true'">
+			<td>
+				<a href="#" data-toggle="modal" data-target="#deleteTripModal">
+					<span class="glyphicon glyphicon-remove"></span>
+				</a>
+			</td>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="trip/regoNumber|deletedById" />
 
 </xsl:stylesheet>
