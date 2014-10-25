@@ -4,7 +4,7 @@
 	xmlns="wsdVehicleMgmtSystem/users"
 	elementFormDefault="qualified">
 
-	<!-- Type declarations -->	
+	<!-- Type declarations -->		
 	<xs:simpleType name="email">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[a-z|A-Z|\.|_]*@[a-z|-]*\.(com|gov|org|net|edu)*(\.[a-z]+)*" />
@@ -34,6 +34,7 @@
 
 	<xs:complexType name="user">
 		<xs:sequence>
+			<xs:element name="id" type="xs:positiveInteger" />
 			<xs:element name="email" type="email" />
 			<xs:element name="firstName" type="name" />
 			<xs:element name="lastName" type="name" />
