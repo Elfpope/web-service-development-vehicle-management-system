@@ -11,8 +11,8 @@
 	<jsp:useBean id="user" class="wsd.vms.User" scope="session" />
 	<%
 		user.setEmail(request.getParameter("email"));
-			user.setPassword(request.getParameter("password"));
-			String usersFilePath = application.getRealPath("WEB-INF/users.xml");
+		user.setPassword(request.getParameter("password"));
+		String usersFilePath = application.getRealPath("WEB-INF/users.xml");
 	%>
 	<jsp:useBean id="vms" class="wsd.vms.VehicleManagementApplication" scope="application">
 		<jsp:setProperty name="vms" property="usersFilePath" value="<%=usersFilePath%>" />
