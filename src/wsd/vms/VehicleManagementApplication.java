@@ -118,14 +118,10 @@ public class VehicleManagementApplication {
 	public User getUser(String email, String password) {
 		return getUsers().login(email, password);
 	}
- 
-	public void addUser(String email, String firstName, String lastName, String password, String role) throws FileNotFoundException, JAXBException {
-		int id = 0;
-		getUsers().addUser(new User(id, email, firstName, lastName, password, role));
-	}
 	
-	public void addUser(User user){
+	public void addUser(User user) throws FileNotFoundException, JAXBException {
 		users.addUser(user);
+		marshallUsers();
 	}
 
 	public void marshallVehicles() throws FileNotFoundException, JAXBException {
@@ -146,6 +142,7 @@ public class VehicleManagementApplication {
 		Marshaller m = jc.createMarshaller();				
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);	// Make the generated XML look nice
 		m.marshal(users, new FileOutputStream(usersFilePath));
+		//m.marshal(users, new FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/WEB-INF/users.xml"));
 	}
 
 	public void deleteTrip(int tripId, int userId) {

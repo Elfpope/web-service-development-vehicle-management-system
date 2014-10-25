@@ -48,6 +48,36 @@
 		<xsl:if test="startDate = $dateFilter and deleted = 'false'">
 			<tr>
 				<xsl:apply-templates />
+				<xsl:if test="$currentlyLoggedIn = 'true'">
+					<td>
+						<a href="#" data-toggle="modal" data-target="#deleteTripModal">
+							<span class="glyphicon glyphicon-remove"></span>
+						</a>
+					</td>
+					<div class="modal fade" id="deleteTripModal" tabindex="-1"
+						role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">
+										<span aria-hidden="true">x
+										</span>
+										<span class="sr-only">Close</span>
+									</button>
+									<h4 class="modal-title" id="myModalLabel">Delete Trip</h4>
+								</div>
+								<div class="modal-body">
+									Are you sure you wish to delete this trip?</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal">Cancel</button>
+									<a href="deleteTripAction.jsp?tripId={id}" type="button"
+										class="btn btn-primary">Yes</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</xsl:if>
 			</tr>
 		</xsl:if>
 	</xsl:template>
