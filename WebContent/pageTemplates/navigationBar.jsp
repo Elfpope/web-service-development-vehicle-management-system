@@ -41,6 +41,7 @@
 			<form action="loginAction.jsp" class="navbar-form navbar-right"
 				role="form" method="post">
 				<div class="form-group">
+
 					<input placeholder="Email" class="form-control" type="text" name="email">
 				</div>
 				<div class="form-group">

@@ -122,10 +122,13 @@ public class VehicleManagementApplication {
 	public void addUser(String email, String firstName, String lastName, String password, String role) throws FileNotFoundException, JAXBException {
 		int id = 0;
 		getUsers().addUser(new User(id, email, firstName, lastName, password, role));
-
+	}
+	
+	public void addUser(User user){
+		users.addUser(user);
 	}
 
-	public void saveFile() throws FileNotFoundException, JAXBException {
+	public void marshallVehicles() throws FileNotFoundException, JAXBException {
 		JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -137,11 +140,18 @@ public class VehicleManagementApplication {
 		// m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		// m.marshal(vehicles, new FileOutputStream("WEB-INF/vehicles.xml"));
 	}
+	
+	public void marshallUsers() throws JAXBException, FileNotFoundException{
+		JAXBContext jc = JAXBContext.newInstance(Users.class);
+		Marshaller m = jc.createMarshaller();				
+		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);	// Make the generated XML look nice
+		m.marshal(users, new FileOutputStream(usersFilePath));
+	}
 
 	public void deleteTrip(int tripId, int userId) {
 		vehicles.deleteTrip(tripId, userId);
 		try {
-			saveFile();
+			marshallVehicles();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (JAXBException e) {
