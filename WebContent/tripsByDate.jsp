@@ -15,7 +15,6 @@
 <body>
 	<jsp:useBean id="user" class="wsd.vms.User" scope="session" />
 	<jsp:include page="pageTemplates/navigationBar.jsp" />
-	<jsp:include page="pageTemplates/modals.jsp" />
 	
 	<x:transform xml="${vehiclesXML}" xslt="${tripsByDateXSLT}" >
 		<x:param name="dateFilter" value='<%= request.getParameter("date") %>'/>

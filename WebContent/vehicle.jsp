@@ -15,7 +15,7 @@
 <body>
 	<jsp:useBean id="user" class="wsd.vms.User" scope="session" />
 	<jsp:include page="pageTemplates/navigationBar.jsp" />
-	<jsp:include page="pageTemplates/modals.jsp" />
+	<jsp:include page="pageTemplates/addTripModal.jsp" />
 
 	<x:transform xml="${vehiclesXML}" xslt="${vehicleAndTripsXSLT}">
 		<x:param name="regoNumberFilter"
