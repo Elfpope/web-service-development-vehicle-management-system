@@ -1,4 +1,5 @@
 package wsd.soap.client;
+
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,32 +16,65 @@ public class TripsSoapClient {
 
 			boolean valid = true;
 			while (valid) {
-				try {
-					String test = diary.fetchTripsList();
-					System.out.println(test);
-				} catch (RemoteException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				
 				Scanner in = new Scanner(System.in);
-				System.out.print("Enter user choice (quit or delete): ");
-				String email = in.nextLine();
+				System.out.print("Enter user choice (showtrips,delete,quit): ");
+				String option = in.nextLine();
 
-				if (email.equals("quit")) {
-
+				if (option.equals("quit")) {
+					System.out.println("Application Quit.");
 					valid = false;
-				} else if (email.equals("delete")) {
-
-					System.out.print("Enter trip id: ");
-					int id = Integer.parseInt(in.nextLine());
+				} 
+				if (option.equals("showtrips")) {
+					
 					try {
-						diary.deleteTrip(id, 0);
-						System.out.println("Trip deleted");
+						String test = diary.fetchTripsList();
+						System.out.println(test);
 					} catch (RemoteException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+				} 
+				else if (option.equals("delete")) {
+					System.out.print("Enter User Email:");
+					try {
+						String email = in.nextLine();
+						int userId = diary.getUserId(email);
+						
+						if(userId != 0) {
+							
+							
+							System.out.print("Enter trip id: ");
+							int tripId = Integer.parseInt(in.nextLine());
+							try {
+								if (diary.deleteTrip(tripId, userId)) {
+								System.out.println("Success: Trip deleted");
+								}
+								else {
+									System.out.println("Error: Trip id not found");
+								}
+							} catch (RemoteException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						
+					} 
+						else {
+							System.out.println("Error: Invalid user");
+							
+						}
+					}
+						catch (RemoteException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+					
+					
+					
+					
 				}
+				System.out.println("");
 			}
 
 		} catch (ServiceException e) {

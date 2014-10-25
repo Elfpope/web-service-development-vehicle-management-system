@@ -34,11 +34,33 @@ public class Vehicles implements Serializable {
 		}
 		return trips;
 	}
-	public void deleteTrip(int tripId, int userId) {
+	
+	public void addVehicle(Vehicle vehicle) {
+		vehicles.add(vehicle);
+		
+	}
+	public void addTrip(Trip trip) {
+		for (Vehicle vehicle : vehicles) {
+			if(vehicle.getRegoNumber().equals(trip.getRegoNumber())) {
+				vehicle.addTrips(trip);
+			}
+		}
+	}
+	public boolean deleteTrip(int tripId, int userId) {
 
 		for (Vehicle vehicle : vehicles) {
-			vehicle.deleteTrip(tripId, userId);
+			if(vehicle.deleteTrip(tripId, userId)) {
+			return true;
+			}
 		}
+		return false;
+	}
 
+	public int getTripSize() {
+		int size = 0;
+		for (Vehicle vehicle : vehicles) {
+			size += vehicle.getTrips().size();
+		}
+		return size;
 	}
 }

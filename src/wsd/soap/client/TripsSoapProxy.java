@@ -44,28 +44,28 @@ public class TripsSoapProxy implements wsd.soap.client.TripsSoap {
     return tripsSoap;
   }
   
-  public int add(int arg0, int arg1) throws java.rmi.RemoteException{
-    if (tripsSoap == null)
-      _initTripsSoapProxy();
-    return tripsSoap.add(arg0, arg1);
-  }
-  
   public void fetchTrips() throws java.rmi.RemoteException{
     if (tripsSoap == null)
       _initTripsSoapProxy();
     tripsSoap.fetchTrips();
   }
   
+  public boolean deleteTrip(int arg0, int arg1) throws java.rmi.RemoteException{
+    if (tripsSoap == null)
+      _initTripsSoapProxy();
+    return tripsSoap.deleteTrip(arg0, arg1);
+  }
+  
+  public int getUserId(java.lang.String arg0) throws java.rmi.RemoteException{
+    if (tripsSoap == null)
+      _initTripsSoapProxy();
+    return tripsSoap.getUserId(arg0);
+  }
+  
   public java.lang.String fetchTripsList() throws java.rmi.RemoteException{
     if (tripsSoap == null)
       _initTripsSoapProxy();
     return tripsSoap.fetchTripsList();
-  }
-  
-  public void deleteTrip(int arg0, int arg1) throws java.rmi.RemoteException{
-    if (tripsSoap == null)
-      _initTripsSoapProxy();
-    tripsSoap.deleteTrip(arg0, arg1);
   }
   
   

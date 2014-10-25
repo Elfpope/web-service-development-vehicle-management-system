@@ -103,14 +103,19 @@ public class Vehicle implements Serializable {
 	public void setTrips(ArrayList<Trip> trips) {
 		this.trips = trips;
 	}
-	public void deleteTrip(int tripId, int userId) {
+	public void addTrips(Trip trip) {
+		trips.add(trip);
+	}
+	public boolean deleteTrip(int tripId, int userId) {
 		
 		for (Trip trip : trips) {
 			if(!trip.isDeleted() && trip.getId() == tripId) {
 			 trip.setDeleted(true);
 			 trip.setDeletedById(userId);
+			 return true;
 			}
 		}
+		return false;
 	}
 	
 
