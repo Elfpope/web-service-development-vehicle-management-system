@@ -20,7 +20,7 @@
 					trip?</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-					<a href="index.jsp" type="button" class="btn btn-primary">Yes</a>
+					<a href="deleteTripAction.jsp?tripId=7" type="button" class="btn btn-primary">Yes</a>
 				</div>
 			</div>
 		</div>

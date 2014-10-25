@@ -120,7 +120,8 @@ public class VehicleManagementApplication {
 	}
  
 	public void addUser(String email, String firstName, String lastName, String password, String role) throws FileNotFoundException, JAXBException {
-		getUsers().addUser(new User(email, firstName, lastName, password, role));
+		int id = 0;
+		getUsers().addUser(new User(id, email, firstName, lastName, password, role));
 
 	}
 
@@ -137,8 +138,8 @@ public class VehicleManagementApplication {
 		// m.marshal(vehicles, new FileOutputStream("WEB-INF/vehicles.xml"));
 	}
 
-	public void deleteTrip(int id, int userId) {
-		vehicles.deleteTrip(id, userId);
+	public void deleteTrip(int tripId, int userId) {
+		vehicles.deleteTrip(tripId, userId);
 		try {
 			saveFile();
 		} catch (FileNotFoundException e) {

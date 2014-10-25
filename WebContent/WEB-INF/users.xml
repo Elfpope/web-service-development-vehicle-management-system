@@ -5,13 +5,15 @@
 
 <users>
 	<user>
-		<email>jason.ralston@uts.edu.au</email>
+		<id>1</id>
+		<email>a</email>
 		<firstName>Jason</firstName>
 		<lastName>Ralston</lastName>
-		<password>Blob</password>
+		<password>1</password>
 		<role>Administrator</role>
 	</user>
 	<user>
+		<id>2</id>
 		<email>ryan.heise@uts.edu.au</email>
 		<firstName>Ryan</firstName>
 		<lastName>Heise</lastName>

@@ -18,7 +18,7 @@
             <endTime>3</endTime>
             <description>Commute staff between offices</description>
             <kilometres>1000.0</kilometres>
-            <deleted>true</deleted>
+            <deleted>false</deleted>
             <deletedById>0</deletedById>
         </trip>
         <trip>
@@ -32,7 +32,7 @@
             <endTime>8</endTime>
             <description>Carry stuff between offices</description>
             <kilometres>1500.0</kilometres>
-            <deleted>true</deleted>
+            <deleted>false</deleted>
             <deletedById>0</deletedById>
         </trip>
     </vehicle>
@@ -55,7 +55,7 @@
             <description>travel to Canberra</description>
             <kilometres>1200.0</kilometres>
             <deleted>false</deleted>
-            <deletedById></deletedById>
+            <deletedById>1</deletedById>
         </trip>
         <trip>
             <id>4</id>
@@ -140,8 +140,8 @@
             <endTime>9</endTime>
             <description>travel to Brisbane</description>
             <kilometres>1500.0</kilometres>
-            <deleted>false</deleted>
-            <deletedById></deletedById>
+            <deleted>true</deleted>
+            <deletedById>1</deletedById>
         </trip>
     </vehicle>
 </vehicles>

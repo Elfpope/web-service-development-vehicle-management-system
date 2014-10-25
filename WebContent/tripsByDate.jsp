@@ -19,7 +19,7 @@
 	
 	<x:transform xml="${vehiclesXML}" xslt="${tripsByDateXSLT}" >
 		<x:param name="dateFilter" value='<%= request.getParameter("date") %>'/>
-		<x:param name="currentlyLoggedIn" value='<%= user.getId() != null %>'/>
+		<x:param name="currentlyLoggedIn" value='<%= user.getEmail() != null %>'/>
 	</x:transform>
 </body>
 </html>

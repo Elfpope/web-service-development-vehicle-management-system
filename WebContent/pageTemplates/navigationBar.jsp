@@ -36,12 +36,12 @@
 		</div>
 		<div class="navbar-collapse collapse navbar-responsive-collapse">
 			<%
-				if (user.getId() == null) {
+				if (user.getEmail() == null) {
 			%>
 			<form action="loginAction.jsp" class="navbar-form navbar-right"
 				role="form" method="post">
 				<div class="form-group">
-					<input placeholder="ID" class="form-control" type="text" name="id">
+					<input placeholder="Email" class="form-control" type="text" name="email">
 				</div>
 				<div class="form-group">
 					<input placeholder="Password" class="form-control" type="password"
