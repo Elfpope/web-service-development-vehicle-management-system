@@ -1,5 +1,6 @@
 package wsd.vms;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -117,7 +118,7 @@ public class VehicleManagementApplication {
 	public User getUser(String email, String password) {
 		return getUsers().login(email, password);
 	}
-
+ 
 	public void addUser(String email, String firstName, String lastName, String password, String role) throws FileNotFoundException, JAXBException {
 		getUsers().addUser(new User(email, firstName, lastName, password, role));
 
@@ -127,15 +128,17 @@ public class VehicleManagementApplication {
 		JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		m.marshal(vehicles, System.out);
+		
+		m.marshal(vehicles, new FileOutputStream(getVehicleFilePath()));
+		//m.marshal(vehicles, new FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/vehicles.xml"));
 		// JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
 		// Marshaller m = jc.createMarshaller();
 		// m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		// m.marshal(vehicles, new FileOutputStream("WEB-INF/vehicles.xml"));
 	}
 
-	public void deleteTrip(int id) {
-		vehicles.deleteTrip(id);
+	public void deleteTrip(int id, int userId) {
+		vehicles.deleteTrip(id, userId);
 		try {
 			saveFile();
 		} catch (FileNotFoundException e) {

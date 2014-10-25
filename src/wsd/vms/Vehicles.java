@@ -34,10 +34,10 @@ public class Vehicles implements Serializable {
 		}
 		return trips;
 	}
-	public void deleteTrip(int id) {
+	public void deleteTrip(int id, int userId) {
 
 		for (Vehicle vehicle : vehicles) {
-			vehicle.deleteTrip(id);
+			vehicle.deleteTrip(id, userId);
 		}
 
 	}

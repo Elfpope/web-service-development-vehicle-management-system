@@ -139,8 +139,9 @@ public class Trip implements Serializable {
 		return deletedById;
 	}
 
-	public void setDeletedById(String deletedById) {
-		this.deletedById = deletedById;
+	public void setDeletedById(int deletedById) {
+		
+		this.deletedById = Integer.toString(deletedById);
 	}
 	public int getId() {
 		

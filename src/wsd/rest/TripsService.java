@@ -5,6 +5,7 @@ import javax.servlet.ServletContext;
 import javax.xml.bind.JAXBException;
 
 
+
 import wsd.vms.Trip;
 import wsd.vms.Users;
 import wsd.vms.VehicleManagementApplication;
@@ -68,6 +69,8 @@ public class TripsService {
  public String hello() {
   return "Hello World";
  }
+ 
+
  //@Path("users/{email}")
 	//@GET
 	//@Produces(MediaType.APPLICATION_XML)

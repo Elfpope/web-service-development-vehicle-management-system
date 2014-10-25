@@ -1,5 +1,4 @@
 package wsd.soap.client;
-
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -35,7 +34,7 @@ public class TripsSoapClient {
 					System.out.print("Enter trip id: ");
 					int id = Integer.parseInt(in.nextLine());
 					try {
-						diary.deleteTrip(id);
+						diary.deleteTrip(id, 0);
 						System.out.println("Trip deleted");
 					} catch (RemoteException e) {
 						// TODO Auto-generated catch block
