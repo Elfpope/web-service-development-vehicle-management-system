@@ -10,6 +10,8 @@ import javax.xml.bind.annotation.*;
 public class User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
+	@XmlElement(name = "id")
+	private int id;
 	@XmlElement(name = "email")
 	private String email;
 	@XmlElement(name = "firstName")
@@ -25,14 +27,23 @@ public class User implements Serializable {
 	
 	public User() {	}
 
-	public User(String email, String firstName, String lastName, String password,
+	public User(int id, String email, String firstName, String lastName, String password,
 			String role) {
 		super();
+		this.id = id;
 		this.email = email;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.password = password;
 		this.role = role;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getEmail() {

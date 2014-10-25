@@ -20,7 +20,7 @@
 	<x:transform xml="${vehiclesXML}" xslt="${vehicleAndTripsXSLT}">
 		<x:param name="regoNumberFilter"
 			value='<%=request.getParameter("regoNumber")%>' />
-		<x:param name="currentlyLoggedIn" value='<%=user.getId() != null%>' />
+		<x:param name="currentlyLoggedIn" value='<%=user.getEmail() != null%>' />
 	</x:transform>
 
 </body>
