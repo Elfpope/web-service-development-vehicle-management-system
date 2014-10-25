@@ -24,26 +24,40 @@
 		<jsp:setProperty name="vms" property="usersFilePath"
 			value="<%=usersFilePath%>" />
 	</jsp:useBean>
+
+	<%
+		String emailError = "";
+		String firstNameError = "";
+		String lastNameError = "";
+		String passwordError = "";
+
+		if (!vms.isEmailValid(user.getEmail())) {
+			emailError = "Email is not valid";
+		}
+		if (user.getFirstName() == null) {
+			firstNameError = "firstName is required";
+		}
+		if (user.getLastName() == null) {
+			lastNameError = "firstName is required";
+		}
+		if (user.getPassword() == null) {
+			passwordError = "Password is required";
+		}
+	%>
+	
 	<%
 		if (vms.getUser(user.getEmail(), user.getPassword()) == null) {
 			vms.addUser(user);
+			vms.marshallUsers();
 		}
 	%>
 
-	<%
-		if (user.getEmail() == null) {
-			String emailError = "Email is required";
-		}
-		if (user.getFirstName() == null) {
-			String firstNameError = "firstName is required";
-		}
-		if (user.getLastName() == null) {
-			String lastNameError = "lastName is required";
-		}
-		if (user.getPassword() == null) {
-			String passwordError = "Password is required";
-		}
-	%>
+	<p> <%= emailError %> </p>
+
+	<p>
+		Click <a href="index.jsp">Home</a> to get to the home page.
+	</p>
+
 
 </body>
 </html>

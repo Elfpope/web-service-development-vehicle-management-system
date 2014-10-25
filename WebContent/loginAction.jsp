@@ -14,19 +14,23 @@
 		user.setPassword(request.getParameter("password"));
 		String usersFilePath = application.getRealPath("WEB-INF/users.xml");
 	%>
-	<jsp:useBean id="vms" class="wsd.vms.VehicleManagementApplication" scope="application">
-		<jsp:setProperty name="vms" property="usersFilePath" value="<%=usersFilePath%>" />
+
+	<jsp:useBean id="vms" class="wsd.vms.VehicleManagementApplication"
+		scope="application">
+		<jsp:setProperty name="vms" property="usersFilePath"
+			value="<%=usersFilePath%>" />
 	</jsp:useBean>
 
 	<%
-		User userLoggingIn = vms.getUser(user.getEmail(), user.getPassword());
+		User userLoggingIn = vms.getUser(user.getEmail(),
+			user.getPassword());
 		if (userLoggingIn != null) {
 			user.setId(userLoggingIn.getId());
 			user.setFirstName(userLoggingIn.getFirstName());
 			user.setLastName(userLoggingIn.getLastName());
 			user.setRole(userLoggingIn.getRole());
 	%>
-	
+
 	<p>
 		Logged in as
 		<%=user.getEmail()%>
@@ -34,16 +38,21 @@
 	</p>
 
 	<a href="index.jsp">Return to home</a>
-	
+
 	<%
-			} else { 
-				user.setEmail(null);
-				user.setPassword(null);
-		%>
-	
-	<p>whoops! you should probably return home <a href="index.jsp">Return to home</a></p>
-	
-	<%} %>
+		} else {
+			user.setEmail(null);
+			user.setPassword(null);
+	%>
+
+	<p>
+		whoops! you should probably return home <a href="index.jsp">Return
+			to home</a>
+	</p>
+
+	<%
+		}
+	%>
 
 
 </body>

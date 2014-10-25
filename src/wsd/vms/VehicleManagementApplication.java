@@ -140,7 +140,7 @@ public class VehicleManagementApplication {
 	public void marshallUsers() throws JAXBException, FileNotFoundException{
 		JAXBContext jc = JAXBContext.newInstance(Users.class);
 		Marshaller m = jc.createMarshaller();				
-		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);	// Make the generated XML look nice
+		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(users, new FileOutputStream(usersFilePath));
 		//m.marshal(users, new FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/WEB-INF/users.xml"));
 	}
@@ -154,5 +154,12 @@ public class VehicleManagementApplication {
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public boolean isEmailValid(String email){
+		String regex = ".*@.*\\.(com|gov|org|net|edu).*";
+		if (email.matches(regex))
+			return true;		
+		return false;
 	}
 }
