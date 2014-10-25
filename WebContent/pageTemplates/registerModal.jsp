@@ -21,33 +21,33 @@
 					<fieldset>
 						<div class="modal-body">
 							<div class="form-group">
-								<label for="inputEmail" class="col-lg-3 control-label">First
+								<label for="firstName" class="col-lg-3 control-label">First
 									name</label>
 								<div class="col-lg-9">
 									<input class="form-control" type="text" name="firstName">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputEmail" class="col-lg-3 control-label">Last
+								<label for="lastName" class="col-lg-3 control-label">Last
 									name</label>
 								<div class="col-lg-9">
 									<input class="form-control" type="text" name="lastName">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputEmail" class="col-lg-3 control-label">Email</label>
+								<label for="email" class="col-lg-3 control-label">Email</label>
 								<div class="col-lg-9">
 									<input class="form-control" type="text" name="email">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputEmail" class="col-lg-3 control-label">Password</label>
+								<label for="password" class="col-lg-3 control-label">Password</label>
 								<div class="col-lg-9">
 									<input class="form-control" type="password" name="password">
 								</div>
 							</div>							
 							<div class="form-group">
-								<label for="inputEmail" class="col-lg-3 control-label">Confirm Password</label>
+								<label for="confirmPassword" class="col-lg-3 control-label">Confirm Password</label>
 								<div class="col-lg-9">
 									<input class="form-control" type="password" name="confirmPassword">
 								</div>

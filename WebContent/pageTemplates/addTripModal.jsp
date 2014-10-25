@@ -9,7 +9,6 @@
 <script type="text/javascript" src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
 </head>
 <body>
-
 	<div class="modal fade" id="addTripModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -20,28 +19,39 @@
 					</button>
 					<h4 class="modal-title" id="myModalLabel">Add a new trip</h4>
 				</div>
-				<form class="form-horizontal">
+				<form class="form-horizontal" action="addTripAction.jsp"
+					method="post">
 					<fieldset>
 						<div class="modal-body">
 							<div class="form-group">
-								<label for="start" class="col-lg-2 control-label">Start</label>
+								<label for="startDate" class="col-lg-2 control-label">Start date</label>
 								<div class='col-lg-4'>
-									<input type='text' readonly="readonly" class="form-control" id='start' data-date-format="DD/MM/YYYY hh:mmA/PM"/>
+									<input type='text' readonly="readonly" class="form-control" name='startDate' data-date-format="DD/MM/YYYY"/>
 								</div>
-								<label for="end" class="col-lg-2 control-label">End</label>
+								<label for="startDate" class="col-lg-2 control-label">Start time</label>
 								<div class='col-lg-4'>
-									<input type='text' readonly="readonly" class="form-control" id='end' data-date-format="DD/MM/YYYY hh:mmA/PM"/>
+									<input type='text' readonly="readonly" class="form-control" name="startTime" />
+								</div>
+								<label for="endDate" class="col-lg-2 control-label">End date</label>
+								<div class='col-lg-4'>
+									<input type='text' readonly="readonly" class="form-control" name='endDate' data-date-format="DD/MM/YYYY"/>
+								</div>
+								<label for="endTime" class="col-lg-2 control-label">End time</label>
+								<div class='col-lg-4'>
+									<input type='text' readonly="readonly" class="form-control" name='endTime'/>
 								</div>
 								<script type="text/javascript">
 									$(function() {
-										$('#start').datetimepicker({});
-										$('#end').datetimepicker({});
-										$("#start").on(	"dp.change", function(e) {
-											$('#end').data("DateTimePicker").setMinDate(e.date);
-											$('#end').data("DateTimePicker").setValue(e.date);
+										$('#startDate').datetimepicker({pickTime:false});
+										$('#startTime').datetimepicker({pickDate:false});
+										$('#endDate').datetimepicker({pickTime:false});
+										$('#endTime').datetimepicker({pickDate:false});
+										$("#startDate").on(	"dp.change", function(e) {
+											$('#endDate').data("DateTimePicker").setMinDate(e.date);
+											$('#endDate').data("DateTimePicker").setValue(e.date);
 										});
-										$("#end").on("dp.change", function(e) {
-											$('#start').data("DateTimePicker").setMaxDate(e.date);
+										$("#endDate").on("dp.change", function(e) {
+											$('#startDate').data("DateTimePicker").setMaxDate(e.date);
 										});
 									});
 								</script>
@@ -51,13 +61,13 @@
 								<div class="col-lg-10">
 									<span class="help-block">Brief description of trip
 										purpose</span>
-									<textarea class="form-control" rows="3" id="textArea"></textarea>
+									<textarea class="form-control" rows="3" name="description"></textarea>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="kilometres" class="col-lg-2 control-label">Kilometres travelled</label>
 								<div class="col-lg-10">
-									<input class="form-control bfh-number" id="kilometres">
+									<input class="form-control bfh-number" name="kilometres">
 								</div>
 							</div>
 						</div>
@@ -73,6 +83,5 @@
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>

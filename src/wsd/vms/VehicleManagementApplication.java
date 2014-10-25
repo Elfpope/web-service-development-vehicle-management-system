@@ -86,13 +86,13 @@ public class VehicleManagementApplication {
 			}
 			if (startDate != 0) {
 				allNull = false;
-				if (!(trips.get(i).getStratDate() == startDate)) {
+				if (!(trips.get(i).getStartDate() == startDate)) {
 					delete = true;
 				}
 			}
 			if (keyword != null) {
 				allNull = false;
-				if (!trips.get(i).getDescripton().contains(keyword)) {
+				if (!trips.get(i).getDescription().contains(keyword)) {
 					delete = true;
 				}
 			}
@@ -146,10 +146,8 @@ public class VehicleManagementApplication {
 		JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		m.marshal(vehicles, new FileOutputStream("/media/KINGSTON/New folder (2)/WebContent/vehicles.xml"));
 		m.marshal(vehicles, new FileOutputStream(getVehicleFilePath()));
-		// m.marshal(vehicles, new
-		// FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/vehicles.xml"));
+		//m.marshal(vehicles, new FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/vehicles.xml"));
 		// JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
 		// Marshaller m = jc.createMarshaller();
 		// m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -163,7 +161,7 @@ public class VehicleManagementApplication {
 																// generated XML
 																// look nice
 		m.marshal(users, new FileOutputStream(usersFilePath));
-		m.marshal(users, new FileOutputStream("/media/KINGSTON/New folder (2)/WebContent/WEB-INF/users.xml"));
+		 //m.marshal(vehicles, new FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/WEB-INF/users.xml"));
 	}
 
 	public boolean deleteTrip(int tripId, int userId) {

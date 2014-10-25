@@ -9,27 +9,26 @@
 </head>
 <body>
 	<jsp:useBean id="user" class="wsd.vms.User" scope="session" />
+	<jsp:include page="pageTemplates/navigationBar.jsp" />
 	<%
 		int userId = user.getId();
 		int tripId = Integer.parseInt(request.getParameter("tripId"));
-		String vehiclesFilePath = application
-				.getRealPath("vehicles.xml");
+		String vehiclesFilePath = application.getRealPath("vehicles.xml");
 	%>
 	<jsp:useBean id="vms" class="wsd.vms.VehicleManagementApplication"
 		scope="application">
-	<jsp:setProperty name="vms" property="vehiclesFilePath" value="<%=vehiclesFilePath%>" />
+		<jsp:setProperty name="vms" property="vehiclesFilePath"
+			value="<%=vehiclesFilePath%>" />
 	</jsp:useBean>
 
-	<%= userId %> <%=tripId %>
-
 	<%
-		vms.deleteTrip(tripId, userId);
+		if (user.getEmail() != null) {
+			vms.deleteTrip(tripId, userId);
+			response.sendRedirect(request.getHeader("referer"));
+		} else {
+			response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+		}
 	%>
-
-	<p>DONE</p>
-
-	<a href="index.jsp">Return to home</a>
-
 
 </body>
 </html>

@@ -9,6 +9,7 @@
 </head>
 <body>
 	<jsp:useBean id="user" class="wsd.vms.User" scope="session" />
+	<jsp:include page="pageTemplates/navigationBar.jsp" />
 	<%
 		user.setEmail(request.getParameter("email"));
 		user.setPassword(request.getParameter("password"));
@@ -23,33 +24,35 @@
 
 	<%
 		User userLoggingIn = vms.getUser(user.getEmail(),
-			user.getPassword());
+				user.getPassword());
 		if (userLoggingIn != null) {
 			user.setId(userLoggingIn.getId());
 			user.setFirstName(userLoggingIn.getFirstName());
 			user.setLastName(userLoggingIn.getLastName());
 			user.setRole(userLoggingIn.getRole());
-	%>
-
-	<p>
-		Logged in as
-		<%=user.getEmail()%>
-		<%=user.getPassword()%>
-	</p>
-
-	<a href="index.jsp">Return to home</a>
-
-	<%
+			response.sendRedirect(request.getHeader("referer"));
 		} else {
 			user.setEmail(null);
 			user.setPassword(null);
 	%>
 
-	<p>
-		whoops! you should probably return home <a href="index.jsp">Return
-			to home</a>
-	</p>
-
+	<div class="container" style="margin-top: 75px;">
+		<div class="row vertical-center-row">
+			<div class="col-lg-4"></div>
+			<div class="col-lg-4">
+				<div class="panel panel-danger">
+					<div class="panel-heading">
+						<h3 class="panel-title">Login Failed</h3>
+					</div>
+					<div class="panel-body">Failed to login. Please try again.</div>
+					<div class="panel-footer text-center">
+						<a href="javascript:history.back()" class="btn btn-warning">Return to the previous page</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4"></div>
+		</div>
+	</div>
 	<%
 		}
 	%>

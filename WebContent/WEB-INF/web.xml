@@ -39,4 +39,14 @@
   <servlet-name>SOAP Web Services</servlet-name>
   <url-pattern>/soap/*</url-pattern>
  </servlet-mapping>
+ 
+ <error-page>
+    <error-code>401</error-code>
+    <location>/pageTemplates/authorisationError.jsp</location>
+ </error-page> 
+ 
+ <error-page>
+    <error-code>404</error-code>
+    <location>/pageTemplates/unavailable.jsp</location>
+ </error-page>
 </web-app>
