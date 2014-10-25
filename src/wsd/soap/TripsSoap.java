@@ -24,10 +24,7 @@ public class TripsSoap {
 	private WebServiceContext context;
 	
 	
- @WebMethod
- public int add(int a, int b) {
-  return a+b;
- }
+
  
  
  
@@ -86,10 +83,12 @@ public class TripsSoap {
 		}
 	 
 	}
- public void deleteTrip(int id, int userId) {
+ public boolean deleteTrip(int id, int userId) {
 	 
 	 try {
-		getVehicleApp().deleteTrip(id, userId);
+		if(getVehicleApp().deleteTrip(id, userId)) {
+			return true;
+		}
 	    
 	} catch (JAXBException e) {
 		// TODO Auto-generated catch block
@@ -98,6 +97,20 @@ public class TripsSoap {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
+	return false;
+ }
+ public int getUserId(String email) {
+	 try {
+		
+		return getVehicleApp().getUserId(email);
+	} catch (JAXBException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 return 0;
  }
 
  private VehicleManagementApplication getVehicleApp() throws JAXBException, IOException {

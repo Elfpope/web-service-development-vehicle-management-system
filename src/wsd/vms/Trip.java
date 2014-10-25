@@ -21,7 +21,7 @@ public class Trip implements Serializable {
 	@XmlElement(name = "driverName")
 	private String driverName;
 	@XmlElement(name = "startDate")
-	private int stratDate;
+	private int startDate;
 	@XmlElement(name = "startTime")
 	private int startTime;
 	@XmlElement(name = "endDate")
@@ -41,13 +41,13 @@ public class Trip implements Serializable {
 	public Trip() {	}
 		
 	public Trip(String regoNumber, String driverId, String driverName,
-			int stratDate, int endDate, int startTime, int endTime,
+			int startDate, int endDate, int startTime, int endTime,
 			String descripton, double kilometres, String deletedById) {
 		super();
 		this.regoNumber = regoNumber;
 		this.driverId = driverId;
 		this.driverName = driverName;
-		this.stratDate = stratDate;
+		this.startDate = startDate;
 		this.endDate = endDate;
 		this.startTime = startTime;
 		this.endTime = endTime;
@@ -80,11 +80,11 @@ public class Trip implements Serializable {
 	}
 
 	public int getStratDate() {
-		return stratDate;
+		return startDate;
 	}
 
 	public void setStratDate(int stratDate) {
-		this.stratDate = stratDate;
+		this.startDate = stratDate;
 	}
 
 	public int getEndDate() {
