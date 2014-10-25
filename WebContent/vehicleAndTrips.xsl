@@ -63,7 +63,7 @@
 				<h1>
 					Trip Information
 				</h1>
-				<a href="" type="button" class="btn btn-info btn-sm" data-toggle="modal"
+				<a href="#" type="button" class="btn btn-info btn-sm" data-toggle="modal"
 					data-target="#addTripModal">
 					Add a new trip
 					<span class="glyphicon glyphicon-plus"></span>
