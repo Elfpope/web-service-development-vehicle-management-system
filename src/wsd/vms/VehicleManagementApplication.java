@@ -67,9 +67,11 @@ public class VehicleManagementApplication {
 
 	public ArrayList<Trip> getTrips(String vehicleRego, int startDate, String keyword) {
 		ArrayList<Trip> trips = vehicles.getTrips();
+		//boolean value to indicate return all trips if no single one trip matches criteria
 		boolean allNull = true;
 
 		for (int i = 0; i < trips.size(); i++) {
+			//maybe isMatch better than detele here to flag dismatched trips
 			boolean delete = false;
 			if (vehicleRego != null) {
 				allNull = false;
@@ -105,19 +107,19 @@ public class VehicleManagementApplication {
 		this.users = users;
 	}
 
-	public boolean isValidUser(String id, String password) {
-		if (getUsers().login(id, password) != null) {
+	public boolean isValidUser(String email, String password) {
+		if (getUsers().login(email, password) != null) {
 			return true;
 		}
 		return false;
 	}
 
-	public User getUser(String id, String password) {
-		return getUsers().login(id, password);
+	public User getUser(String email, String password) {
+		return getUsers().login(email, password);
 	}
 
-	public void addUser(String id, String firstName, String lastName, String password, String role) throws FileNotFoundException, JAXBException {
-		getUsers().addUser(new User(id, firstName, lastName, password, role));
+	public void addUser(String email, String firstName, String lastName, String password, String role) throws FileNotFoundException, JAXBException {
+		getUsers().addUser(new User(email, firstName, lastName, password, role));
 
 	}
 
@@ -137,10 +139,8 @@ public class VehicleManagementApplication {
 		try {
 			saveFile();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
