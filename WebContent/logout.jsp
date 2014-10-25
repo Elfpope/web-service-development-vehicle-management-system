@@ -6,11 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<%
-	session.invalidate();
-%>
 <body>
-	You have been logged out. Click
-	<a href="index.jsp">here</a> to return to the main page.
+	<%
+		session.invalidate();
+		response.sendRedirect(request.getHeader("referer"));
+	%>
 </body>
 </html>

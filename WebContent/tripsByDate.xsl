@@ -89,15 +89,5 @@
 		</td>
 	</xsl:template>
 
-	<xsl:template match="deleted">
-		<xsl:if test="$currentlyLoggedIn = 'true'">
-			<td>
-				<a href="#" data-toggle="modal" data-target="#deleteTripModal">
-					<span class="glyphicon glyphicon-remove"></span>
-				</a>
-			</td>
-		</xsl:if>
-	</xsl:template>
-
-	<xsl:template match="deletedById" />
+	<xsl:template match="deleted|deletedById" />
 </xsl:stylesheet>

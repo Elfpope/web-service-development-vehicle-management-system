@@ -9,8 +9,7 @@
 		<div class="jumbotron">
 			<h1>Vehicle Management System</h1>
 			<p>
-				This is a vehicle management system, and this is the home page
-				you're on atm.
+				Welcome to the Vehicle Management System!
 			</p>
 		</div>
 		<div class="container">

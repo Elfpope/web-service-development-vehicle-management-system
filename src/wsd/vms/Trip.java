@@ -17,7 +17,7 @@ public class Trip implements Serializable {
 	@XmlElement(name = "regoNumber")
 	private String regoNumber;
 	@XmlElement(name = "driverId")
-	private String driverId;
+	private int driverId;
 	@XmlElement(name = "driverName")
 	private String driverName;
 	@XmlElement(name = "startDate")
@@ -29,7 +29,7 @@ public class Trip implements Serializable {
 	@XmlElement(name = "endTime")
 	private int endTime;
 	@XmlElement(name = "description")
-	private String descripton;
+	private String description;
 	@XmlElement(name = "kilometres")
 	private double kilometres;
 	@XmlElement(name = "deleted")
@@ -40,9 +40,9 @@ public class Trip implements Serializable {
 	
 	public Trip() {	}
 		
-	public Trip(String regoNumber, String driverId, String driverName,
+	public Trip(String regoNumber, int driverId, String driverName,
 			int startDate, int endDate, int startTime, int endTime,
-			String descripton, double kilometres, String deletedById) {
+			String description, double kilometres, String deletedById) {
 		super();
 		this.regoNumber = regoNumber;
 		this.driverId = driverId;
@@ -51,7 +51,7 @@ public class Trip implements Serializable {
 		this.endDate = endDate;
 		this.startTime = startTime;
 		this.endTime = endTime;
-		this.descripton = descripton;
+		this.description = description;
 		this.kilometres = kilometres;
 	}
 
@@ -63,11 +63,11 @@ public class Trip implements Serializable {
 		this.regoNumber = regoNumber;
 	}
 
-	public String getDriverId() {
+	public int getDriverId() {
 		return driverId;
 	}
 
-	public void setDriverId(String driverId) {
+	public void setDriverId(int driverId) {
 		this.driverId = driverId;
 	}
 
@@ -79,12 +79,12 @@ public class Trip implements Serializable {
 		this.driverName = driverName;
 	}
 
-	public int getStratDate() {
+	public int getStartDate() {
 		return startDate;
 	}
 
-	public void setStratDate(int stratDate) {
-		this.startDate = stratDate;
+	public void setStartDate(int startDate) {
+		this.startDate = startDate;
 	}
 
 	public int getEndDate() {
@@ -111,12 +111,12 @@ public class Trip implements Serializable {
 		this.endTime = endTime;
 	}
 
-	public String getDescripton() {
-		return descripton;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDescripton(String descripton) {
-		this.descripton = descripton;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public double getKilometres() {
