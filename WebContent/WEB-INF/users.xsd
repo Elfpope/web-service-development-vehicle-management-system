@@ -20,7 +20,7 @@
 	<!-- Can be any lower or upper case letters and digits,  at least 6 to maximun 12 charachers  -->
 	<xs:simpleType name="password">
 		<xs:restriction base="xs:string">
-			<xs:pattern value="([a-zA-Z0-9]){6,12}" />
+			<xs:pattern value="([a-zA-Z0-9]){4,16}" />
 		</xs:restriction>
 	</xs:simpleType>
 

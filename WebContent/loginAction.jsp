@@ -32,16 +32,16 @@
 <body>
 	<jsp:useBean id="user" class="wsd.vms.User" scope="session" />
 	<%
-		user.setId(request.getParameter("id"));
-		user.setPassword(request.getParameter("password"));
-		String usersFilePath = application.getRealPath("WEB-INF/users.xml");
+		user.setEmail(request.getParameter("id"));
+			user.setPassword(request.getParameter("password"));
+			String usersFilePath = application.getRealPath("WEB-INF/users.xml");
 	%>
 	<jsp:useBean id="vms" class="wsd.vms.VehicleManagementApplication" scope="application">
 		<jsp:setProperty name="vms" property="usersFilePath" value="<%=usersFilePath%>" />
 	</jsp:useBean>
 
 	<%
-		User userLoggingIn = vms.getUser(user.getId(), user.getPassword());
+		User userLoggingIn = vms.getUser(user.getEmail(), user.getPassword());
 		if (userLoggingIn != null) {
 			user.setFirstName(userLoggingIn.getFirstName());
 			user.setLastName(userLoggingIn.getLastName());
@@ -50,16 +50,17 @@
 	
 	<p>
 		Logged in as
-		<%=user.getId()%>
+		<%=user.getEmail()%>
 		<%=user.getPassword()%>
 	</p>
 
 	<a href="index.jsp">Return to home</a>
 	
-	<% } else { 
-		user.setId(null);
-		user.setPassword(null);
-	%>
+	<%
+			} else { 
+				user.setEmail(null);
+				user.setPassword(null);
+		%>
 	
 	<p>whoops! you should probably return home <a href="index.jsp">Return to home</a></p>
 	

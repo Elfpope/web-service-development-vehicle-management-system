@@ -87,11 +87,8 @@ public class Vehicle implements Serializable {
 		this.colour = colour;
 	}
 
-	public ArrayList<Trip> getTrips() {
-		
+	public ArrayList<Trip> getTrips() {		
 		ArrayList<Trip> currentTrips = new ArrayList<Trip> ();
-
-		
 		for (Trip trip : trips) {
 			if(!trip.isDeleted()) {
 			currentTrips.add(trip);
@@ -103,8 +100,8 @@ public class Vehicle implements Serializable {
 	public void setTrips(ArrayList<Trip> trips) {
 		this.trips = trips;
 	}
-	public void deleteTrip(int id) {
-		
+	
+	public void deleteTrip(int id) {		
 		for (Trip trip : trips) {
 			if(!trip.isDeleted() && trip.getId() == id) {
 			 trip.setDeleted(true);
@@ -112,5 +109,8 @@ public class Vehicle implements Serializable {
 		}
 	}
 	
+	public void refreshKms(){
+		//TODO method: add travelled km into vehicle kms
+	}
 
 }

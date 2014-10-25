@@ -48,7 +48,7 @@
 		</div>
 		<div class="navbar-collapse collapse navbar-responsive-collapse">
 			<%
-				if (user.getId() == null) {
+				if (user.getEmail() == null) {
 			%>
 			<form action="loginAction.jsp" class="navbar-form navbar-right"
 				role="form" method="post">
