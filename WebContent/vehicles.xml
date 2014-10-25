@@ -1,187 +1,147 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="vehicles.xsl"?>
-<!-- <vehicles xmlns="wsdVehicleMgmtSystem/vehicles" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="wsdVehicleMgmtSystem/vehicles vehicles.xsd"> -->
-	
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <vehicles>
-	<vehicle>
-		<regoNumber>ABC123</regoNumber>
-		<vehicleType>Seden</vehicleType>
-		<make>Honda</make>
-		<model>Accord</model>		
-		<colour>Blue</colour>
-		<kilometres>10000</kilometres>
-		<trip>
-			<id>1</id>
-			<regoNumber>ABC123</regoNumber>
-			<driverId>D1000</driverId>
-			<driverName>David Kim</driverName>
-<!-- 			<startDate>01/08/2014</startDate>
-			<startTime>8:00</startTime>
-			<endDate>05/08/2014</endDate>
-			<endTime>20:00</endTime> -->
-			<startDate>1</startDate>
-			<startTime>1</startTime>
-			<endDate>3</endDate>
-			<endTime>3</endTime>
-			<description>Commute staff between offices</description>
-			<kilometres>1000</kilometres>
-			<deleted>false</deleted>
-			<deletedById></deletedById>
-		</trip>
-		<trip>
-			<id>6</id>
-			<regoNumber>ABC123</regoNumber>
-			<driverId>J1000</driverId>
-			<driverName>James Pan</driverName>
-<!-- 			<startDate>08/08/2014</startDate>
-			<startTime>9:00</startTime>
-			<endDate>15/08/2014</endDate>
-			<endTime>21:00</endTime> -->
-			<startDate>6</startDate>
-			<startTime>6</startTime>
-			<endDate>8</endDate>
-			<endTime>8</endTime>
-			<description>Carry stuff between offices</description>
-			<kilometres>1500</kilometres>
-			<deleted>false</deleted>
-			<deletedById></deletedById>
-		</trip>
-	</vehicle>
-
-	<vehicle>
-		<regoNumber>EFG123</regoNumber>
-		<vehicleType>Hatch</vehicleType>
-		<make>Mazda</make>
-		<model>CX5</model>
-		<colour>Purple</colour>
-		<kilometres>250</kilometres>
-		<trip>
-			<id>2</id>
-			<regoNumber>EFG123</regoNumber>
-			<driverId>G1000</driverId>
-			<driverName>Gorden Green</driverName>
-<!-- 			<startDate>01/08/2014</startDate>
-			<startTime>10:00</startTime>
-			<endDate>03/08/2014</endDate>
-			<endTime>20:00</endTime> -->
-			<startDate>2</startDate>
-			<startTime>2</startTime>
-			<endDate>4</endDate>
-			<endTime>4</endTime>
-			<description>travel to Canberra</description>
-			<kilometres>1200</kilometres>
-			<deleted>false</deleted>
-			<deletedById></deletedById>
-		</trip>
-		<trip>
-			<id>4</id>
-			<regoNumber>EFG123</regoNumber>
-			<driverId>J1000</driverId>
-			<driverName>James Pan</driverName>
-<!-- 			<startDate>05/08/2014</startDate>
-			<startTime>9:00</startTime>
-			<endDate>15/08/2014</endDate>
-			<endTime>21:00</endTime> -->
-			<startDate>4</startDate>
-			<startTime>4</startTime>
-			<endDate>6</endDate>
-			<endTime>6</endTime>
-			<description>travel to Brisbane</description>
-			<kilometres>1500</kilometres>
-			<deleted>false</deleted>
-			<deletedById></deletedById>
-		</trip>
-	</vehicle>
-
-	<vehicle>
-		<regoNumber>HJK123</regoNumber>
-		<vehicleType>Minibus</vehicleType>
-		<make>Ford</make>
-		<model>Focus</model>
-		<colour>Red</colour>
-		<kilometres>500</kilometres>
-		<trip>
-			<id>5</id>
-			<regoNumber>HJK123</regoNumber>
-			<driverId>G1000</driverId>
-			<driverName>Gorden Green</driverName>
-<!-- 			<startDate>07/08/2014</startDate>
-			<startTime>10:00</startTime>
-			<endDate>13/08/2014</endDate>
-			<endTime>20:00</endTime> -->
-			<startDate>5</startDate>
-			<startTime>5</startTime>
-			<endDate>7</endDate>
-			<endTime>7</endTime>
-			<description>travel to BlueMountain</description>
-			<kilometres>1200</kilometres>
-			<deleted>false</deleted>
-			<deletedById></deletedById>
-		</trip>
-		<trip>
-			<id>8</id>
-			<regoNumber>HJK123</regoNumber>
-			<driverId>D1000</driverId>
-			<driverName>David Kim</driverName>
-<!-- 			<startDate>15/08/2014</startDate>
-			<startTime>9:00</startTime>
-			<endDate>18/08/2014</endDate>
-			<endTime>21:00</endTime> -->
-			<startDate>8</startDate>
-			<startTime>8</startTime>
-			<endDate>10</endDate>
-			<endTime>10</endTime>
-			<description>travel to Canberra</description>
-			<kilometres>1500</kilometres>
-			<deleted>false</deleted>
-			<deletedById></deletedById>
-		</trip>
-	</vehicle>
-
-	<vehicle>
-		<regoNumber>XYZ789</regoNumber>
-		<vehicleType>SUV</vehicleType>
-		<make>Audi</make>
-		<model>Q5</model>
-		<colour>Yellow</colour>
-		<kilometres>1500</kilometres>
-		<trip>
-			<id>3</id>
-			<regoNumber>XYZ789</regoNumber>
-			<driverId>J1000</driverId>
-			<driverName>James Pan</driverName>
-<!-- 			<startDate>03/08/2014</startDate>
-			<startTime>10:00</startTime>
-			<endDate>7/08/2014</endDate>
-			<endTime>20:00</endTime> -->
-			<startDate>3</startDate>
-			<startTime>3</startTime>
-			<endDate>5</endDate>
-			<endTime>5</endTime>
-			<description>Commute staff between offices</description>
-			<kilometres>800</kilometres>
-			<deleted>false</deleted>
-			<deletedById></deletedById>
-		</trip>
-		<trip>
-			<id>7</id>
-			<regoNumber>XYZ789</regoNumber>
-			<driverId>G1000</driverId>
-			<driverName>Gorden Green</driverName>
-<!-- 			<startDate>12/08/2014</startDate>
-			<startTime>9:00</startTime>
-			<endDate>17/08/2014</endDate>
-			<endTime>21:00</endTime> -->
-			<startDate>7</startDate>
-			<startTime>7</startTime>
-			<endDate>9</endDate>
-			<endTime>9</endTime>
-			<description>travel to Brisbane</description>
-			<kilometres>1500</kilometres>
-			<deleted>false</deleted>
-			<deletedById></deletedById>
-		</trip>
-	</vehicle>
+    <vehicle>
+        <regoNumber>ABC123</regoNumber>
+        <vehicleType>Seden</vehicleType>
+        <make>Honda</make>
+        <model>Accord</model>
+        <colour>Blue</colour>
+        <kilometres>10000.0</kilometres>
+        <trip>
+            <id>1</id>
+            <regoNumber>ABC123</regoNumber>
+            <driverId>D1000</driverId>
+            <driverName>David Kim</driverName>
+            <startDate>8</startDate>
+            <startTime>1</startTime>
+            <endDate>3</endDate>
+            <endTime>3</endTime>
+            <description>Commute staff between offices</description>
+            <kilometres>1000.0</kilometres>
+            <deleted>true</deleted>
+            <deletedById>0</deletedById>
+        </trip>
+        <trip>
+            <id>6</id>
+            <regoNumber>ABC123</regoNumber>
+            <driverId>J1000</driverId>
+            <driverName>James Pan</driverName>
+            <startDate>6</startDate>
+            <startTime>6</startTime>
+            <endDate>8</endDate>
+            <endTime>8</endTime>
+            <description>Carry stuff between offices</description>
+            <kilometres>1500.0</kilometres>
+            <deleted>true</deleted>
+            <deletedById>0</deletedById>
+        </trip>
+    </vehicle>
+    <vehicle>
+        <regoNumber>EFG123</regoNumber>
+        <vehicleType>Hatch</vehicleType>
+        <make>Mazda</make>
+        <model>CX5</model>
+        <colour>Purple</colour>
+        <kilometres>250.0</kilometres>
+        <trip>
+            <id>2</id>
+            <regoNumber>EFG123</regoNumber>
+            <driverId>G1000</driverId>
+            <driverName>Gorden Green</driverName>
+            <startDate>2</startDate>
+            <startTime>2</startTime>
+            <endDate>4</endDate>
+            <endTime>4</endTime>
+            <description>travel to Canberra</description>
+            <kilometres>1200.0</kilometres>
+            <deleted>false</deleted>
+            <deletedById></deletedById>
+        </trip>
+        <trip>
+            <id>4</id>
+            <regoNumber>EFG123</regoNumber>
+            <driverId>J1000</driverId>
+            <driverName>James Pan</driverName>
+            <startDate>4</startDate>
+            <startTime>4</startTime>
+            <endDate>6</endDate>
+            <endTime>6</endTime>
+            <description>travel to Brisbane</description>
+            <kilometres>1500.0</kilometres>
+            <deleted>false</deleted>
+            <deletedById></deletedById>
+        </trip>
+    </vehicle>
+    <vehicle>
+        <regoNumber>HJK123</regoNumber>
+        <vehicleType>Minibus</vehicleType>
+        <make>Ford</make>
+        <model>Focus</model>
+        <colour>Red</colour>
+        <kilometres>500.0</kilometres>
+        <trip>
+            <id>5</id>
+            <regoNumber>HJK123</regoNumber>
+            <driverId>G1000</driverId>
+            <driverName>Gorden Green</driverName>
+            <startDate>5</startDate>
+            <startTime>5</startTime>
+            <endDate>7</endDate>
+            <endTime>7</endTime>
+            <description>travel to BlueMountain</description>
+            <kilometres>1200.0</kilometres>
+            <deleted>false</deleted>
+            <deletedById></deletedById>
+        </trip>
+        <trip>
+            <id>8</id>
+            <regoNumber>HJK123</regoNumber>
+            <driverId>D1000</driverId>
+            <driverName>David Kim</driverName>
+            <startDate>8</startDate>
+            <startTime>8</startTime>
+            <endDate>10</endDate>
+            <endTime>10</endTime>
+            <description>travel to Canberra</description>
+            <kilometres>1500.0</kilometres>
+            <deleted>false</deleted>
+            <deletedById></deletedById>
+        </trip>
+    </vehicle>
+    <vehicle>
+        <regoNumber>XYZ789</regoNumber>
+        <vehicleType>SUV</vehicleType>
+        <make>Audi</make>
+        <model>Q5</model>
+        <colour>Yellow</colour>
+        <kilometres>1500.0</kilometres>
+        <trip>
+            <id>3</id>
+            <regoNumber>XYZ789</regoNumber>
+            <driverId>J1000</driverId>
+            <driverName>James Pan</driverName>
+            <startDate>3</startDate>
+            <startTime>3</startTime>
+            <endDate>5</endDate>
+            <endTime>5</endTime>
+            <description>Commute staff between offices</description>
+            <kilometres>800.0</kilometres>
+            <deleted>false</deleted>
+            <deletedById></deletedById>
+        </trip>
+        <trip>
+            <id>7</id>
+            <regoNumber>XYZ789</regoNumber>
+            <driverId>G1000</driverId>
+            <driverName>Gorden Green</driverName>
+            <startDate>7</startDate>
+            <startTime>7</startTime>
+            <endDate>9</endDate>
+            <endTime>9</endTime>
+            <description>travel to Brisbane</description>
+            <kilometres>1500.0</kilometres>
+            <deleted>false</deleted>
+            <deletedById></deletedById>
+        </trip>
+    </vehicle>
 </vehicles>
