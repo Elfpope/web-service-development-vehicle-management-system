@@ -31,13 +31,22 @@ public class Users implements Serializable {
 		
 		users.add(user);
 	}
-	  public User login(String email, String password) {
-	        // For each user in the list...
-	        for (User user : users) {
-	            if (user.getEmail().equals(email) && user.getPassword().equals(password))
-	                return user; // Login correct. Return this user.
-	        }
-	        return null; // Login incorrect. Return null.
-	    }
+	
+	public User login(String email, String password) {
+        // For each user in the list...
+        for (User user : users) {
+            if (user.getEmail().equals(email) && user.getPassword().equals(password))
+                return user; // Login correct. Return this user.
+        }
+        return null; // Login incorrect. Return null.
+    }
+	
+	public boolean userExists(User user){
+        for (User u : users) {
+            if (user.getEmail().equals(u.getEmail()))
+                return true; 
+        }
+		return false;
+	}
 
 }

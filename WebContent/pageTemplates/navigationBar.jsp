@@ -105,6 +105,12 @@
 									<input class="form-control" type="password" name="password">
 								</div>
 							</div>
+							<div class="form-group">
+								<label for="inputEmail" class="col-lg-3 control-label">Confirm Password</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="password" name="confirmPassword">
+								</div>
+							</div>
 						</div>
 						<div class="modal-footer">
 							<div class="col-lg-10 col-lg-offset-2">
