@@ -53,7 +53,9 @@ public class VehicleManagementApplication {
 		// Now unmarshal the object from the file
 		FileInputStream fin = new FileInputStream(vehiclesFilePath);
 		vehicles = (Vehicles) u.unmarshal(fin);
+		vehicles.sort();
 		fin.close();
+		
 	}
 
 	public Users getUsers() {
@@ -70,6 +72,7 @@ public class VehicleManagementApplication {
 
 	public ArrayList<Trip> getTrips(String vehicleRego, int startDate,
 			String keyword) {
+		
 		ArrayList<Trip> trips = vehicles.getTrips();
 		// boolean value to indicate return all trips if no single one trip
 		// matches criteria
@@ -151,8 +154,8 @@ public class VehicleManagementApplication {
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(vehicles, new FileOutputStream(getVehicleFilePath()));
-		 //m.marshal(vehicles, new
-		 //FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/vehicles.xml"));
+		// m.marshal(vehicles, new
+		// FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/vehicles.xml"));
 		// JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
 		// Marshaller m = jc.createMarshaller();
 		// m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -166,8 +169,8 @@ public class VehicleManagementApplication {
 																// generated XML
 																// look nice
 		m.marshal(users, new FileOutputStream(usersFilePath));
-		 //m.marshal(vehicles, new
-		 //FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/WEB-INF/users.xml"));
+		// m.marshal(vehicles, new
+		// FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/WEB-INF/users.xml"));
 	}
 
 	public boolean deleteTrip(int tripId, int userId) {

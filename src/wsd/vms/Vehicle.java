@@ -7,9 +7,10 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Comparator;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Vehicle implements Serializable {
+public class Vehicle implements Serializable, Comparable<Vehicle> {
 	private static final long serialVersionUID = 1L;
 	@XmlElement(name = "regoNumber")
 	private String regoNumber;
@@ -95,9 +96,15 @@ public class Vehicle implements Serializable {
 		for (Trip trip : trips) {
 			if(!trip.isDeleted()) {
 			currentTrips.add(trip);
+			
 			}
 		}
 		return currentTrips;
+	}
+public int getTripsSize() {
+		
+
+		return trips.size();
 	}
 
 	public void setTrips(ArrayList<Trip> trips) {
@@ -105,6 +112,7 @@ public class Vehicle implements Serializable {
 	}
 	public void addTrips(Trip trip) {
 		trips.add(trip);
+		kilometres += trip.getKilometres();
 	}
 	public boolean deleteTrip(int tripId, int userId) {
 		
@@ -117,6 +125,16 @@ public class Vehicle implements Serializable {
 		}
 		return false;
 	}
-	
+	@Override
+	    public int compareTo(Vehicle compareVehicle) {
+	        int compareResult=   	regoNumber.compareTo(((Vehicle)compareVehicle).getRegoNumber());
+	        /* For Ascending order*/
+	        return  compareResult;
+
+	        /* For Descending order do like this */
+	        //return compareage-this.studentage;
+	    }
+
+
 
 }
