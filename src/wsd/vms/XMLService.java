@@ -11,6 +11,11 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+/**
+ * XMLService deals with xml file marshaling and unmarshaling.
+ * 
+ * Benefits: encapsulat all xml file processes to help future code maintain.
+ */
 public class XMLService implements Serializable {
 
 	private String usersFilePath;

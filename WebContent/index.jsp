@@ -11,10 +11,12 @@
 </head>
 
 <%
+	//Initialize the web application with xml files path.
 	String usersFilePath = application.getRealPath("WEB-INF/users.xml");
-	String vehiclesFilePath = application.getRealPath("vehicles.xml");
-	
+	String vehiclesFilePath = application.getRealPath("vehicles.xml");	
 	VehicleManagementApplication vms = (VehicleManagementApplication) session.getAttribute("vms");
+	
+	//Ensure only one VMS is created and reused accross the whole application
 	if (vms == null) {
 		vms = new VehicleManagementApplication(usersFilePath, vehiclesFilePath);
 		session.setAttribute("vms", vms);

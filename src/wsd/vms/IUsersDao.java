@@ -1,5 +1,8 @@
 package wsd.vms;
 
+/**
+ * Users Dao interface deals with all users data CRUD.
+ */
 
 public interface IUsersDao {
 	
