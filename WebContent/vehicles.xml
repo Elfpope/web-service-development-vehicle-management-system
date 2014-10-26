@@ -6,11 +6,11 @@
         <make>Honda</make>
         <model>Accord</model>
         <colour>Blue</colour>
-        <kilometres>10000.0</kilometres>
+        <kilometres>11339.0</kilometres>
         <trip>
             <id>1</id>
             <regoNumber>ABC123</regoNumber>
-            <driverId>D1000</driverId>
+            <driverId>0</driverId>
             <driverName>David Kim</driverName>
             <startDate>8</startDate>
             <startTime>1</startTime>
@@ -18,13 +18,13 @@
             <endTime>3</endTime>
             <description>Commute staff between offices</description>
             <kilometres>1000.0</kilometres>
-            <deleted>false</deleted>
-            <deletedById>0</deletedById>
+            <deleted>true</deleted>
+            <deletedById>1</deletedById>
         </trip>
         <trip>
             <id>6</id>
             <regoNumber>ABC123</regoNumber>
-            <driverId>J1000</driverId>
+            <driverId>0</driverId>
             <driverName>James Pan</driverName>
             <startDate>6</startDate>
             <startTime>6</startTime>
@@ -32,8 +32,175 @@
             <endTime>8</endTime>
             <description>Carry stuff between offices</description>
             <kilometres>1500.0</kilometres>
+            <deleted>true</deleted>
+            <deletedById>1</deletedById>
+        </trip>
+        <trip>
+            <id>6</id>
+            <regoNumber>ABC123</regoNumber>
+            <driverId>1</driverId>
+            <startDate>3</startDate>
+            <startTime>4</startTime>
+            <endDate>0</endDate>
+            <endTime>0</endTime>
+            <description>blahblah</description>
+            <kilometres>500.99</kilometres>
+            <deleted>true</deleted>
+            <deletedById>1</deletedById>
+        </trip>
+        <trip>
+            <id>7</id>
+            <regoNumber>ABC123</regoNumber>
+            <driverId>1</driverId>
+            <startDate>3</startDate>
+            <startTime>4</startTime>
+            <endDate>0</endDate>
+            <endTime>0</endTime>
+            <description>qwerty</description>
+            <kilometres>500.0</kilometres>
+            <deleted>true</deleted>
+            <deletedById>1</deletedById>
+        </trip>
+        <trip>
+            <id>8</id>
+            <regoNumber>ABC123</regoNumber>
+            <driverId>1</driverId>
+            <driverName>Jason Ralston</driverName>
+            <startDate>3</startDate>
+            <startTime>4</startTime>
+            <endDate>0</endDate>
+            <endTime>0</endTime>
+            <description>omomo</description>
+            <kilometres>111.0</kilometres>
+            <deleted>true</deleted>
+            <deletedById>1</deletedById>
+        </trip>
+        <trip>
+            <id>5</id>
+            <regoNumber>ABC123</regoNumber>
+            <driverId>1</driverId>
+            <driverName>Jason Ralston</driverName>
+            <description>blah blah blah</description>
+            <kilometres>100.0</kilometres>
+            <deleted>true</deleted>
+            <deletedById>1</deletedById>
+        </trip>
+        <trip>
+            <id>6</id>
+            <regoNumber>ABC123</regoNumber>
+            <driverId>1</driverId>
+            <driverName>Jason Ralston</driverName>
+            <startDate>06/10/2014</startDate>
+            <startTime>11:50</startTime>
+            <endDate>06/10/2014</endDate>
+            <endTime></endTime>
+            <description>weeee</description>
+            <kilometres>1.923891238E9</kilometres>
+            <deleted>true</deleted>
+            <deletedById>1</deletedById>
+        </trip>
+        <trip>
+            <id>5</id>
+            <regoNumber>ABC123</regoNumber>
+            <driverId>1</driverId>
+            <driverName>Jason Ralston</driverName>
+            <description>blah bluh</description>
+            <kilometres>400.0</kilometres>
+            <deleted>true</deleted>
+            <deletedById>1</deletedById>
+        </trip>
+        <trip>
+            <id>4</id>
+            <regoNumber>ABC123</regoNumber>
+            <driverId>1</driverId>
+            <driverName>Jason Ralston</driverName>
+            <startDate>26/10/2014 12:24</startDate>
+            <startTime>26/10/2014 12:24</startTime>
+            <endDate>26/10/2014 12:24</endDate>
+            <endTime>26/10/2014 12:24</endTime>
+            <description>asdasd</description>
+            <kilometres>1.0</kilometres>
+            <deleted>true</deleted>
+            <deletedById>1</deletedById>
+        </trip>
+        <trip>
+            <id>16</id>
+            <regoNumber>ABC123</regoNumber>
+            <driverId>1</driverId>
+            <driverName>Jason Ralston</driverName>
+            <startDate>18/10/2014 13:42</startDate>
+            <startTime>18/10/2014 13:42</startTime>
+            <endDate>23/10/2014 13:42</endDate>
+            <endTime>23/10/2014 13:42</endTime>
+            <description>asdasd</description>
+            <kilometres>213.0</kilometres>
+            <deleted>true</deleted>
+            <deletedById>1</deletedById>
+        </trip>
+        <trip>
+            <id>17</id>
+            <regoNumber>ABC123</regoNumber>
+            <driverId>1</driverId>
+            <driverName>Jason Ralston</driverName>
+            <startDate>26/10/2014 13:59</startDate>
+            <startTime>26/10/2014 13:59</startTime>
+            <endDate>26/10/2014 13:59</endDate>
+            <endTime>26/10/2014 13:59</endTime>
+            <description>aaaaaaa</description>
+            <kilometres>2.0</kilometres>
+            <deleted>true</deleted>
+            <deletedById>1</deletedById>
+        </trip>
+        <trip>
+            <id>18</id>
+            <regoNumber>ABC123</regoNumber>
+            <driverId>1</driverId>
+            <driverName>Jason Ralston</driverName>
+            <startDate>26/10/2014 14:00</startDate>
+            <startTime>26/10/2014 14:00</startTime>
+            <endDate>26/10/2014 14:00</endDate>
+            <endTime>26/10/2014 14:00</endTime>
+            <description>im going to put a really long description in here to see what it does and my right and is really cold blob</description>
+            <kilometres>1.0</kilometres>
             <deleted>false</deleted>
-            <deletedById>0</deletedById>
+        </trip>
+        <trip>
+            <id>19</id>
+            <regoNumber>ABC123</regoNumber>
+            <driverId>1</driverId>
+            <driverName>Jason Ralston</driverName>
+            <startDate>17/10/2014</startDate>
+            <startTime>17/10/2014</startTime>
+            <endDate>17/10/2014</endDate>
+            <endTime>17/10/2014</endTime>
+            <description>THIS ONE</description>
+            <kilometres>1111.0</kilometres>
+            <deleted>false</deleted>
+        </trip>
+        <trip>
+            <id>20</id>
+            <regoNumber>ABC123</regoNumber>
+            <driverId>1</driverId>
+            <driverName>Jason Ralston</driverName>
+            <startDate>16/10/2014</startDate>
+            <startTime>15:20</startTime>
+            <endDate>16/10/2014</endDate>
+            <endTime>15:20</endTime>
+            <description>test</description>
+            <kilometres>11.0</kilometres>
+            <deleted>false</deleted>
+        </trip>
+        <trip>
+            <id>21</id>
+            <regoNumber>ABC123</regoNumber>
+            <driverId>1</driverId>
+            <driverName>Jason Ralston</driverName>
+            <startDate>26/10/2014</startDate>
+            <startTime>15:35</startTime>
+            <description>a</description>
+            <kilometres>1.0</kilometres>
+            <deleted>true</deleted>
+            <deletedById>1</deletedById>
         </trip>
     </vehicle>
     <vehicle>
@@ -46,7 +213,7 @@
         <trip>
             <id>2</id>
             <regoNumber>EFG123</regoNumber>
-            <driverId>G1000</driverId>
+            <driverId>0</driverId>
             <driverName>Gorden Green</driverName>
             <startDate>2</startDate>
             <startTime>2</startTime>
@@ -54,13 +221,13 @@
             <endTime>4</endTime>
             <description>travel to Canberra</description>
             <kilometres>1200.0</kilometres>
-            <deleted>false</deleted>
+            <deleted>true</deleted>
             <deletedById>1</deletedById>
         </trip>
         <trip>
             <id>4</id>
             <regoNumber>EFG123</regoNumber>
-            <driverId>J1000</driverId>
+            <driverId>0</driverId>
             <driverName>James Pan</driverName>
             <startDate>4</startDate>
             <startTime>4</startTime>
@@ -69,7 +236,7 @@
             <description>travel to Brisbane</description>
             <kilometres>1500.0</kilometres>
             <deleted>false</deleted>
-            <deletedById></deletedById>
+            <deletedById>1</deletedById>
         </trip>
     </vehicle>
     <vehicle>
@@ -78,11 +245,11 @@
         <make>Ford</make>
         <model>Focus</model>
         <colour>Red</colour>
-        <kilometres>500.0</kilometres>
+        <kilometres>123836.0</kilometres>
         <trip>
             <id>5</id>
             <regoNumber>HJK123</regoNumber>
-            <driverId>G1000</driverId>
+            <driverId>0</driverId>
             <driverName>Gorden Green</driverName>
             <startDate>5</startDate>
             <startTime>5</startTime>
@@ -91,12 +258,12 @@
             <description>travel to BlueMountain</description>
             <kilometres>1200.0</kilometres>
             <deleted>false</deleted>
-            <deletedById></deletedById>
+            <deletedById>1</deletedById>
         </trip>
         <trip>
             <id>8</id>
             <regoNumber>HJK123</regoNumber>
-            <driverId>D1000</driverId>
+            <driverId>0</driverId>
             <driverName>David Kim</driverName>
             <startDate>8</startDate>
             <startTime>8</startTime>
@@ -105,7 +272,33 @@
             <description>travel to Canberra</description>
             <kilometres>1500.0</kilometres>
             <deleted>false</deleted>
-            <deletedById></deletedById>
+            <deletedById>1</deletedById>
+        </trip>
+        <trip>
+            <id>22</id>
+            <regoNumber>HJK123</regoNumber>
+            <driverId>1</driverId>
+            <driverName>Jason Ralston</driverName>
+            <startDate>26/10/2014</startDate>
+            <startTime>15:35</startTime>
+            <endDate>26/10/2014</endDate>
+            <endTime>15:35</endTime>
+            <description>132</description>
+            <kilometres>123213.0</kilometres>
+            <deleted>false</deleted>
+        </trip>
+        <trip>
+            <id>23</id>
+            <regoNumber>HJK123</regoNumber>
+            <driverId>1</driverId>
+            <driverName>Jason Ralston</driverName>
+            <startDate>26/10/2014</startDate>
+            <startTime>15:36</startTime>
+            <endDate>25/12/2020</endDate>
+            <endTime>09:42</endTime>
+            <description>???</description>
+            <kilometres>123.0</kilometres>
+            <deleted>false</deleted>
         </trip>
     </vehicle>
     <vehicle>
@@ -118,7 +311,7 @@
         <trip>
             <id>3</id>
             <regoNumber>XYZ789</regoNumber>
-            <driverId>J1000</driverId>
+            <driverId>0</driverId>
             <driverName>James Pan</driverName>
             <startDate>3</startDate>
             <startTime>3</startTime>
@@ -126,13 +319,13 @@
             <endTime>5</endTime>
             <description>Commute staff between offices</description>
             <kilometres>800.0</kilometres>
-            <deleted>false</deleted>
-            <deletedById></deletedById>
+            <deleted>true</deleted>
+            <deletedById>1</deletedById>
         </trip>
         <trip>
             <id>7</id>
             <regoNumber>XYZ789</regoNumber>
-            <driverId>G1000</driverId>
+            <driverId>0</driverId>
             <driverName>Gorden Green</driverName>
             <startDate>7</startDate>
             <startTime>7</startTime>

@@ -7,17 +7,21 @@
 <title>Register Result Page</title>
 </head>
 <body>
-	<%
-		String email = request.getParameter("email");
-		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("lastName");
-		String password = request.getParameter("password");
-		String confirmPassword = request.getParameter("confirmPassword");
-		String role = "Driver";
-		User user = new User(0, email, firstName, lastName, password, role);
+<%
+	String usersFilePath = application.getRealPath("WEB-INF/users.xml");
 
-		String usersFilePath = application.getRealPath("WEB-INF/users.xml");
-	%>
+	int id = 100;
+	String email = request.getParameter("email");
+	String firstName = request.getParameter("firstName");
+	String lastName = request.getParameter("lastName");
+	String password = request.getParameter("password");
+	String confirmPassword = request.getParameter("confirmPassword");
+	String role = "Driver";
+	
+	User user = null;
+	String userError = "";
+
+%>
 
 	<jsp:useBean id="vms" class="wsd.vms.VehicleManagementApplication"
 		scope="application">
@@ -26,32 +30,28 @@
 	</jsp:useBean>
 
 	<%
-		//only register the new user that is not in the registry
-		if (!vms.getUsers().userExists(user)) {
-			vms.addUser(user);
-			vms.marshallUsers();
-		} else {
+
+		
+		
+			user = new User(id, email, firstName, lastName, password, role);
+			
+			//only register the new user that is not in the registry
+			if (!vms.getUsers().userExists(user)) {
+				vms.addUser(user);
+				vms.marshallUsers();
+			}
+			else {
+				userError = "User already exists.";
+			}
+		
 	%>
-	<div class="container" style="margin-top: 75px;">
-		<div class="row vertical-center-row">
-			<div class="col-lg-4"></div>
-			<div class="col-lg-4">
-				<div class="panel panel-danger">
-					<div class="panel-heading">
-						<h3 class="panel-title">Register Failed</h3>
-					</div>
-					<div class="panel-body">Failed to register. Please try again.</div>
-					<div class="panel-footer text-center">
-						<a href="javascript:history.back()" class="btn btn-warning">Return
-							to the previous page</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4"></div>
-		</div>
-	</div>
-	<%
-		}
-	%>
+
+	<p> <%= userError %> </p>
+
+	<p>
+		Click <a href="index.jsp">Home</a> to get to the home page.
+	</p>
+
+
 </body>
 </html>
