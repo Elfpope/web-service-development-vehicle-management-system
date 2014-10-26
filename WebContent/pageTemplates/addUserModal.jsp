@@ -16,7 +16,7 @@
 					</button>
 					<h4 class="modal-title" id="myModalLabel">Register new user</h4>
 				</div>
-				<form class="form-horizontal" action="registerUserAction.jsp"
+				<form class="form-horizontal" action="addUserAction.jsp"
 					method="post">
 					<fieldset>
 						<div class="modal-body">
