@@ -151,4 +151,16 @@ public void setId(int id) {
 		
 		this.id = id;
 	}
+
+	public void setStartDateTime(String dateTime) {
+		String[] splitDateTime = dateTime.split(" ");
+		startDate = splitDateTime[0];
+		startTime = splitDateTime[1];
+	}
+	
+	public void setEndDateTime(String dateTime) {
+		String[] splitDateTime = dateTime.split(" ");
+		endDate = splitDateTime[0];
+		endTime = splitDateTime[1];	
+	}
 }
