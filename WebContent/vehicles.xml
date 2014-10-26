@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- <vehicles xmlns="wsdVehicleMgmtSystem/vehicles" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="wsdVehicleMgmtSystem/vehicles vehicles.xsd"> -->
 <vehicles>
 	<vehicle>
 		<regoNumber>ABC123</regoNumber>
