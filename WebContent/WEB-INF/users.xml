@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- The below users tag is used to easily reactivate schema validation against xsd file -->
+<!-- <users xmlns="wsdVehicleMgmtSystem/users"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="wsdVehicleMgmtSystem/users users.xsd"> -->
+        
 <users>
     <user>
         <id>1</id>
@@ -23,5 +28,29 @@
         <lastName>Heise</lastName>
         <password>test</password>
         <role>Administrator</role>
+    </user>
+    <user>
+        <id>3</id>
+        <email>david.kim@nsw.gov.au</email>
+        <firstName>David</firstName>
+        <lastName>Kim</lastName>
+        <password>dk</password>
+        <role>Driver</role>
+    </user>
+    <user>
+        <id>4</id>
+        <email>james.pan@cba.com.au</email>
+        <firstName>James</firstName>
+        <lastName>Pan</lastName>
+        <password>jp</password>
+        <role>Driver</role>
+    </user>
+    <user>
+        <id>5</id>
+        <email>gorden.green@ict.org.au</email>
+        <firstName>Gorden</firstName>
+        <lastName>Green</lastName>
+        <password>gg</password>
+        <role>Driver</role>
     </user>
 </users>

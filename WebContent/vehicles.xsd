@@ -13,7 +13,7 @@
 	
 	<xs:simpleType name="vehicleType">
 		<xs:restriction base="xs:string">
-			<xs:pattern value="[A-Z][a-z]*" />
+			<xs:pattern value="[A-Z][a-zA-Z]*" />
 		</xs:restriction>
 	</xs:simpleType>
 	
@@ -66,10 +66,10 @@
 			<xs:element name="regoNumber" type="regoNumber" />
 			<xs:element name="driverId" type="xs:string" />
 			<xs:element name="driverName" type="Name" />
-			<xs:element name="startDate" type="xs:string" />
-			<xs:element name="startTime" type="xs:string" />
-			<xs:element name="endDate" type="xs:string" />
-			<xs:element name="endTime" type="xs:string" /> 
+ 			<xs:element name="startDate" type="Date" />		
+			<xs:element name="startTime" type="Time" />		
+			<xs:element name="endDate" type="Date" />		
+			<xs:element name="endTime" type="Time" /> 
 			<xs:element name="description" type="xs:string" />
 			<xs:element name="kilometres" type="positiveDecimal" />
 			<xs:element name="deleted" type="xs:boolean" />
