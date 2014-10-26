@@ -27,7 +27,7 @@ public class UsersDaoImpl implements IUsersDao, Serializable {
 	}
 
 	@Override
-	// retrieve a singel user as per credential
+	// retrieves a single user as per entered credential
 	public User getUser(String email, String password) {
 		return users.login(email, password);
 	}

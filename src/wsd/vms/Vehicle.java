@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Comparator;
+
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Vehicle implements Serializable, Comparable<Vehicle> {
@@ -23,11 +24,12 @@ public class Vehicle implements Serializable, Comparable<Vehicle> {
 	@XmlElement(name = "colour")
 	private String colour;
 	@XmlElement(name = "kilometres")
-	private double kilometres;	
+	private double kilometres;
 	@XmlElement(name = "trip")
-	private ArrayList<Trip> trips = new ArrayList<Trip> ();
-	
-	public Vehicle() {	}
+	private ArrayList<Trip> trips = new ArrayList<Trip>();
+
+	public Vehicle() {
+	}
 
 	public Vehicle(String regoNumber, String type, double kilometres,
 			String make, String model, String colour) {
@@ -89,53 +91,46 @@ public class Vehicle implements Serializable, Comparable<Vehicle> {
 	}
 
 	public ArrayList<Trip> getTrips() {
-		
-		ArrayList<Trip> currentTrips = new ArrayList<Trip> ();
 
-		
+		ArrayList<Trip> currentTrips = new ArrayList<Trip>();
 		for (Trip trip : trips) {
-			if(!trip.isDeleted()) {
-			currentTrips.add(trip);
-			
+			if (!trip.isDeleted()) {
+				currentTrips.add(trip);
 			}
 		}
 		return currentTrips;
 	}
-public int getTripsSize() {
-		
 
+	public int getTripsSize() {
 		return trips.size();
 	}
 
 	public void setTrips(ArrayList<Trip> trips) {
 		this.trips = trips;
 	}
+
 	public void addTrips(Trip trip) {
 		trips.add(trip);
 		kilometres += trip.getKilometres();
 	}
+
 	public boolean deleteTrip(int tripId, int userId) {
-		
 		for (Trip trip : trips) {
-			if(!trip.isDeleted() && trip.getId() == tripId) {
-			 trip.setDeleted(true);
-			 trip.setDeletedById(userId);
-			 kilometres -= trip.getKilometres();
-			 return true;
+			if (!trip.isDeleted() && trip.getId() == tripId) {
+				trip.setDeleted(true);
+				trip.setDeletedById(userId);
+				kilometres -= trip.getKilometres();
+				return true;
 			}
 		}
 		return false;
 	}
+
 	@Override
-	    public int compareTo(Vehicle compareVehicle) {
-	        int compareResult=   	regoNumber.compareTo(((Vehicle)compareVehicle).getRegoNumber());
-	        /* For Ascending order*/
-	        return  compareResult;
-
-	        /* For Descending order do like this */
-	        //return compareage-this.studentage;
-	    }
-
-
+	public int compareTo(Vehicle compareVehicle) {
+		int compareResult = regoNumber.compareTo(((Vehicle) compareVehicle)
+				.getRegoNumber());
+		return compareResult;
+	}
 
 }

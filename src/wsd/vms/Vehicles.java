@@ -28,7 +28,6 @@ public class Vehicles implements Serializable {
 	}
 
 	public void sort() {
-
 		Collections.sort(vehicles);
 		for (Vehicle vehicle : vehicles) {
 			System.out.println(vehicle.getRegoNumber());
@@ -36,9 +35,7 @@ public class Vehicles implements Serializable {
 	}
 
 	public ArrayList<Trip> getTrips() {
-
 		ArrayList<Trip> trips = new ArrayList<Trip>();
-
 		for (Vehicle vehicle : vehicles) {
 			trips.addAll(vehicle.getTrips());
 		}
@@ -59,7 +56,6 @@ public class Vehicles implements Serializable {
 	}
 
 	public boolean deleteTrip(int tripId, int userId) {
-
 		for (Vehicle vehicle : vehicles) {
 			if (vehicle.deleteTrip(tripId, userId)) {
 				return true;
