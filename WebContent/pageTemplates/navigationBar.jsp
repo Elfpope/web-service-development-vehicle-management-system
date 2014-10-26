@@ -50,7 +50,7 @@
 			<form class="navbar-form navbar-right">
 				<a>Currently logged in as <%=user.getFirstName()%> <%=user.getLastName()%>
 					<%
-						if (user.getRole().equals("Administrator")) {
+						if (user.isAdministrator()) {
 					%> [ADMINISTRATOR] <%
 						}
 					%>
