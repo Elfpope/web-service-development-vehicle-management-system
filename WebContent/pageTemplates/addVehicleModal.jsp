@@ -6,6 +6,7 @@
 
 <script type="text/javascript" src="bootstrap/js/moment.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+
 <link rel="stylesheet" href="bootstrap/bootstrapvalidator-dist-0.5.2/css/bootstrapValidator.min.css"/>
 <script type="text/javascript" src="bootstrap/bootstrapvalidator-dist-0.5.2/js/bootstrapValidator.min.js"></script>
 <script type="text/javascript" src="bootstrap/bootstrapvalidator-dist-0.5.2/js/form.js"></script>
