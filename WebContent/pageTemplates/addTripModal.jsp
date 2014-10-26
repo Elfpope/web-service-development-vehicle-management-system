@@ -7,6 +7,17 @@
 <link rel="stylesheet" href="bootstrap/css/bootstrap-datetimepicker.min.css" />
 <script type="text/javascript" src="bootstrap/js/moment.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet" href="bootstrap/bootstrapvalidator-dist-0.5.2/css/bootstrapValidator.min.css"/>
+<script type="text/javascript" src="bootstrap/bootstrapvalidator-dist-0.5.2/js/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="bootstrap/bootstrapvalidator-dist-0.5.2/js/form.js"></script>
+
+<style>
+.nonReadOnly {
+	cursor: auto !important;
+    background-color: white !important;
+}
+</style>
+
 </head>
 <body>
 	<div class="modal fade" id="addTripModal" tabindex="-1" role="dialog"
@@ -24,60 +35,47 @@
 					<fieldset>
 						<div class="modal-body">
 							<div class="form-group">
-								<label for="startDate" class="col-lg-2 control-label">Start date</label>
-								<div class='col-lg-4'>
-									<input type='text' readonly="readonly" class="form-control" name='startDate' data-date-format="DD/MM/YYYY"/>
+								<label for="regoNumber" class="col-lg-2 control-label">Registration Number</label>
+								<div class="col-lg-10">
+									<input class="form-control" type="text" name="regoNumber"
+										readonly value="<%=request.getParameter("regoNumber")%>" />
 								</div>
-								<label for="startDate" class="col-lg-2 control-label">Start time</label>
-								<div class='col-lg-4'>
-									<input type='text' readonly="readonly" class="form-control" name="startTime" />
+							</div>
+							<div class="form-group">
+								<label for="start" class="col-lg-2 control-label">Start date</label>
+								<div class='col-lg-10'>
+									<input type='text' class="form-control nonReadOnly" id='start'
+										data-date-format="DD/MM/YYYY HH:mm" name='start' readonly required />
 								</div>
-								<label for="endDate" class="col-lg-2 control-label">End date</label>
-								<div class='col-lg-4'>
-									<input type='text' readonly="readonly" class="form-control" name='endDate' data-date-format="DD/MM/YYYY"/>
+							</div>
+							<div class="form-group">					
+								<label for="end" class="col-lg-2 control-label">End	date</label>
+								<div class='col-lg-10'>
+									<input type='text' class="form-control nonReadOnly" id='end'
+										data-date-format="DD/MM/YYYY HH:mm" name='end' readonly required />
 								</div>
-								<label for="endTime" class="col-lg-2 control-label">End time</label>
-								<div class='col-lg-4'>
-									<input type='text' readonly="readonly" class="form-control" name='endTime'/>
-								</div>
-								<script type="text/javascript">
-									$(function() {
-										$('#startDate').datetimepicker({pickTime:false});
-										$('#startTime').datetimepicker({pickDate:false});
-										$('#endDate').datetimepicker({pickTime:false});
-										$('#endTime').datetimepicker({pickDate:false});
-										$("#startDate").on(	"dp.change", function(e) {
-											$('#endDate').data("DateTimePicker").setMinDate(e.date);
-											$('#endDate').data("DateTimePicker").setValue(e.date);
-										});
-										$("#endDate").on("dp.change", function(e) {
-											$('#startDate').data("DateTimePicker").setMaxDate(e.date);
-										});
-									});
-								</script>
 							</div>
 							<div class="form-group">
 								<label for="description" class="col-lg-2 control-label">Description</label>
 								<div class="col-lg-10">
-									<span class="help-block">Brief description of trip
-										purpose</span>
-									<textarea class="form-control" rows="3" name="description"></textarea>
+									<textarea placeholder="Brief description of the trip"
+										class="form-control" rows="3" name="description" required></textarea>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="kilometres" class="col-lg-2 control-label">Kilometres travelled</label>
+								<label for="kilometres" class="col-lg-2 control-label">Kilometres
+									travelled</label>
 								<div class="col-lg-10">
-									<input class="form-control bfh-number" name="kilometres">
+									<input class="form-control bfh-number" name="kilometres" required>
 								</div>
 							</div>
-						</div>
-						<div class="modal-footer">
-							<div class="col-lg-10 col-lg-offset-2">
-								<button type="button" class="btn btn-default"
-									data-dismiss="modal">Cancel</button>
-								<button type="submit" class="btn btn-primary">Submit</button>
+							<div class="modal-footer">
+								<div class="col-lg-10 col-lg-offset-2">
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal">Cancel</button>
+									<button type="submit" class="btn btn-primary">Submit</button>
+								</div>
 							</div>
-						</div>
 					</fieldset>
 				</form>
 			</div>

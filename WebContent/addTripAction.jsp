@@ -12,29 +12,23 @@
 
 	<%
 		Trip trip = new Trip();
-			trip.setRegoNumber("ABC123");
+			trip.setRegoNumber(request.getParameter("regoNumber"));
 			trip.setDriverId(user.getId());
-			trip.setStartDate(1);
-			trip.setStartTime(2);
-			trip.setStartDate(3);
-			trip.setStartTime(4);
+			trip.setDriverName(user.getFullName());
+			trip.setStartDate(request.getParameter("start"));
+			trip.setStartTime(request.getParameter("start"));
+			trip.setEndDate(request.getParameter("end"));
+			trip.setEndTime(request.getParameter("end"));
 			trip.setDescription(request.getParameter("description"));
 			trip.setKilometres(Double.parseDouble(request.getParameter("kilometres")));
 
 		System.out.println(request.getParameter("regoNumber"));
+		System.out.println(request.getParameter("start"));
+		System.out.println(request.getParameter("end"));
+		System.out.println(request.getParameter("description"));
+
 		String vehiclesFilePath = application.getRealPath("vehicles.xml");
 	%>
-
-	<%-->
-		trip.setRegoNumber(request.getParameter("regoNumber"));
-		trip.setDriverId(user.getId());
-		trip.setStartDate(Integer.parseInt(request.getParameter("startDate")));
-		trip.setStartTime(Integer.parseInt(request.getParameter("startTime")));
-		trip.setStartDate(Integer.parseInt(request.getParameter("endDate")));
-		trip.setStartTime(Integer.parseInt(request.getParameter("endTime")));
-		trip.setDescription(request.getParameter("description"));
-		trip.setKilometres(Double.parseDouble(request.getParameter("kilometres")));
-	--%>
 
 	<jsp:useBean id="vms" class="wsd.vms.VehicleManagementApplication"
 		scope="application">
