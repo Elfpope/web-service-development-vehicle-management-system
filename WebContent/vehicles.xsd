@@ -13,11 +13,7 @@
 	
 	<xs:simpleType name="vehicleType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Ute" />
-			<xs:enumeration value="SUV" />
-			<xs:enumeration value="Seden" />
-		    <xs:enumeration value="Hatch" />
-		    <xs:enumeration value="Minibus" />
+			<xs:pattern value="[A-Z][a-z]*" />
 		</xs:restriction>
 	</xs:simpleType>
 	
@@ -35,14 +31,7 @@
 	
 	<xs:simpleType name="colour">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Blue" />
-			<xs:enumeration value="Purple" />
-			<xs:enumeration value="Red" />
-		    <xs:enumeration value="Yellow" />
-		    <xs:enumeration value="Black" />
-			<xs:enumeration value="White" />
-		    <xs:enumeration value="Green" />
-		    <xs:enumeration value="Grey" />
+			<xs:pattern value="[A-Z][a-z]*" />
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -77,10 +66,6 @@
 			<xs:element name="regoNumber" type="regoNumber" />
 			<xs:element name="driverId" type="xs:string" />
 			<xs:element name="driverName" type="Name" />
-<!-- 			<xs:element name="startDate" type="Date" />
-			<xs:element name="startTime" type="Time" />
-			<xs:element name="endDate" type="Date" />
-			<xs:element name="endTime" type="Time" /> -->
 			<xs:element name="startDate" type="xs:string" />
 			<xs:element name="startTime" type="xs:string" />
 			<xs:element name="endDate" type="xs:string" />
