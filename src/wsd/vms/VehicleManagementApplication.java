@@ -1,26 +1,26 @@
 package wsd.vms;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+//import java.io.File;
+//import java.io.FileInputStream;
+//import java.io.FileNotFoundException;
+//import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
-import javax.xml.bind.JAXBContext;
+//import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
+//import javax.xml.bind.Marshaller;
+//import javax.xml.bind.Unmarshaller;
 
-import wsd.vms.User;
-import wsd.vms.Users;
+//import wsd.vms.User;
+//import wsd.vms.Users;
 
 public class VehicleManagementApplication {
 
-	private String usersFilePath;
-	private String vehiclesFilePath;
-	private Users users;
-	private Vehicles vehicles;
+//	private String usersFilePath;
+//	private String vehiclesFilePath;
+//	private Users users;
+//	private Vehicles vehicles;
 
 	private IUsersDao usersDao;
 	private IVehiclesDao vehiclesDao;

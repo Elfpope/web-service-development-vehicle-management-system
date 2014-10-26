@@ -106,11 +106,11 @@
 				<xsl:apply-templates />
 				<xsl:if test="$currentlyLoggedIn = 'true'">
 					<td>
-						<a href="#" data-toggle="modal" data-target="#deleteTripModal">
+						<a href="#" data-toggle="modal" data-target="#deleteTripModal{id}">
 							<span class="glyphicon glyphicon-remove"></span>
 						</a>
 					</td>
-					<div class="modal fade" id="deleteTripModal" tabindex="-1"
+					<div class="modal fade" id="deleteTripModal{id}" tabindex="-1"
 						role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">

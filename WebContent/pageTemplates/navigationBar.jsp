@@ -17,9 +17,6 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="../../assets/js/docs.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </head>
 
 <body>
@@ -56,8 +53,13 @@
 				} else {
 			%>
 			<form class="navbar-form navbar-right">
-				<a>Currently logged in as <%=user.getFirstName()%> <%=user.getLastName()%></a>
-				<a href="logout.jsp" type="button" class="btn btn-info">Logout</a>
+				<a>Currently logged in as <%=user.getFirstName()%> <%=user.getLastName()%>
+					<%
+						if (user.getRole().equals("Administrator")) {
+					%> [ADMINISTRATOR] <%
+						}
+					%>
+				</a> <a href="logout.jsp" type="button" class="btn btn-info">Logout</a>
 			</form>
 			<%
 				}
