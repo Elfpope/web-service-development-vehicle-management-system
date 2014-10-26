@@ -22,44 +22,105 @@ public class VehicleManagementApplication {
 	private Users users;
 	private Vehicles vehicles;
 
-	public String getUserFilePath() {
-		return usersFilePath;
+	private IUsersDao usersDao;
+	private IVehiclesDao vehiclesDao;
+	private XMLService xmlService;
+
+	public VehicleManagementApplication() {
+		super();
+	}
+	
+	public VehicleManagementApplication(String usersFilePath,
+			String vehiclesFilePath) throws JAXBException, IOException {
+		super();
+		xmlService = new XMLService(usersFilePath, vehiclesFilePath);
+		usersDao = new UsersDaoImpl(xmlService);		
+		vehiclesDao = new VehiclesDaoImpl(xmlService);
 	}
 
-	public String getVehicleFilePath() {
-		return vehiclesFilePath;
+	public IUsersDao getUsersDao() {
+		return usersDao;
 	}
 
-	public void setUsersFilePath(String usersFilePath) throws JAXBException,
-			IOException {
-		this.usersFilePath = usersFilePath;
-		// Create the unmarshaller
-		JAXBContext jc = JAXBContext.newInstance(Users.class);
-		Unmarshaller u = jc.createUnmarshaller();
-
-		// Now unmarshal the object from the file
-		FileInputStream fin = new FileInputStream(usersFilePath);
-		users = (Users) u.unmarshal(fin);
-		fin.close();
+	public void setUsersDao(IUsersDao usersDaoImpl) {
+		this.usersDao = usersDaoImpl;
 	}
 
-	public void setVehiclesFilePath(String vehiclesFilePath)
-			throws JAXBException, IOException {
-		this.vehiclesFilePath = vehiclesFilePath;
-		// Create the unmarshaller
-		JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
-		Unmarshaller u = jc.createUnmarshaller();
-
-		// Now unmarshal the object from the file
-		FileInputStream fin = new FileInputStream(vehiclesFilePath);
-		vehicles = (Vehicles) u.unmarshal(fin);
-		vehicles.sort();
-		fin.close();
-		
+	public IVehiclesDao getVehiclesDao() {
+		return vehiclesDao;
 	}
+
+	public void setVehiclesDao(IVehiclesDao vehiclesDao) {
+		this.vehiclesDao = vehiclesDao;
+	}
+
+	public XMLService getXmlService() {
+		return xmlService;
+	}
+
+	public void setXmlService(XMLService xmlService) {
+		this.xmlService = xmlService;
+	}
+
+	
+	
+	
+
+	 public String getUserFilePath() {
+	 return usersFilePath;
+	 }
+	
+	 public String getVehicleFilePath() {
+	 return vehiclesFilePath;
+	 }
+	
+	 public void setUsersFilePath(String usersFilePath) throws JAXBException,
+	 IOException {
+	 this.usersFilePath = usersFilePath;
+	 // Create the unmarshaller
+	 JAXBContext jc = JAXBContext.newInstance(Users.class);
+	 Unmarshaller u = jc.createUnmarshaller();
+	
+	 // Now unmarshal the object from the file
+	 FileInputStream fin = new FileInputStream(usersFilePath);
+	 users = (Users) u.unmarshal(fin);
+	 fin.close();
+	 }
+	
+	 public void setVehiclesFilePath(String vehiclesFilePath)
+	 throws JAXBException, IOException {
+	 this.vehiclesFilePath = vehiclesFilePath;
+	 // Create the unmarshaller
+	 JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
+	 Unmarshaller u = jc.createUnmarshaller();
+	
+	 // Now unmarshal the object from the file
+	 FileInputStream fin = new FileInputStream(vehiclesFilePath);
+	 vehicles = (Vehicles) u.unmarshal(fin);
+	 vehicles.sort();
+	 fin.close();
+	 }
+
+
+
+//	public String getUserFilePath() {
+//		return xmlService.getUserFilePath();
+//	}
+//
+//	public String getVehicleFilePath() {
+//		return xmlService.getVehicleFilePath();
+//	}
+//
+//	public void setUsersFilePath(String usersFilePath) {
+//		xmlService.setUsersFilePath(usersFilePath);
+//	}
+//
+//	public void setVehiclesFilePath(String vehiclesFilePath) {
+//		xmlService.setVehiclesFilePath(vehiclesFilePath);
+//	}
 
 	public Users getUsers() {
-		return users;
+		return usersDao.getUsers();
 	}
 
 	public Vehicles getVehicles() {
@@ -72,7 +133,7 @@ public class VehicleManagementApplication {
 
 	public ArrayList<Trip> getTrips(String vehicleRego, int startDate,
 			String keyword) {
-		
+
 		ArrayList<Trip> trips = vehicles.getTrips();
 		// boolean value to indicate return all trips if no single one trip
 		// matches criteria
@@ -112,7 +173,7 @@ public class VehicleManagementApplication {
 	}
 
 	public void setUsers(Users users) {
-		this.users = users;
+		usersDao.setUsers(users);
 	}
 
 	public boolean isValidUser(String email, String password) {
@@ -165,9 +226,7 @@ public class VehicleManagementApplication {
 	public void marshallUsers() throws JAXBException, FileNotFoundException {
 		JAXBContext jc = JAXBContext.newInstance(Users.class);
 		Marshaller m = jc.createMarshaller();
-		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true); // Make the
-																// generated XML
-																// look nice
+		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true); 
 		m.marshal(users, new FileOutputStream(usersFilePath));
 		// m.marshal(vehicles, new
 		// FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/WEB-INF/users.xml"));

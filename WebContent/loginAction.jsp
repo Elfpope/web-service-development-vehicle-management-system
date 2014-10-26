@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="wsd.vms.User"%>
+<%@ page import="wsd.vms.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,27 +13,29 @@
 	<%
 		user.setEmail(request.getParameter("email"));
 		user.setPassword(request.getParameter("password"));
-		String usersFilePath = application.getRealPath("WEB-INF/users.xml");
+
+		VehicleManagementApplication vms =(VehicleManagementApplication) session.getAttribute("vms");
 	%>
 
-	<jsp:useBean id="vms" class="wsd.vms.VehicleManagementApplication"
+<%-- 	<jsp:useBean id="vms" class="wsd.vms.VehicleManagementApplication"
 		scope="application">
 		<jsp:setProperty name="vms" property="usersFilePath"
 			value="<%=usersFilePath%>" />
-	</jsp:useBean>
+	</jsp:useBean> --%>
 
 	<%
-		User userLoggingIn = vms.getUser(user.getEmail(),
-				user.getPassword());
-		if (userLoggingIn != null) {
-			user.setId(userLoggingIn.getId());
-			user.setFirstName(userLoggingIn.getFirstName());
-			user.setLastName(userLoggingIn.getLastName());
-			user.setRole(userLoggingIn.getRole());
-			response.sendRedirect(request.getHeader("referer"));
-		} else {
-			user.setEmail(null);
-			user.setPassword(null);
+		User userLoggingIn = vms.getUsersDao().getUser(user.getEmail(),
+			user.getPassword());
+
+			if (userLoggingIn != null) {
+		user.setId(userLoggingIn.getId());
+		user.setFirstName(userLoggingIn.getFirstName());
+		user.setLastName(userLoggingIn.getLastName());
+		user.setRole(userLoggingIn.getRole());
+		response.sendRedirect(request.getHeader("referer"));
+			} else {
+		user.setEmail(null);
+		user.setPassword(null);
 	%>
 
 	<div class="container" style="margin-top: 75px;">
