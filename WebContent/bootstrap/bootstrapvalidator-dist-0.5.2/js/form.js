@@ -44,7 +44,7 @@ $(function() {
             		},
                     regexp: {
                 		regexp: /^\d+(\.\d{1,2})?$/,
-                		message: 'Please round off to the nearest two decimal value'
+                		message: 'Kilometres must be a positive number and rounded to the nearest two decimal value'
                     }
             	}
             },
@@ -54,6 +54,73 @@ $(function() {
             			message: 'A description is required and cannot be empty'
             		}
             	}
+            },
+            regoNumber: {
+            	validators: {
+            		notEmpty: {
+            			message: 'A vehicle registration number is required and cannot be empty'
+            		}
+            	}
+            },
+            type: {
+            	validators: {
+            		notEmpty: {
+            			message: 'A vehicle type is required and cannot be empty'
+            		}
+            	}
+            },
+            make: {
+            	validators: {
+            		notEmpty: {
+            			message: 'A vehicle make is required and cannot be empty'
+            		}
+            	}
+            },
+            model: {
+            	validators: {
+            		notEmpty: {
+            			message: 'A vehicle model is required and cannot be empty'
+            		}
+            	}
+            },
+            colour: {
+            	validators: {
+            		notEmpty: {
+            			message: 'A vehicle colour is required and cannot be empty'
+            		}
+            	}
+            },
+            firstName: {
+            	validators: {
+            		notEmpty: {
+            			message: 'First Name is required and cannot be empty'
+            		}
+            	}
+            },
+            lastName: {
+            	validators: {
+            		notEmpty: {
+            			message: 'Last Name is required and cannot be empty'
+            		}
+            	}
+            },
+            password: {
+            	validators: {
+            		notEmpty: {
+            			message: 'A password is required and cannot be empty'
+            		}
+            	}
+            },
+            confirmPassword: {
+            	validators: {
+            		notEmpty: {
+            			message: 'A password is required and cannot be empty'
+            		},
+                 	identical: {
+                            field: 'password',
+                            message: 'Password does not match'
+            	}
+            }
             }
         }
     });

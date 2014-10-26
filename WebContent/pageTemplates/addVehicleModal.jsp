@@ -4,6 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script type="text/javascript" src="bootstrap/js/moment.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet" href="bootstrap/bootstrapvalidator-dist-0.5.2/css/bootstrapValidator.min.css"/>
+<script type="text/javascript" src="bootstrap/bootstrapvalidator-dist-0.5.2/js/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="bootstrap/bootstrapvalidator-dist-0.5.2/js/form.js"></script>
+
 </head>
 <body>
 	<div class="modal fade" id="addVehicleModal" tabindex="-1" role="dialog"
@@ -23,39 +30,39 @@
 							<div class="form-group">
 								<label for="regoNumber" class="col-lg-3 control-label">Registration Number</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text" name="regoNumber">
+									<input class="form-control" type="text" name="regoNumber" required>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="type" class="col-lg-3 control-label">Type</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text" name="type">
+									<input class="form-control" type="text" name="type" required>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="make" class="col-lg-3 control-label">Make</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text" name="make">
+									<input class="form-control" type="text" name="make" required>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="model" class="col-lg-3 control-label">Model</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text" name="model">
+									<input class="form-control" type="text" name="model" required>
 								</div>
 							</div>	
 							<div class="form-group">
 								<label for="colour" class="col-lg-3 control-label">Colour</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text" name="colour">
+									<input class="form-control" type="text" name="colour" required>
 								</div>
 							</div>					
 							<div class="form-group">
 								<label for="kilometres" class="col-lg-2 control-label">Kilometres
 									travelled</label>
 								<div class="col-lg-10">
-									<input class="form-control bfh-number" name="kilometres" required
-									type="number" step="0.5">
+									<input class="form-control bfh-number" name="kilometres" value = "0" required
+									type="number" step="0.5" required>
 								</div>
 							</div>
 						</div>

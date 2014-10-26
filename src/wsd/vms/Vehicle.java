@@ -120,6 +120,7 @@ public int getTripsSize() {
 			if(!trip.isDeleted() && trip.getId() == tripId) {
 			 trip.setDeleted(true);
 			 trip.setDeletedById(userId);
+			 kilometres -= trip.getKilometres();
 			 return true;
 			}
 		}

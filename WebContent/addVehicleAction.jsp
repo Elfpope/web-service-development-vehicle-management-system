@@ -32,7 +32,7 @@
 
 	<%
 
-		//if all fields are valid, then create a new user
+		//if all fields are valid, then create a new vehicle
 
 			
 	vehicle = new Vehicle( regoNumber,  type,kilometres,make,  model,colour);

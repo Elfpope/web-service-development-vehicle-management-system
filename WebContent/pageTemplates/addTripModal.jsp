@@ -66,7 +66,7 @@
 								<label for="kilometres" class="col-lg-2 control-label">Kilometres
 									travelled</label>
 								<div class="col-lg-10">
-									<input class="form-control bfh-number" name="kilometres" required>
+									<input class="form-control bfh-number" name="kilometres" required type="number" step="0.5" >
 								</div>
 							</div>
 							<div class="modal-footer">
