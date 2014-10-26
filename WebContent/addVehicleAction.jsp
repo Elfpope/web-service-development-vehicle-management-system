@@ -8,10 +8,11 @@
 </head>
 <body>
 <%
-	String vehiclesFilePath = application.getRealPath("vehicles.xml");
-
+	VehicleManagementApplication vms = (VehicleManagementApplication) session.getAttribute("vms");
+	IVehiclesDao vehiclesDao = vms.getVehiclesDao();
+	Vehicles vehicles = vehiclesDao.getVehicles();
 	
-	
+//	String vehiclesFilePath = application.getRealPath("vehicles.xml");
 	
 	String regoNumber = request.getParameter("regoNumber");
 	String type = request.getParameter("type");
@@ -24,30 +25,28 @@
 
 %>
 
-	<jsp:useBean id="vms" class="wsd.vms.VehicleManagementApplication"
+<%-- 	<jsp:useBean id="vms" class="wsd.vms.VehicleManagementApplication"
 		scope="application">
 		<jsp:setProperty name="vms" property="vehiclesFilePath"
 			value="<%=vehiclesFilePath%>" />
 	</jsp:useBean>
-
+ --%>
 	<%
 
 		//if all fields are valid, then create a new vehicle
-
-			
-	vehicle = new Vehicle( regoNumber,  type,kilometres,make,  model,colour);
+		
+		vehicle = new Vehicle( regoNumber,  type,kilometres,make,  model,colour);
 			//only register the new user that is not in the registry
 			
-			if (!vms.getVehicles().vehicleExists(vehicle)) {
-				vms.addVehicle(vehicle);
-				vms.marshallVehicles();
+			if (!vehicles.vehicleExists(vehicle)) {
+				vehiclesDao.addVehicle(vehicle);
+/* 				vms.addVehicle(vehicle);
+				vms.marshallVehicles(); */
 				vehicleError = "YAYYYYYYYY";
 			}
 			else {
 				vehicleError = "Vehicle already exists.";
 			}
-			
-		
 	%>
 
 	<p> <%= vehicle.getRegoNumber() %> </p>

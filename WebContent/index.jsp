@@ -12,15 +12,27 @@
 <title>Vehicle Management System</title>
 </head>
 
+<%
+	//Initialize the web application with xml files path.
+	String usersFilePath = application.getRealPath("WEB-INF/users.xml");
+	String vehiclesFilePath = application.getRealPath("vehicles.xml");
+	
+	VehicleManagementApplication vms = (VehicleManagementApplication) session.getAttribute("vms");
+	if (vms == null) {
+		vms = new VehicleManagementApplication(usersFilePath, vehiclesFilePath);
+		session.setAttribute("vms", vms);
+	}
+%>
+
 <body>
 	<jsp:useBean id="user" class="wsd.vms.User" scope="session" />
 	<jsp:include page="pageTemplates/navigationBar.jsp" />
 	<jsp:include page="pageTemplates/addVehicleModal.jsp" />
-	<x:transform xml="${vehiclesXML}" xslt="${vehiclesXSLT}" >
+	<x:transform xml="${vehiclesXML}" xslt="${vehiclesXSLT}">
 		<x:param name="currentlyLoggedIn" value='<%=user.getEmail() != null%>' />
 		<x:param name="userRole" value='<%=user.getRole()%>' />
 	</x:transform>
-	
-	
+
+
 </body>
 </html>
