@@ -64,6 +64,6 @@
 			%>
 		</div>
 	</div>
-	<jsp:include page="registerModal.jsp" />
+	<jsp:include page="addUserModal.jsp" />
 </body>
 </html>
