@@ -7,7 +7,7 @@
 <users>
     <user>
         <id>1</id>
-        <email>a</email>
+        <email>jason.ralston@abc.com</email>
         <firstName>Jason</firstName>
         <lastName>Ralston</lastName>
         <password>1</password>
@@ -20,14 +20,6 @@
         <lastName>Heise</lastName>
         <password>Coderiscool</password>
         <role>Driver</role>
-    </user>
-    <user>
-        <id>2</id>
-        <email>test</email>
-        <firstName>Ryan</firstName>
-        <lastName>Heise</lastName>
-        <password>test</password>
-        <role>Administrator</role>
     </user>
     <user>
         <id>3</id>
