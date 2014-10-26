@@ -47,7 +47,13 @@ public class Users implements Serializable {
 	        return 0; // Login incorrect. Return null.
 	  
 	  }
-
+	  public boolean userExists(User user){
+			for (User u : users) {
+			if (user.getEmail().equals(u.getEmail()))
+				return true;
+			}
+			return false;
+		}
 
 	
 		

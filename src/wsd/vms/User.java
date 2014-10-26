@@ -94,4 +94,8 @@ public class User implements Serializable {
 	public boolean isDriver(){
 		return role == "Driver";
 	}
+	
+	public String getFullName() {
+		return firstName + " " + lastName;
+	}
 }

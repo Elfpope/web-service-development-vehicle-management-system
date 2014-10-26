@@ -39,7 +39,7 @@ public class TripsSoap {
 				tester += "Id: " + trip.getId() + "\n";
 				tester += "Registration: " + trip.getRegoNumber() + "\n";
 				tester += "Driver: " + trip.getDriverName()+ "\n";
-				tester += "Description: " + trip.getDescripton()+ "\n";
+				tester += "Description: " + trip.getDescription()+ "\n";
 				tester += "\n";
 				
 			}
@@ -67,7 +67,7 @@ public class TripsSoap {
 			for (Trip trip : test) {
 				System.out.println("Registration: " + trip.getRegoNumber());
 				System.out.println("Driver: " + trip.getDriverName());
-				System.out.println("Description: " + trip.getDescripton());
+				System.out.println("Description: " + trip.getDescription());
 				System.out.println();
 				
 			}
