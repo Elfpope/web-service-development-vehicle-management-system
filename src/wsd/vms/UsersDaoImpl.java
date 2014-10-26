@@ -75,11 +75,12 @@ public class UsersDaoImpl implements IUsersDao, Serializable {
 				&& (isCorrectRole(user.getRole())) && (isValidId(user.getId()))) {
 			return true;
 		}
+		System.out.println("Fail");
 		return false;
 	}
 
 	public boolean isValidEmail(String email) {
-		String regex = ".*@.*\\.(com|gov|org|net|edu).*";
+		String regex = ".*@.*\\.(com|gov|org|net|edu)\\.?.*";
 		if (email.matches(regex))
 			return true;
 		return false;
@@ -95,7 +96,7 @@ public class UsersDaoImpl implements IUsersDao, Serializable {
 
 	// Validation Rule: any lower or upper case letter or any digits
 	public boolean isValidPassword(String password) {
-		String regex = "([a-zA-Z0-9]){4,16}";
+		String regex = "[a-zA-Z0-9]*";
 		if (password.matches(regex))
 			return true;
 		return false;
