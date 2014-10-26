@@ -130,24 +130,29 @@ public class VehicleManagementApplication {
 
 		marshallUsers();
 	}
+
 	public void addTrip(Trip trip) throws FileNotFoundException, JAXBException {
 		int id = vehicles.getTripSize() + 1;
 		trip.setId(id);
 		vehicles.addTrip(trip);
 		marshallVehicles();
 	}
-	public void addVehicle(Vehicle vehicle) throws FileNotFoundException, JAXBException {
-		
+
+	public void addVehicle(Vehicle vehicle) throws FileNotFoundException,
+			JAXBException {
+
 		vehicles.addVehicle(vehicle);
 
 		marshallVehicles();
 	}
+
 	public void marshallVehicles() throws FileNotFoundException, JAXBException {
 		JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(vehicles, new FileOutputStream(getVehicleFilePath()));
-		//m.marshal(vehicles, new FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/vehicles.xml"));
+		// m.marshal(vehicles, new
+		// FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/vehicles.xml"));
 		// JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
 		// Marshaller m = jc.createMarshaller();
 		// m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -161,7 +166,8 @@ public class VehicleManagementApplication {
 																// generated XML
 																// look nice
 		m.marshal(users, new FileOutputStream(usersFilePath));
-		 //m.marshal(vehicles, new FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/WEB-INF/users.xml"));
+		// m.marshal(vehicles, new
+		// FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/WEB-INF/users.xml"));
 	}
 
 	public boolean deleteTrip(int tripId, int userId) {
@@ -181,5 +187,35 @@ public class VehicleManagementApplication {
 	public int getUserId(String email) {
 
 		return users.getUserId(email);
+	}
+
+	// Validation Rule: must have "@" and "com|gov|org|net|edu"
+	public boolean isEmailValid(String email) {
+		String regex = ".*@.*\\.(com|gov|org|net|edu).*";
+		if (email.matches(regex))
+			return true;
+		return false;
+	}
+
+	// Validation Rule: First letter must be capital.
+	public boolean isNameValid(String name) {
+		String regex = "[A-Z][a-z]*";
+		if (name.matches(regex))
+			return true;
+		return false;
+	}
+
+	// Validation Rule: any lower or upper case letter or any digits
+	public boolean isPasswordValid(String password) {
+		String regex = "([a-zA-Z0-9]){4,16}";
+		if (password.matches(regex))
+			return true;
+		return false;
+	}
+
+	public boolean isconfirmPasswordSame(String password, String confirmPassword) {
+		if (password.equals(confirmPassword))
+			return true;
+		return false;
 	}
 }
