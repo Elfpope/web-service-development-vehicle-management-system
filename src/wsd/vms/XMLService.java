@@ -45,7 +45,6 @@ public class XMLService implements Serializable {
 		Users users = null;
 		JAXBContext jc = JAXBContext.newInstance(Users.class);
 		Unmarshaller u = jc.createUnmarshaller();
-
 		FileInputStream fin = new FileInputStream(usersFilePath);
 		users = (Users) u.unmarshal(fin);
 		fin.close();
@@ -56,7 +55,6 @@ public class XMLService implements Serializable {
 		Vehicles vehicles = null;
 		JAXBContext jc = JAXBContext.newInstance(Vehicles.class);
 		Unmarshaller u = jc.createUnmarshaller();
-
 		FileInputStream fin = new FileInputStream(vehiclesFilePath);
 		vehicles = (Vehicles) u.unmarshal(fin);
 		fin.close();
@@ -68,9 +66,6 @@ public class XMLService implements Serializable {
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(users, new FileOutputStream(usersFilePath));
-
-		 //m.marshal(users, new
-		 //FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/WEB-INF/users.xml"));
 	}
 
 	public void marshallVehicles(Vehicles vehicles) throws FileNotFoundException, JAXBException {
@@ -78,9 +73,6 @@ public class XMLService implements Serializable {
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(vehicles, new FileOutputStream(getVehicleFilePath()));
-
-		 //m.marshal(vehicles, new
-		 //FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/vehicles.xml"));
 	}
 
 }

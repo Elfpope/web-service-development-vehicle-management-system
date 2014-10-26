@@ -54,7 +54,6 @@ public class VehiclesDaoImpl implements IVehiclesDao, Serializable {
 		// boolean value to indicate return all trips if no single one trip
 		// matches criteria
 		boolean allNull = true;
-
 		for (int i = 0; i < trips.size(); i++) {
 			// maybe isMatch better than detele here to flag dismatched trips
 			boolean delete = false;
@@ -120,6 +119,7 @@ public class VehiclesDaoImpl implements IVehiclesDao, Serializable {
 	}
 
 	public boolean checkVehicle(Vehicle vehicle) {
+		
 		if (isNotNull(vehicle.getRegoNumber())
 				&& (isNotNull(vehicle.getType()))
 				&& (isNotNull(vehicle.getMake()))
@@ -132,30 +132,22 @@ public class VehiclesDaoImpl implements IVehiclesDao, Serializable {
 	}
 
 	public boolean isNotNull(String value) {
-		String regex = ".";
-		if (value.matches(regex))
-			return true;
-		return false;
+		if(value == null || value.equals(""))
+			return false;
+		return true;
 
 	}
 
 	public boolean isValidKilometres(double kilometres) {
-
 		if (kilometres >= 0)
 			return true;
 		return false;
 	}
 
 	public boolean isValidId(int id) {
-
-		if (id > 0)
+		if (id >= 0)
 			return true;
 		return false;
-	}
-
-	public boolean isNotDeleted(boolean deleted) {
-
-		return deleted;
 	}
 
 	public boolean checkTrip(Trip trip) {
@@ -167,10 +159,9 @@ public class VehiclesDaoImpl implements IVehiclesDao, Serializable {
 				&& (isNotNull(trip.getDescription()))
 				&& (isValidKilometres(trip.getKilometres()))
 				&& (isValidId(trip.getId()))
-				&& (isNotDeleted(trip.isDeleted()))) {
+				&& (!trip.isDeleted())) {
 			return true;
 		}
 		return false;
 	}
-
 }

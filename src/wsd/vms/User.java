@@ -24,7 +24,6 @@ public class User implements Serializable {
 	@XmlElement(name = "role")
 	private String role;
 	
-
 	public User() {	}
 
 	public User(int id, String email, String firstName, String lastName, String password,
@@ -45,7 +44,6 @@ public class User implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 	public String getEmail() {
 		return email;
@@ -88,11 +86,11 @@ public class User implements Serializable {
 	}
 	
 	public boolean isAdministrator(){
-		return role == "Administrator";
+		return role.equals("Administrator");
 	}
 
 	public boolean isDriver(){
-		return role == "Driver";
+		return role.equals("Driver");
 	}
 	
 	public String getFullName() {

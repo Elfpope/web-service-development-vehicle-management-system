@@ -28,7 +28,6 @@ public class Users implements Serializable {
 	}
 
 	public void addUser(User user) {
-
 		users.add(user);
 	}
 
@@ -51,8 +50,8 @@ public class Users implements Serializable {
 	}
 
 	public boolean userExists(User user) {
-		for (User u : users) {
-			if (user.getEmail().equals(u.getEmail()))
+		for (User compareUser : users) {
+			if (user.getEmail().equals(compareUser.getEmail()))
 				return true;
 		}
 		return false;

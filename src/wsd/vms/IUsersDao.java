@@ -3,21 +3,22 @@ package wsd.vms;
 
 public interface IUsersDao {
 	
-	//retrieve users object from data source
+	//retrieve the users object from the data source
 	public Users getUsers();
 	
-	//retrieve a singel user
+	//retrieves a single user
 	public User getUser(String email, String password);
 	
+	//retrieves a single user id
 	public int getUserId(String email);
 	
-	//check if user email matches password when try to login
+	//checks if the users email and password matches for login
 	public boolean isUserValid(String email, String password);
 	
-	//replace the whole users in data source with the input
+	//replaces the users list with input from a data source
 	public void setUsers(Users users);
 	
-	//add a new user into data source
+	//adds a new user into the data source
 	public void addUser(User user);
 
 }
