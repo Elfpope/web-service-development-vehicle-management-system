@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ page import="wsd.vms.User"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8" import="wsd.vms.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,26 +26,23 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.jsp">Vehicle Management
-				System</a>
+			<a class="navbar-brand" href="index.jsp">Vehicle Management	System</a>
 		</div>
 		<div class="navbar-collapse collapse navbar-responsive-collapse">
 			<%
 				if (user.getEmail() == null) {
 			%>
-			<form action="loginAction.jsp" class="navbar-form navbar-right"
-				role="form" method="post">
+			<form action="loginAction.jsp" class="navbar-form navbar-right"	role="form" method="post">
 				<div class="form-group">
-					<input placeholder="Email" class="form-control" type="text"
-						name="email">
+					<input placeholder="Email" class="form-control" type="text" name="email">
 				</div>
 				<div class="form-group">
-					<input placeholder="Password" class="form-control" type="password"
-						name="password">
+					<input placeholder="Password" class="form-control" type="password" name="password">
 				</div>
 				<button type="submit" class="btn btn-success">Sign in</button>
-				<a href="#" type="button" class="btn btn-info" data-toggle="modal"
-					data-target="#registerUserModal">Register</a>
+				<a href="#" type="button" class="btn btn-info" data-toggle="modal" data-target="#addUserModal">
+					Register
+				</a>
 			</form>
 			<%
 				} else {
@@ -59,7 +54,8 @@
 					%> [ADMINISTRATOR] <%
 						}
 					%>
-				</a> <a href="logout.jsp" type="button" class="btn btn-info">Logout</a>
+				</a>
+				<a href="logout.jsp" type="button" class="btn btn-info">Logout</a>
 			</form>
 			<%
 				}

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,41 +28,47 @@
 						<div class="modal-body">
 							<div class="form-group">
 								<label for="regoNumber" class="col-lg-3 control-label">Registration Number</label>
-								<div class="col-lg-9">
+								<div class="col-lg-8">
 									<input class="form-control" type="text" name="regoNumber" required>
 								</div>
+								<div class="col-lg-1"></div>
 							</div>
 							<div class="form-group">
 								<label for="type" class="col-lg-3 control-label">Type</label>
-								<div class="col-lg-9">
+								<div class="col-lg-8">
 									<input class="form-control" type="text" name="type" required>
 								</div>
+								<div class="col-lg-1"></div>
 							</div>
 							<div class="form-group">
 								<label for="make" class="col-lg-3 control-label">Make</label>
-								<div class="col-lg-9">
+								<div class="col-lg-8">
 									<input class="form-control" type="text" name="make" required>
 								</div>
+								<div class="col-lg-1"></div>
 							</div>
 							<div class="form-group">
 								<label for="model" class="col-lg-3 control-label">Model</label>
-								<div class="col-lg-9">
+								<div class="col-lg-8">
 									<input class="form-control" type="text" name="model" required>
 								</div>
+								<div class="col-lg-1"></div>
 							</div>	
 							<div class="form-group">
 								<label for="colour" class="col-lg-3 control-label">Colour</label>
-								<div class="col-lg-9">
+								<div class="col-lg-8">
 									<input class="form-control" type="text" name="colour" required>
 								</div>
+								<div class="col-lg-1"></div>
 							</div>					
 							<div class="form-group">
-								<label for="kilometres" class="col-lg-2 control-label">Kilometres
+								<label for="kilometres" class="col-lg-3 control-label">Kilometres
 									travelled</label>
-								<div class="col-lg-10">
-									<input class="form-control bfh-number" name="kilometres" value = "0" required
+								<div class="col-lg-8">
+									<input class="form-control" name="kilometres" value = "0" required
 									type="number" step="0.5" required>
 								</div>
+								<div class="col-lg-1"></div>
 							</div>
 						</div>
 						<div class="modal-footer">
