@@ -75,7 +75,7 @@ public class UsersDaoImpl implements IUsersDao, Serializable {
 				&& (isCorrectRole(user.getRole())) && (isValidId(user.getId()))) {
 			return true;
 		}
-		System.out.println("Fail");
+		System.out.println("User Register Failure due to invalid field input");
 		return false;
 	}
 
@@ -88,7 +88,7 @@ public class UsersDaoImpl implements IUsersDao, Serializable {
 
 	// Validation Rule: Must contain valid letters
 	public boolean isValidName(String name) {
-		String regex = "[a-z]*";
+		String regex = "[a-zA-Z]*";
 		if (name.matches(regex))
 			return true;
 		return false;
