@@ -34,7 +34,7 @@ public class TripsSoap {
 			
 			
 			String tester = "";
-			ArrayList<Trip> test = getVehicleApp().getTrips();
+			ArrayList<Trip> test = getVehicleApp().getVehiclesDao().getTrips();
 			for (Trip trip : test) {
 				tester += "Id: " + trip.getId() + "\n";
 				tester += "Registration: " + trip.getRegoNumber() + "\n";
@@ -63,7 +63,7 @@ public class TripsSoap {
 			
 			
 			
-			ArrayList<Trip> test = getVehicleApp().getTrips();
+			ArrayList<Trip> test = getVehicleApp().getVehiclesDao().getTrips();
 			for (Trip trip : test) {
 				System.out.println("Registration: " + trip.getRegoNumber());
 				System.out.println("Driver: " + trip.getDriverName());
@@ -84,10 +84,10 @@ public class TripsSoap {
 	 
 	}
  @WebMethod
- public boolean deleteTrip(int id, int userId) {
+ public boolean deleteTrip(int tripId, int userId) {
 	 
 	 try {
-		if(getVehicleApp().deleteTrip(id, userId)) {
+		if(getVehicleApp().getVehiclesDao().deleteTrip(tripId, userId)) {
 			return true;
 		}
 	    
@@ -103,7 +103,7 @@ public class TripsSoap {
  public int getUserId(String email) {
 	 try {
 		
-		return getVehicleApp().getUserId(email);
+		return getVehicleApp().getUsersDao().getUserId(email);
 	} catch (JAXBException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
@@ -123,15 +123,16 @@ public class TripsSoap {
 	  //
 	  // The "synchronized" keyword is used to lock the application object while
 	  // we're manpulating it.
-	 ServletContext application = (ServletContext)context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
-	  synchronized (application) {
-		  VehicleManagementApplication vehicleApp = (VehicleManagementApplication)application.getAttribute("vehicleApp");
-	   if (vehicleApp == null) {
-		   vehicleApp = new VehicleManagementApplication();
-		   vehicleApp.setUsersFilePath(application.getRealPath("WEB-INF/users.xml"));
-		   vehicleApp.setVehiclesFilePath(application.getRealPath("vehicles.xml"));
-	    application.setAttribute("vehicleApp", vehicleApp);
-	   }
+	 ServletContext application = (ServletContext)context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);	   
+		synchronized (application) {
+			VehicleManagementApplication vehicleApp = (VehicleManagementApplication) application.getAttribute("vehicleApp");
+			if (vehicleApp == null) {
+				String usersFilePath = application.getRealPath("WEB-INF/users.xml");
+				String vehiclesFilePath = application.getRealPath("vehicles.xml");
+				vehicleApp = new VehicleManagementApplication(usersFilePath, vehiclesFilePath);
+
+				application.setAttribute("vehicleApp", vehicleApp);
+			}
 	   return vehicleApp;
 	  }
 	 }
