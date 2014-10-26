@@ -10,22 +10,15 @@
 <body>
 	<jsp:useBean id="user" class="wsd.vms.User" scope="session" />
 
-	<%
+	<%	
 		Trip trip = new Trip();
-			trip.setRegoNumber(request.getParameter("regoNumber"));
-			trip.setDriverId(user.getId());
-			trip.setDriverName(user.getFullName());
-			trip.setStartDate(request.getParameter("start"));
-			trip.setStartTime(request.getParameter("start"));
-			trip.setEndDate(request.getParameter("end"));
-			trip.setEndTime(request.getParameter("end"));
-			trip.setDescription(request.getParameter("description"));
-			trip.setKilometres(Double.parseDouble(request.getParameter("kilometres")));
-
-		System.out.println(request.getParameter("regoNumber"));
-		System.out.println(request.getParameter("start"));
-		System.out.println(request.getParameter("end"));
-		System.out.println(request.getParameter("description"));
+		trip.setRegoNumber(request.getParameter("regoNumber"));
+		trip.setStartDateTime(request.getParameter("start"));
+		trip.setEndDateTime(request.getParameter("end"));
+		trip.setDriverId(user.getId());
+		trip.setDriverName(user.getFullName());
+		trip.setDescription(request.getParameter("description"));
+		trip.setKilometres(Double.parseDouble(request.getParameter("kilometres")));
 
 		String vehiclesFilePath = application.getRealPath("vehicles.xml");
 	%>
