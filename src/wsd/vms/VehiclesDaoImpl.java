@@ -30,7 +30,9 @@ public class VehiclesDaoImpl implements IVehiclesDao, Serializable {
 
 	@Override
 	public void addVehicle(Vehicle vehicle) {
-		vehicles.addVehicle(vehicle);
+		if (checkVehicle(vehicle)) {
+			vehicles.addVehicle(vehicle);
+		}
 		try {
 			xmlService.marshallVehicles(vehicles);
 		} catch (FileNotFoundException e) {
@@ -90,7 +92,9 @@ public class VehiclesDaoImpl implements IVehiclesDao, Serializable {
 	public void addTrip(Trip trip) {
 		int id = vehicles.getTripSize() + 1;
 		trip.setId(id);
-		vehicles.addTrip(trip);
+		if (checkTrip(trip)) {
+			vehicles.addTrip(trip);
+		}
 		try {
 			xmlService.marshallVehicles(vehicles);
 		} catch (FileNotFoundException e) {
@@ -111,6 +115,60 @@ public class VehiclesDaoImpl implements IVehiclesDao, Serializable {
 			} catch (JAXBException e) {
 				e.printStackTrace();
 			}
+		}
+		return false;
+	}
+
+	public boolean checkVehicle(Vehicle vehicle) {
+		if (isNotNull(vehicle.getRegoNumber())
+				&& (isNotNull(vehicle.getType()))
+				&& (isNotNull(vehicle.getMake()))
+				&& (isNotNull(vehicle.getModel()))
+				&& (isNotNull(vehicle.getColour()))
+				&& (isValidKilometres(vehicle.getKilometres()))) {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean isNotNull(String value) {
+		String regex = ".";
+		if (value.matches(regex))
+			return true;
+		return false;
+
+	}
+
+	public boolean isValidKilometres(double kilometres) {
+
+		if (kilometres >= 0)
+			return true;
+		return false;
+	}
+
+	public boolean isValidId(int id) {
+
+		if (id > 0)
+			return true;
+		return false;
+	}
+
+	public boolean isNotDeleted(boolean deleted) {
+
+		return deleted;
+	}
+
+	public boolean checkTrip(Trip trip) {
+		if (isNotNull(trip.getDriverName()) && (isNotNull(trip.getStartDate()))
+				&& (isNotNull(trip.getStartTime()))
+				&& (isNotNull(trip.getEndDate()))
+				&& (isNotNull(trip.getEndTime()))
+				&& (isNotNull(trip.getRegoNumber()))
+				&& (isNotNull(trip.getDescription()))
+				&& (isValidKilometres(trip.getKilometres()))
+				&& (isValidId(trip.getId()))
+				&& (isNotDeleted(trip.isDeleted()))) {
+			return true;
 		}
 		return false;
 	}

@@ -252,32 +252,5 @@ public class VehicleManagementApplication {
 //	}
 
 	// Validation Rule: must have "@" and "com|gov|org|net|edu"
-	public boolean isEmailValid(String email) {
-		String regex = ".*@.*\\.(com|gov|org|net|edu).*";
-		if (email.matches(regex))
-			return true;
-		return false;
-	}
-
-	// Validation Rule: First letter must be capital.
-	public boolean isNameValid(String name) {
-		String regex = "[A-Z][a-z]*";
-		if (name.matches(regex))
-			return true;
-		return false;
-	}
-
-	// Validation Rule: any lower or upper case letter or any digits
-	public boolean isPasswordValid(String password) {
-		String regex = "([a-zA-Z0-9]){4,16}";
-		if (password.matches(regex))
-			return true;
-		return false;
-	}
-
-	public boolean isconfirmPasswordSame(String password, String confirmPassword) {
-		if (password.equals(confirmPassword))
-			return true;
-		return false;
-	}
+	
 }
