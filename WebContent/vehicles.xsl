@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:param name="currentlyLoggedIn" />
+	<xsl:param name="userRole" />
+	
 	<xsl:template match="/">
 		<ul class="breadcrumb" style="margin-top: 75px;">
 			<li class="active">Home</li>
@@ -14,6 +17,16 @@
 		</div>
 		<div class="container">
 			<h1>List of Vehicles</h1>
+			
+			<xsl:if test="$currentlyLoggedIn = 'true' and $userRole = 'Administrator'  ">
+					
+					<a href="#" type="button" class="btn btn-info btn-sm"
+						data-toggle="modal" data-target="#addVehicleModal">
+						Add a new vehicle
+						<span class="glyphicon glyphicon-plus"></span>
+					</a>
+					
+				</xsl:if>
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>

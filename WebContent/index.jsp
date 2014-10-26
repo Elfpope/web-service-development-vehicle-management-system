@@ -15,8 +15,12 @@
 <body>
 	<jsp:useBean id="user" class="wsd.vms.User" scope="session" />
 	<jsp:include page="pageTemplates/navigationBar.jsp" />
-
-	<x:transform xml="${vehiclesXML}" xslt="${vehiclesXSLT}" />
-
+	<jsp:include page="pageTemplates/addVehicleModal.jsp" />
+	<x:transform xml="${vehiclesXML}" xslt="${vehiclesXSLT}" >
+		<x:param name="currentlyLoggedIn" value='<%=user.getEmail() != null%>' />
+		<x:param name="userRole" value='<%=user.getRole()%>' />
+	</x:transform>
+	
+	
 </body>
 </html>
