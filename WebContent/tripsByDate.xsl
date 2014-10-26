@@ -58,7 +58,7 @@
 				<xsl:apply-templates />
 				<xsl:if test="$currentlyLoggedIn = 'true'">
 					<td>
-						<a href="#" data-toggle="modal" data-target="#deleteTripModal">
+						<a href="#" data-toggle="modal" data-target="#deleteTripModal{id}">
 							<span class="glyphicon glyphicon-remove"></span>
 						</a>
 					</td>
@@ -77,8 +77,9 @@
 									Are you sure you wish to delete this trip?
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-default"
-										data-dismiss="modal">Cancel</button>
+									<button type="button" class="btn btn-default" data-dismiss="modal">
+										Cancel
+									</button>
 									<a href="deleteTripAction.jsp?tripId={id}" type="button"
 										class="btn btn-primary">Yes</a>
 								</div>
