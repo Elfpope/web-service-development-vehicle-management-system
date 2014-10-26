@@ -7,7 +7,7 @@
 	<!-- Type declarations -->		
 	<xs:simpleType name="email">
 		<xs:restriction base="xs:string">
-			<xs:pattern value="[a-z|A-Z|\.|_]*@[a-z|-]*\.(com|gov|org|net|edu)*(\.[a-z]+)*" />
+			<xs:pattern value=".*@.*\.(com|gov|org|net|edu)\.?.*" />
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -17,16 +17,14 @@
 		</xs:restriction>
 	</xs:simpleType>
 
-	<!-- Can be any lower or upper case letters and digits,  at least 6 to maximun 12 charachers  -->
 	<xs:simpleType name="password">
 		<xs:restriction base="xs:string">
-			<xs:pattern value="([a-zA-Z0-9]){4,16}" />
+			<xs:pattern value="[a-zA-Z0-9]*" />
 		</xs:restriction>
 	</xs:simpleType>
 
 	<xs:simpleType name="role">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Guest" />
 			<xs:enumeration value="Driver" />
 			<xs:enumeration value="Administrator" />
 		</xs:restriction>

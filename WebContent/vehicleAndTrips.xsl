@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:param name="regoNumberFilter" />
 	<xsl:param name="currentlyLoggedIn" />
 	<xsl:template match="/">
@@ -10,13 +9,21 @@
 			</li>
 			<li class="active">Vehicle</li>
 		</ul>
-		<div class="container">
-			<h1>
-				Vehicle Information
-				<xsl:value-of select="$regoNumberFilter" />
-			</h1>
-			<xsl:apply-templates />
-		</div>
+		<xsl:choose>
+		<xsl:when test="$regoNumberFilter = ''">
+			<div class="container">
+				<h1>Vehicle information not found</h1>
+			</div>
+		</xsl:when>
+		<xsl:otherwise>
+			<div class="container">
+				<h1>
+					Vehicle Information	<xsl:value-of select="$regoNumberFilter" />
+				</h1>
+				<xsl:apply-templates />
+			</div>
+		</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
 	<xsl:template match="vehicle">
@@ -25,39 +32,27 @@
 				<table class="table">
 					<tr>
 						<th>Registration Number</th>
-						<td>
-							<xsl:value-of select="regoNumber" />
-						</td>
+						<td><xsl:value-of select="regoNumber" /></td>
 					</tr>
 					<tr>
 						<th>Type</th>
-						<td>
-							<xsl:value-of select="vehicleType" />
-						</td>
+						<td><xsl:value-of select="vehicleType" /></td>
 					</tr>
 					<tr>
 						<th>Make</th>
-						<td>
-							<xsl:value-of select="make" />
-						</td>
+						<td><xsl:value-of select="make" /></td>
 					</tr>
 					<tr>
 						<th>Model</th>
-						<td>
-							<xsl:value-of select="model" />
-						</td>
+						<td><xsl:value-of select="model" /></td>
 					</tr>
 					<tr>
 						<th>Colour</th>
-						<td>
-							<xsl:value-of select="colour" />
-						</td>
+						<td><xsl:value-of select="colour" /></td>
 					</tr>
 					<tr>
 						<th>Kilometres travelled</th>
-						<td>
-							<xsl:value-of select="kilometres" />
-						</td>
+						<td><xsl:value-of select="kilometres" /></td>
 					</tr>
 				</table>
 				<h1>
@@ -91,10 +86,7 @@
 						<xsl:apply-templates />
 					</tbody>
 				</table>
-			</xsl:when>
-			<xsl:when test="$regoNumberFilter = ''">
-				WELPS
-			</xsl:when>
+			</xsl:when>			
 		</xsl:choose>
 	</xsl:template>
 
@@ -116,14 +108,14 @@
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal">
-										<span aria-hidden="true">x
-										</span>
+										<span aria-hidden="true">x</span>
 										<span class="sr-only">Close</span>
 									</button>
 									<h4 class="modal-title" id="myModalLabel">Delete Trip</h4>
 								</div>
 								<div class="modal-body">
-									Are you sure you wish to delete this trip?</div>
+									Are you sure you wish to delete this trip?
+								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-default"
 										data-dismiss="modal">Cancel</button>
@@ -153,7 +145,7 @@
 			</a>
 		</td>
 	</xsl:template>
-
+	
 	<xsl:template match="trip/regoNumber|deleted|deletedById" />
 
 </xsl:stylesheet>
