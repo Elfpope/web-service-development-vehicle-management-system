@@ -26,7 +26,7 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.jsp">Vehicle Management	System</a>
+			<a class="navbar-brand" href="index.jsp">Vehicle Management System</a>
 		</div>
 		<div class="navbar-collapse collapse navbar-responsive-collapse">
 			<%

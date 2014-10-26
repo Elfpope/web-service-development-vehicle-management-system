@@ -18,7 +18,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
 </head>
-</head>
 <body>
 	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="navbar-header">
