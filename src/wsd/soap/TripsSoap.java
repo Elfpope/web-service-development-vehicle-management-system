@@ -83,6 +83,7 @@ public class TripsSoap {
 		}
 	 
 	}
+ @WebMethod
  public boolean deleteTrip(int id, int userId) {
 	 
 	 try {

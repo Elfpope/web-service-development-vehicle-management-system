@@ -8,8 +8,8 @@
 package wsd.soap.client;
 
 public interface TripsSoap extends java.rmi.Remote {
+    public java.lang.String fetchTripsList() throws java.rmi.RemoteException;
+    public int getUserId(java.lang.String arg0) throws java.rmi.RemoteException;
     public void fetchTrips() throws java.rmi.RemoteException;
     public boolean deleteTrip(int arg0, int arg1) throws java.rmi.RemoteException;
-    public int getUserId(java.lang.String arg0) throws java.rmi.RemoteException;
-    public java.lang.String fetchTripsList() throws java.rmi.RemoteException;
 }

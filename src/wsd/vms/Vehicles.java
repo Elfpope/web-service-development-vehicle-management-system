@@ -2,6 +2,7 @@ package wsd.vms;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -23,8 +24,15 @@ public class Vehicles implements Serializable {
 
 	public void setVehicles(ArrayList<Vehicle> vehicles) {
 		this.vehicles = vehicles;
+		sort();
+		}
+	public void sort() {
+		
+		Collections.sort(vehicles);
+		for (Vehicle vehicle : vehicles) {
+			System.out.println(vehicle.getRegoNumber());
+		}
 	}
-
 	public ArrayList<Trip> getTrips() {
 
 		ArrayList<Trip> trips = new ArrayList<Trip>();
@@ -37,7 +45,7 @@ public class Vehicles implements Serializable {
 	
 	public void addVehicle(Vehicle vehicle) {
 		vehicles.add(vehicle);
-		
+		sort();
 	}
 	public void addTrip(Trip trip) {
 		for (Vehicle vehicle : vehicles) {
@@ -59,7 +67,7 @@ public class Vehicles implements Serializable {
 	public int getTripSize() {
 		int size = 0;
 		for (Vehicle vehicle : vehicles) {
-			size += vehicle.getTrips().size();
+			size += vehicle.getTripsSize();
 		}
 		return size;
 	}
