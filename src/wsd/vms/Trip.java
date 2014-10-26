@@ -21,13 +21,13 @@ public class Trip implements Serializable {
 	@XmlElement(name = "driverName")
 	private String driverName;
 	@XmlElement(name = "startDate")
-	private int startDate;
+	private String startDate;
 	@XmlElement(name = "startTime")
-	private int startTime;
+	private String startTime;
 	@XmlElement(name = "endDate")
-	private int endDate;
+	private String endDate;
 	@XmlElement(name = "endTime")
-	private int endTime;
+	private String endTime;
 	@XmlElement(name = "description")
 	private String description;
 	@XmlElement(name = "kilometres")
@@ -41,7 +41,7 @@ public class Trip implements Serializable {
 	public Trip() {	}
 		
 	public Trip(String regoNumber, int driverId, String driverName,
-			int startDate, int endDate, int startTime, int endTime,
+			String startDate, String endDate, String startTime, String endTime,
 			String description, double kilometres, String deletedById) {
 		super();
 		this.regoNumber = regoNumber;
@@ -79,35 +79,35 @@ public class Trip implements Serializable {
 		this.driverName = driverName;
 	}
 
-	public int getStartDate() {
+	public String getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(int startDate) {
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
 
-	public int getEndDate() {
+	public String getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(int endDate) {
+	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
 
-	public int getStartTime() {
+	public String getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(int startTime) {
+	public void setStartTime(String startTime) {
 		this.startTime = startTime;
 	}
 
-	public int getEndTime() {
+	public String getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(int endTime) {
+	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 	}
 
