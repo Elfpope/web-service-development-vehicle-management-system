@@ -7,8 +7,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.Comparator;
 
+/** vehicle java class containing a list of trips */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Vehicle implements Serializable, Comparable<Vehicle> {
@@ -28,70 +28,84 @@ public class Vehicle implements Serializable, Comparable<Vehicle> {
 	@XmlElement(name = "trip")
 	private ArrayList<Trip> trips = new ArrayList<Trip>();
 
+	/** creates new blank vehicle */
 	public Vehicle() {
 	}
 
-	public Vehicle(String regoNumber, String type, double kilometres,
-			String make, String model, String colour) {
+	/** creates new vehicle */
+	public Vehicle(String regoNumber, String type, String make, String model,
+			String colour, double kilometres) {
 		super();
 		this.regoNumber = regoNumber;
 		this.type = type;
-		this.kilometres = kilometres;
 		this.make = make;
 		this.model = model;
 		this.colour = colour;
+		this.kilometres = kilometres;
 	}
 
+	/** returns registration number */
 	public String getRegoNumber() {
 		return regoNumber;
 	}
 
+	/** sets the registration number */
 	public void setRegoNumber(String regoNumber) {
 		this.regoNumber = regoNumber;
 	}
 
+	/** returns the vehicle type */
 	public String getType() {
 		return type;
 	}
 
+	/** sets the vehicle type */
 	public void setType(String type) {
 		this.type = type;
 	}
 
-	public double getKilometres() {
-		return kilometres;
-	}
-
-	public void setKilometres(double kilometres) {
-		this.kilometres = kilometres;
-	}
-
+	/** returns the vehicle make */
 	public String getMake() {
 		return make;
 	}
 
+	/** sets the make */
 	public void setMake(String make) {
 		this.make = make;
 	}
 
+	/** returns the vehicle model */
 	public String getModel() {
 		return model;
 	}
 
+	/** sets the model */
 	public void setModel(String model) {
 		this.model = model;
 	}
 
+	/** returns the colour */
 	public String getColour() {
 		return colour;
 	}
 
+	/** sets the colour */
 	public void setColour(String colour) {
 		this.colour = colour;
 	}
 
-	public ArrayList<Trip> getTrips() {
+	/** returns the accumulative kilometres travelled */
+	public double getKilometres() {
+		return kilometres;
+	}
 
+	/** sets the accumulative kilometres travelled */
+	public void setKilometres(double kilometres) {
+		this.kilometres = kilometres;
+	}
+
+	/** returns the list of trips */
+	public ArrayList<Trip> getTrips() {
 		ArrayList<Trip> currentTrips = new ArrayList<Trip>();
 		for (Trip trip : trips) {
 			if (!trip.isDeleted()) {
@@ -101,19 +115,29 @@ public class Vehicle implements Serializable, Comparable<Vehicle> {
 		return currentTrips;
 	}
 
-	public int getTripsSize() {
-		return trips.size();
-	}
-
+	/** sets the list of trips */
 	public void setTrips(ArrayList<Trip> trips) {
 		this.trips = trips;
 	}
 
+	/** returns the number of trips in trips list */
+	public int getTripsSize() {
+		return trips.size();
+	}
+
+	/**
+	 * adds new trip to the list of trips then updates accumulative kilometres
+	 * travelled
+	 */
 	public void addTrips(Trip trip) {
 		trips.add(trip);
 		kilometres += trip.getKilometres();
 	}
 
+	/**
+	 * updates existing trip in the list of trips as deleted and records user ID
+	 * then updates accumulative kilometres travelled
+	 */
 	public boolean deleteTrip(int tripId, int userId) {
 		for (Trip trip : trips) {
 			if (!trip.isDeleted() && trip.getId() == tripId) {
@@ -126,6 +150,7 @@ public class Vehicle implements Serializable, Comparable<Vehicle> {
 		return false;
 	}
 
+	/** comparison to allow vehicles to be sorted */
 	@Override
 	public int compareTo(Vehicle compareVehicle) {
 		int compareResult = regoNumber.compareTo(((Vehicle) compareVehicle)

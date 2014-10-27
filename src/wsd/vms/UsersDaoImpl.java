@@ -11,40 +11,51 @@ public class UsersDaoImpl implements IUsersDao, Serializable {
 	private XMLService xmlService;
 	private Users users;
 
+	private final String ADMIN = "Administrator";
+	private final String DRIVER = "Driver";
+
+	/** creates blank user data access object implementation */
 	public UsersDaoImpl() {
 		xmlService = new XMLService();
 	}
 
+	/** creates new user data access object implementation */
 	public UsersDaoImpl(XMLService xmlService) throws JAXBException,
 			IOException {
 		this.xmlService = xmlService;
 		users = xmlService.unmarshallUsers();
 	}
 
+	/** returns the list of users */
 	@Override
 	public Users getUsers() {
 		return users;
 	}
 
+	/** returns a user based on email and password */
 	@Override
-	// retrieves a single user as per entered credential
 	public User getUser(String email, String password) {
 		return users.login(email, password);
 	}
 
+	/** returns user ID based on email */
 	@Override
 	public int getUserId(String email) {
 		return users.getUserId(email);
 	}
-
+	
+	/** adds user object to list of users */
 	@Override
-	public boolean isUserValid(String email, String password) {
-		if (getUsers().login(email, password) != null) {
-			return true;
+	public void addUser(User user) {
+		int id = users.getUsers().size() + 1;
+		user.setId(id);
+		if (checkUser(user)) {
+			users.addUser(user);
+			setUsers(users);
 		}
-		return false;
 	}
 
+	/** sets the users by marshaling XML */
 	@Override
 	public void setUsers(Users users) {
 		this.users = users;
@@ -57,28 +68,28 @@ public class UsersDaoImpl implements IUsersDao, Serializable {
 		}
 	}
 
-	@Override
-	public void addUser(User user) {
-		int id = users.getUsers().size() + 1;
-		user.setId(id);
-		if (checkUser(user)) {
-			users.addUser(user);
-			setUsers(users);
-		}
-	}
-
+	/** checks user's variables for validity */
 	public boolean checkUser(User user) {
-		if ((isValidEmail(user.getEmail()))
+		if (((isValidId(user.getId()) 
+				&& isValidEmail(user.getEmail()))
 				&& (isValidName(user.getFirstName()))
 				&& (isValidName(user.getLastName()))
-				&& (isValidPassword(user.getPassword()))
-				&& (isCorrectRole(user.getRole())) && (isValidId(user.getId()))) {
+				&& (isValidPassword(user.getPassword())) 
+				&& (isCorrectRole(user.getRole())))) {
 			return true;
 		}
 		System.out.println("User Register Failure due to invalid field input");
 		return false;
 	}
 
+	/** id validation: digit higher than 0 */
+	public boolean isValidId(int id) {
+		if (id >= 0)
+			return true;
+		return false;
+	}
+
+	/** email validation: follows standard email regex */
 	public boolean isValidEmail(String email) {
 		String regex = ".*@.*\\.(com|gov|org|net|edu)\\.?.*";
 		if (email.matches(regex))
@@ -86,7 +97,7 @@ public class UsersDaoImpl implements IUsersDao, Serializable {
 		return false;
 	}
 
-	// Validation Rule: Must contain valid letters
+	/** name validation: must contain valid letters */
 	public boolean isValidName(String name) {
 		String regex = "[a-zA-Z]*";
 		if (name.matches(regex))
@@ -94,7 +105,7 @@ public class UsersDaoImpl implements IUsersDao, Serializable {
 		return false;
 	}
 
-	// Validation Rule: any lower or upper case letter or any digits
+	/** password validation: any lower or upper case letters or digits */
 	public boolean isValidPassword(String password) {
 		String regex = "[a-zA-Z0-9]*";
 		if (password.matches(regex))
@@ -102,17 +113,11 @@ public class UsersDaoImpl implements IUsersDao, Serializable {
 		return false;
 	}
 
+	/** role validation: must equal driver or administrator */
 	public boolean isCorrectRole(String role) {
-		if (role.equals("Driver") || role.equals("Administrator")) {
+		if (role.equals(DRIVER) || role.equals(ADMIN)) {
 			return true;
 		}
-		return false;
-	}
-
-	public boolean isValidId(int id) {
-
-		if (id >= 0)
-			return true;
 		return false;
 	}
 }
