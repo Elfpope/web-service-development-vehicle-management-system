@@ -1,34 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="wsdVehicleMgmtSystem/vehicles" 
-	xmlns="wsdVehicleMgmtSystem/vehicles"
+	targetNamespace="wsdVehicleMgmtSystem/vehicles" xmlns="wsdVehicleMgmtSystem/vehicles"
 	elementFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation>
+			XML Schema used for vehicles.xml
+		</xs:documentation>
+	</xs:annotation>
 
-	<!-- Type declarations -->	
+	<!-- Type declarations -->
 	<xs:simpleType name="regoNumber">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[A-Z]{3}[0-9]{3}" />
 		</xs:restriction>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="vehicleType">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[A-Z][a-zA-Z]*" />
 		</xs:restriction>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="make">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[A-Z][a-z]*" />
 		</xs:restriction>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="model">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[A-Z].*" />
 		</xs:restriction>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="colour">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[A-Z][a-z]*" />
@@ -55,7 +59,7 @@
 
 	<xs:simpleType name="positiveDecimal">
 		<xs:restriction base="xs:decimal ">
-			<xs:minInclusive value="0"/>
+			<xs:minInclusive value="0" />
 			<xs:fractionDigits value="2" />
 		</xs:restriction>
 	</xs:simpleType>
@@ -66,10 +70,10 @@
 			<xs:element name="regoNumber" type="regoNumber" />
 			<xs:element name="driverId" type="xs:string" />
 			<xs:element name="driverName" type="Name" />
- 			<xs:element name="startDate" type="Date" />		
-			<xs:element name="startTime" type="Time" />		
-			<xs:element name="endDate" type="Date" />		
-			<xs:element name="endTime" type="Time" /> 
+			<xs:element name="startDate" type="Date" />
+			<xs:element name="startTime" type="Time" />
+			<xs:element name="endDate" type="Date" />
+			<xs:element name="endTime" type="Time" />
 			<xs:element name="description" type="xs:string" />
 			<xs:element name="kilometres" type="positiveDecimal" />
 			<xs:element name="deleted" type="xs:boolean" />
@@ -85,15 +89,17 @@
 			<xs:element name="model" type="model" />
 			<xs:element name="colour" type="colour" />
 			<xs:element name="kilometres" type="positiveDecimal" />
-			<xs:element name="trip" type="trip" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="trip" type="trip" minOccurs="0"
+				maxOccurs="unbounded" />
 		</xs:sequence>
-	</xs:complexType>	
+	</xs:complexType>
 
 	<!-- xml structure -->
 	<xs:element name="vehicles">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="vehicle" type="vehicle" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element name="vehicle" type="vehicle" minOccurs="0"
+					maxOccurs="unbounded" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "users")
 public class Users implements Serializable {
+	private static final long serialVersionUID = 1L;
 	@XmlElement(name = "user")
 	private ArrayList<User> users = new ArrayList<User>();
 

@@ -14,23 +14,10 @@ $(function() {
                     },
                     emailAddress: {
                         message: 'The input is not a valid email address'
-                    }
-                }
-            },
-            username: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'The username is required and cannot be empty'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 30,
-                        message: 'The username must be more than 6 and less than 30 characters long'
                     },
                     regexp: {
-                        regexp: /^[a-zA-Z0-9_]+$/,
-                        message: 'The username can only consist of alphabetical, number and underscore'
+                    	regexp: '.*@.*\.(com|gov|org|net|edu)\.?.*',
+                    		message: "Email address must end in .com, .gov, .org, .net or .edu"
                     }
                 }
             },
@@ -59,6 +46,10 @@ $(function() {
             	validators: {
             		notEmpty: {
             			message: 'A vehicle registration number is required and cannot be empty'
+            		},
+            		regexp: {
+            			regexp: /[A-Z]{3}[0-9]{3}/,
+            			message: 'Registration number must be in the format of XXX000' 
             		}
             	}
             },

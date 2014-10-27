@@ -22,9 +22,6 @@ public class User implements Serializable {
 	private String password;
 	@XmlElement(name = "role")
 	private String role;
-
-	private final String ADMIN = "Administrator";
-	private final String DRIVER = "Driver";
 	
 	/** creates new blank user */
 	public User() {
@@ -112,12 +109,12 @@ public class User implements Serializable {
 
 	/** returns true if current user is administrator */
 	public boolean isAdministrator() {
-		return role.equals(ADMIN);
+		return role.equals("Administrator");
 	}
 
 	/** returns true if current user is driver */
 	public boolean isDriver() {
-		return role.equals(DRIVER);
+		return role.equals("Driver");
 	}
 
 	/** returns first name and last name */
