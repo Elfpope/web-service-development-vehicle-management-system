@@ -33,6 +33,14 @@ public class Vehicle implements Serializable, Comparable<Vehicle> {
 	}
 
 	/** creates new vehicle */
+	/**
+	 * @param regoNumber Registration number of the vehicle
+	 * @param type Type of vehicle
+	 * @param make Make of vehicle
+	 * @param model Model of vehicle
+	 * @param colour Colour of vehicle
+	 * @param kilometres Accumulative kilometres travelled
+	 */
 	public Vehicle(String regoNumber, String type, String make, String model,
 			String colour, double kilometres) {
 		super();

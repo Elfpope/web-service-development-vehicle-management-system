@@ -18,6 +18,10 @@ public class VehiclesDaoImpl implements IVehiclesDao, Serializable {
 	}
 
 	/** creates new vehicles data access object implementation */
+	/**
+	 * @param usersFilePath File path for users.xml
+ 	 * @param vehiclesFilePath File path for vehicle.xml
+ 	 */
 	public VehiclesDaoImpl(XMLService xmlService) throws JAXBException,
 			IOException {
 		super();

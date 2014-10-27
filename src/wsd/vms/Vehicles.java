@@ -17,6 +17,9 @@ public class Vehicles implements Serializable {
 	private ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>();
 
 	/** creates new list of vehicles */
+	/**
+	 * @param none
+	 */
 	public Vehicles() {
 	}
 

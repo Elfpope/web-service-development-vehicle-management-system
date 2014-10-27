@@ -20,6 +20,7 @@ public class TripsSoap {
 	@Resource
 	private WebServiceContext context;
 
+	/** returns all trips */
 	@WebMethod
 	public String fetchTripsList() {
 		try {
@@ -40,7 +41,8 @@ public class TripsSoap {
 		}
 		return null;
 	}
-
+	
+	/** returns all trips */
 	@WebMethod
 	public void fetchTrips() {
 		try {
@@ -58,6 +60,7 @@ public class TripsSoap {
 		}
 	}
 
+	/** updates existing trip in the list of trips in vehicles as deleted */
 	@WebMethod
 	public boolean deleteTrip(int tripId, int userId) {
 		try {
@@ -72,6 +75,7 @@ public class TripsSoap {
 		return false;
 	}
 
+	/** returns user ID based on email */
 	public int getUserId(String email) {
 		try {
 			return getVehicleApp().getUsersDao().getUserId(email);
@@ -83,6 +87,7 @@ public class TripsSoap {
 		return 0;
 	}
 
+	/** initialising the vehicle management application */
 	private VehicleManagementApplication getVehicleApp() throws JAXBException, IOException {
 		ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
 		synchronized (application) {

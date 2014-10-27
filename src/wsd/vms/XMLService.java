@@ -78,8 +78,7 @@ public class XMLService implements Serializable {
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(users, new FileOutputStream(usersFilePath));
-		m.marshal(users, new
-				 FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/WEB-INF/users.xml"));
+
 	}
 
 	/** marshals vehicles to vehicle XML */
@@ -88,8 +87,6 @@ public class XMLService implements Serializable {
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(vehicles, new FileOutputStream(getVehicleFilePath()));
-		m.marshal(vehicles, new
-				 FileOutputStream("C:/Users/Rebecca Ao/Desktop/31284/New folder (2)/WebContent/vehicles.xml"));
 	}
 
 }

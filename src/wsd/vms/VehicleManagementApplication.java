@@ -16,6 +16,12 @@ public class VehicleManagementApplication {
 	}
 
 	/** creates new vehicle management application with user and vehicle XML's */
+	/**
+	 * @param usersFilePath File path for users.xml
+	 * @param vehiclesFilePath File path for vehicle.xml
+	 * @throws JAXBException
+	 * @throws IOException
+	 */
 	public VehicleManagementApplication(String usersFilePath,
 			String vehiclesFilePath) throws JAXBException, IOException {
 		super();

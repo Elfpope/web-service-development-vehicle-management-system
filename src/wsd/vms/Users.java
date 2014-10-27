@@ -17,6 +17,9 @@ public class Users implements Serializable {
 	}
 
 	/** creates list of users */
+	/**
+	 * @param users List of users registered in the system
+	 */
 	public Users(ArrayList<User> users) {
 		super();
 		this.users = users;
