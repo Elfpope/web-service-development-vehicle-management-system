@@ -31,6 +31,14 @@ public class User implements Serializable {
 	}
 
 	/** creates new user */
+	/**
+	 * @param id ID of the user
+	 * @param email Email of the user
+	 * @param firstName First name of the user
+	 * @param lastName Last name of the user
+	 * @param password Password of the user
+	 * @param role Role of the user
+	 */
 	public User(int id, String email, String firstName, String lastName,
 			String password, String role) {
 		super();

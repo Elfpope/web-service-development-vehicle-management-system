@@ -6,6 +6,7 @@ import java.util.Scanner;
 import javax.xml.rpc.ServiceException;
 
 public class TripsSoapClient {
+	/** SOAP client initiator */
 	public static void main(String[] args) {
 		TripsSoapServiceLocator locator = new TripsSoapServiceLocator();
 		TripsSoap vehicleApp;
@@ -42,6 +43,7 @@ public class TripsSoapClient {
 		}
 	}
 
+	/** show options for trips */
 	public static void showTripsOption(TripsSoap vehicleApp) {
 		try {
 			String tripsDetailList = vehicleApp.fetchTripsList();
@@ -51,6 +53,7 @@ public class TripsSoapClient {
 		}
 	}
 
+	/** show delete options for trips */
 	public static void deleteOption(TripsSoap vehicleApp) {
 		Scanner in = new Scanner(System.in);
 		System.out.print("Enter User Email:");
@@ -68,6 +71,7 @@ public class TripsSoapClient {
 		}
 	}
 
+	/** show options for trips */
 	public static void deleteTrip(TripsSoap vehicleApp, int userId) {
 		Scanner in = new Scanner(System.in);
 		System.out.print("Enter trip id: ");

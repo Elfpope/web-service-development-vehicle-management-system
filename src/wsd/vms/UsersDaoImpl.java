@@ -20,6 +20,11 @@ public class UsersDaoImpl implements IUsersDao, Serializable {
 	}
 
 	/** creates new user data access object implementation */
+	/**
+	 * @param xmlService Service for marshaling and unmarshaling XML
+	 * @throws JAXBException
+	 * @throws IOException
+	 */
 	public UsersDaoImpl(XMLService xmlService) throws JAXBException,
 			IOException {
 		this.xmlService = xmlService;

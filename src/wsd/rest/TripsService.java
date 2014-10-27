@@ -16,7 +16,7 @@ public class TripsService {
 	@Context
 	private ServletContext application;
 
-	
+	/** setting up vehicle management system */
 	private VehicleManagementApplication getVehicleApp() throws JAXBException, IOException {
 		synchronized (application) {
 			VehicleManagementApplication vehicleApp = (VehicleManagementApplication) application.getAttribute("vehicleApp");

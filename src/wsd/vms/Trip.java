@@ -42,6 +42,17 @@ public class Trip implements Serializable {
 	}
 
 	/** creates new trip */
+	/**
+	 * @param regoNumber Registration Number of vehicle
+	 * @param driverId Driver ID who took the trip
+	 * @param driverName Name of the driver
+	 * @param startDate Starting date of trip
+	 * @param endDate End date of  trip
+	 * @param startTime Starting time of trip
+	 * @param endTime End time of trip
+	 * @param description Brief description of trip purpose
+	 * @param kilometres Accumulated kilometres travelled
+	 */
 	public Trip(String regoNumber, int driverId, String driverName,
 			String startDate, String endDate, String startTime, String endTime,
 			String description, double kilometres) {
