@@ -1,12 +1,9 @@
 package wsd.soap.client;
 
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.xml.rpc.ServiceException;
-
-import wsd.vms.Trip;
 
 public class TripsSoapClient {
 	public static void main(String[] args) {
@@ -41,7 +38,6 @@ public class TripsSoapClient {
 			}
 
 		} catch (ServiceException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -51,7 +47,6 @@ public class TripsSoapClient {
 			String tripsDetailList = vehicleApp.fetchTripsList();
 			System.out.println(tripsDetailList);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -69,7 +64,6 @@ public class TripsSoapClient {
 				System.out.println("Error: Invalid user");
 			}
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -85,7 +79,6 @@ public class TripsSoapClient {
 				System.out.println("Error: Trip id not found");
 			}
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

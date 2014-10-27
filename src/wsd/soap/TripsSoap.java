@@ -8,7 +8,6 @@ import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.servlet.ServletContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.ws.Endpoint;
 import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.handler.MessageContext;
 
@@ -35,10 +34,8 @@ public class TripsSoap {
 			}
 			return tripDetailList;
 		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -55,10 +52,8 @@ public class TripsSoap {
 				System.out.println();
 			}
 		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -70,10 +65,8 @@ public class TripsSoap {
 				return true;
 			}
 		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return false;
@@ -83,30 +76,21 @@ public class TripsSoap {
 		try {
 			return getVehicleApp().getUsersDao().getUserId(email);
 		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return 0;
 	}
 
-	private VehicleManagementApplication getVehicleApp() throws JAXBException,
-			IOException {
-
-		ServletContext application = (ServletContext) context
-				.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
+	private VehicleManagementApplication getVehicleApp() throws JAXBException, IOException {
+		ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
 		synchronized (application) {
-			VehicleManagementApplication vehicleApp = (VehicleManagementApplication) application
-					.getAttribute("vehicleApp");
+			VehicleManagementApplication vehicleApp = (VehicleManagementApplication) application.getAttribute("vehicleApp");
 			if (vehicleApp == null) {
-				String usersFilePath = application
-						.getRealPath("WEB-INF/users.xml");
-				String vehiclesFilePath = application
-						.getRealPath("vehicles.xml");
-				vehicleApp = new VehicleManagementApplication(usersFilePath,
-						vehiclesFilePath);
+				String usersFilePath = application.getRealPath("WEB-INF/users.xml");
+				String vehiclesFilePath = application.getRealPath("vehicles.xml");
+				vehicleApp = new VehicleManagementApplication(usersFilePath, vehiclesFilePath);
 
 				application.setAttribute("vehicleApp", vehicleApp);
 			}

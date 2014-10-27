@@ -6,9 +6,8 @@ import javax.xml.bind.annotation.*;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-
 public class User implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@XmlElement(name = "id")
@@ -23,11 +22,17 @@ public class User implements Serializable {
 	private String password;
 	@XmlElement(name = "role")
 	private String role;
-	
-	public User() {	}
 
-	public User(int id, String email, String firstName, String lastName, String password,
-			String role) {
+	private final String ADMIN = "Administrator";
+	private final String DRIVER = "Driver";
+	
+	/** creates new blank user */
+	public User() {
+	}
+
+	/** creates new user */
+	public User(int id, String email, String firstName, String lastName,
+			String password, String role) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -36,63 +41,78 @@ public class User implements Serializable {
 		this.password = password;
 		this.role = role;
 	}
-	
+
+	/** returns the user ID */
 	public int getId() {
 		return id;
 	}
-	
+
+	/** sets the user ID */
 	public void setId(int id) {
 		this.id = id;
 	}
 
+	/** returns the email */
 	public String getEmail() {
 		return email;
 	}
 
+	/** sets the email */
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
+	/** returns the first name */
 	public String getFirstName() {
 		return firstName;
 	}
 
+	/** sets the first name */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
+	/** returns the last name */
 	public String getLastName() {
 		return lastName;
 	}
 
+	/** sets the last name */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
+	/** returns the password */
 	public String getPassword() {
 		return password;
 	}
 
+	/** sets the password */
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
+	/** returns the user role */
 	public String getRole() {
 		return role;
 	}
 
+	/** sets the user role */
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
-	public boolean isAdministrator(){
-		return role.equals("Administrator");
+
+	/** returns true if current user is administrator */
+	public boolean isAdministrator() {
+		return role.equals(ADMIN);
 	}
 
-	public boolean isDriver(){
-		return role.equals("Driver");
+	/** returns true if current user is driver */
+	public boolean isDriver() {
+		return role.equals(DRIVER);
 	}
-	
+
+	/** returns first name and last name */
 	public String getFullName() {
 		return firstName + " " + lastName;
 	}

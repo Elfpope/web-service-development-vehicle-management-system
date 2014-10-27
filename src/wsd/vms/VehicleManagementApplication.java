@@ -10,10 +10,12 @@ public class VehicleManagementApplication {
 	private IVehiclesDao vehiclesDao;
 	private XMLService xmlService;
 
+	/** creates new blank vehicle management application */
 	public VehicleManagementApplication() {
 		super();
 	}
 
+	/** creates new vehicle management application with user and vehicle XML's */
 	public VehicleManagementApplication(String usersFilePath,
 			String vehiclesFilePath) throws JAXBException, IOException {
 		super();
@@ -22,26 +24,32 @@ public class VehicleManagementApplication {
 		vehiclesDao = new VehiclesDaoImpl(xmlService);
 	}
 
+	/** returns the users data access object */
 	public IUsersDao getUsersDao() {
 		return usersDao;
 	}
 
+	/** sets the users data access object */
 	public void setUsersDao(IUsersDao usersDaoImpl) {
 		this.usersDao = usersDaoImpl;
 	}
 
+	/** returns the vehicles data access object */
 	public IVehiclesDao getVehiclesDao() {
 		return vehiclesDao;
 	}
 
+	/** sets the vehicles data access object */
 	public void setVehiclesDao(IVehiclesDao vehiclesDao) {
 		this.vehiclesDao = vehiclesDao;
 	}
 
+	/** returns the XML service */
 	public XMLService getXmlService() {
 		return xmlService;
 	}
 
+	/** sets the XML service */
 	public void setXmlService(XMLService xmlService) {
 		this.xmlService = xmlService;
 	}

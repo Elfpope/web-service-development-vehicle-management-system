@@ -1,27 +1,22 @@
 package wsd.vms;
 
-/**
- * Users Dao interface deals with all users data CRUD.
- */
+/** Users DAO interface to deal with all users data CRUD */
 
 public interface IUsersDao {
-	
-	//retrieve the users object from the data source
+
+	/** returns the list of users */
 	public Users getUsers();
-	
-	//retrieves a single user
+
+	/** returns a user based on email and password */
 	public User getUser(String email, String password);
-	
-	//retrieves a single user id
+
+	/** returns user ID based on email */
 	public int getUserId(String email);
-	
-	//checks if the users email and password matches for login
-	public boolean isUserValid(String email, String password);
-	
-	//replaces the users list with input from a data source
-	public void setUsers(Users users);
-	
-	//adds a new user into the data source
+
+	/** adds user object to list of users */
 	public void addUser(User user);
+	
+	/** sets the users by marshaling XML */
+	public void setUsers(Users users);
 
 }
