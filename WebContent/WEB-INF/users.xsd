@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="wsdVehicleMgmtSystem/users" 
-	xmlns="wsdVehicleMgmtSystem/users"
+	targetNamespace="wsdVehicleMgmtSystem/users" xmlns="wsdVehicleMgmtSystem/users"
 	elementFormDefault="qualified">
 
-	<!-- Type declarations -->		
+	<xs:annotation>
+		<xs:documentation>
+			XML Schema used for users.xml
+		</xs:documentation>
+	</xs:annotation>
+
+	<!-- Type declarations -->
 	<xs:simpleType name="email">
 		<xs:restriction base="xs:string">
 			<xs:pattern value=".*@.*\.(com|gov|org|net|edu)\.?.*" />
@@ -45,7 +50,8 @@
 	<xs:element name="users">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="user" type="user" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element name="user" type="user" minOccurs="0"
+					maxOccurs="unbounded" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

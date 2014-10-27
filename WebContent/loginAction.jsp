@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="wsd.vms.*"%>
+<!-- Action to log user into the system. If user could not be found, error is displayed-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,7 +18,8 @@
 		user.setEmail(request.getParameter("email"));
 		user.setPassword(request.getParameter("password"));
 
-		User userLoggingIn = vms.getUsersDao().getUser(user.getEmail(), user.getPassword());
+		User userLoggingIn = vms.getUsersDao().getUser(user.getEmail(),
+				user.getPassword());
 
 		if (userLoggingIn != null) {
 			user.setId(userLoggingIn.getId());
@@ -42,7 +44,8 @@
 					</div>
 					<div class="panel-body">Failed to login. Please try again.</div>
 					<div class="panel-footer text-center">
-						<a href="index.jsp" class="btn btn-warning">Return to home page</a>
+						<a href="index.jsp" class="btn btn-warning">Return to home
+							page</a>
 					</div>
 				</div>
 			</div>

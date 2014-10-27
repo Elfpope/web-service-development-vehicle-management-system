@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import javax.xml.bind.JAXBException;
 
 public class VehiclesDaoImpl implements IVehiclesDao, Serializable {
-
+	private static final long serialVersionUID = 1L;
 	private XMLService xmlService;
 	private Vehicles vehicles;
 

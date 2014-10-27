@@ -7,12 +7,9 @@ import java.io.Serializable;
 import javax.xml.bind.JAXBException;
 
 public class UsersDaoImpl implements IUsersDao, Serializable {
-
+	private static final long serialVersionUID = 1L;
 	private XMLService xmlService;
 	private Users users;
-
-	private final String ADMIN = "Administrator";
-	private final String DRIVER = "Driver";
 
 	/** creates blank user data access object implementation */
 	public UsersDaoImpl() {
@@ -120,7 +117,7 @@ public class UsersDaoImpl implements IUsersDao, Serializable {
 
 	/** role validation: must equal driver or administrator */
 	public boolean isCorrectRole(String role) {
-		if (role.equals(DRIVER) || role.equals(ADMIN)) {
+		if (role.equals("Driver") || role.equals("Administrator")) {
 			return true;
 		}
 		return false;

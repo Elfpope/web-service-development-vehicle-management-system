@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!-- Page for Errors 403, 404, 500 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -6,7 +8,9 @@
 <title>Page unavailable</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- Bootstrap core CSS -->
-<link href="<%=request.getContextPath()%>/bootstrap/sandstone/bootstrap.min.css" rel="stylesheet">
+<link
+	href="<%=request.getContextPath()%>/bootstrap/sandstone/bootstrap.min.css"
+	rel="stylesheet">
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -16,7 +20,8 @@
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
+<script
+	src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="navbar navbar-default navbar-fixed-top">
@@ -26,8 +31,9 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<%=request.getContextPath()%>/index.jsp">Vehicle Management
-				System</a>
+			<a class="navbar-brand"
+				href="<%=request.getContextPath()%>/index.jsp">Vehicle
+				Management System</a>
 		</div>
 	</div>
 	<div class="container" style="margin-top: 75px;">
@@ -42,7 +48,8 @@
 						<p>Whoops! Looks like something funny happened!</p>
 					</div>
 					<div class="panel-footer text-center">
-						<a href="<%=request.getContextPath()%>/index.jsp" class="btn btn-warning">Return to home page</a>
+						<a href="<%=request.getContextPath()%>/index.jsp"
+							class="btn btn-warning">Return to home page</a>
 					</div>
 				</div>
 			</div>

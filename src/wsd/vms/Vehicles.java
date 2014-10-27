@@ -13,6 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "vehicles")
 public class Vehicles implements Serializable {
+	private static final long serialVersionUID = 1L;
 	@XmlElement(name = "vehicle")
 	private ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>();
 

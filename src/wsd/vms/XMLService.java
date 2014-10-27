@@ -15,7 +15,7 @@ import javax.xml.bind.Unmarshaller;
  * XMLService deals with XML file marshaling and unmarshaling.
  */
 public class XMLService implements Serializable {
-
+	private static final long serialVersionUID = 1L;
 	private String usersFilePath;
 	private String vehiclesFilePath;
 
@@ -78,7 +78,6 @@ public class XMLService implements Serializable {
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(users, new FileOutputStream(usersFilePath));
-
 	}
 
 	/** marshals vehicles to vehicle XML */
