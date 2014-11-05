@@ -16,7 +16,7 @@ public interface IVehiclesDao {
 	public ArrayList<Trip> getTrips();
 
 	/** returns list of trips for the REST service based on parameters */
-	public ArrayList<Trip> getTrips(String vehicleRego, int startDate, String keyword);
+	public ArrayList<Trip> getTrips(String vehicleRego, String startDate, String keyword);
 
 	/** adds trip to the matching vehicle and marshals to XML */
 	public void addTrip(Trip trip);

@@ -5,6 +5,7 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   
+  <!-- Rest Config -->
    <servlet>
   <servlet-name>Jersey REST Web Services</servlet-name>
   <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
@@ -40,6 +41,7 @@
   <url-pattern>/soap/*</url-pattern>
  </servlet-mapping>
  
+ <!-- Error Pages -->
  <error-page>
     <error-code>401</error-code>
     <location>/WEB-INF/authorisationError.jsp</location>
