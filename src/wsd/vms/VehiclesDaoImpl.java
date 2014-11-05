@@ -62,7 +62,7 @@ public class VehiclesDaoImpl implements IVehiclesDao, Serializable {
 	 * list of trips
 	 */
 	@Override
-	public ArrayList<Trip> getTrips(String vehicleRego, int startDate,
+	public ArrayList<Trip> getTrips(String vehicleRego, String startDate,
 			String keyword) {
 		ArrayList<Trip> trips = vehicles.getTrips();
 
@@ -79,7 +79,7 @@ public class VehiclesDaoImpl implements IVehiclesDao, Serializable {
 					delete = true;
 				}
 			}
-			if (startDate != 0) {
+			if (startDate != null) {
 				allNull = false;
 				if (!(trips.get(i).getStartDate().equals(startDate))) {
 					delete = true;

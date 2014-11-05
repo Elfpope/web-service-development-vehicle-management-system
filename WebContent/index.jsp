@@ -4,6 +4,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x"%>
 <c:import var="vehiclesXML" url="vehicles.xml" />
 <c:import var="vehiclesXSLT" url="vehicles.xsl" />
+
 <!-- Index home landing page of the application. Displays table of registered vehicles. 
 Can add vehicles on this page if user is administrator -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -17,13 +18,11 @@ Can add vehicles on this page if user is administrator -->
 	//Initialize the web application with xml files path.
 	String usersFilePath = application.getRealPath("WEB-INF/users.xml");
 	String vehiclesFilePath = application.getRealPath("vehicles.xml");
-	VehicleManagementApplication vms = (VehicleManagementApplication) session
-			.getAttribute("vms");
+	VehicleManagementApplication vms = (VehicleManagementApplication) session.getAttribute("vms");
 
 	//Ensure only one VMS is created and reused accross the whole application
 	if (vms == null) {
-		vms = new VehicleManagementApplication(usersFilePath,
-				vehiclesFilePath);
+		vms = new VehicleManagementApplication(usersFilePath, vehiclesFilePath);
 		session.setAttribute("vms", vms);
 	}
 %>

@@ -34,7 +34,7 @@ public class TripsService {
 	@Path("trips")
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
-	public ArrayList<Trip> getTrips(@QueryParam("regoNumber") String vehicleRego, @QueryParam("startDate") int startDate,
+	public ArrayList<Trip> getTrips(@QueryParam("regoNumber") String vehicleRego, @QueryParam("startDate") String startDate,
 			@QueryParam("keyword") String keyword) throws JAXBException, IOException {
 		return getVehicleApp().getVehiclesDao().getTrips(vehicleRego, startDate, keyword);
 	}
